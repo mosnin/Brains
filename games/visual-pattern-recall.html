@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visual Pattern Recall — Visual Memory Test | BrainForge</title>
+  <meta name="description" content="Test your visual pattern memory online. Study a grid pattern and recreate it from memory. Free 30-level visual working memory exercise." />
+  <meta property="og:title" content="Visual Pattern Recall — Visual Memory Test | BrainForge" />
+  <meta property="og:description" content="Test your visual pattern memory online. Study a grid pattern and recreate it from memory. Free 30-level visual working memory exercise." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://brainforge.app/games/visual-pattern-recall.html" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/game.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Visual Pattern Recall","description":"Grid of cells briefly illuminated in a pattern — study it, then reconstruct from memory by clicking the correct cells.","url":"https://brainforge.app/games/visual-pattern-recall.html","genre":"Brain Training","gamePlatform":"Web Browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="nav__brand" href="../">
+        <svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+        <span>BrainForge</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="../working-memory-games.html" class="active">Working Memory</a></li>
+        <li><a href="../attention-games.html">Attention</a></li>
+        <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+        <li><a href="../executive-function-games.html">Executive Function</a></li>
+        <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+        <li><a href="../all-games.html">All Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav class="breadcrumb container" aria-label="Breadcrumb">
+    <ol class="breadcrumb__list">
+      <li class="breadcrumb__item"><a href="../">Home</a></li>
+      <li class="breadcrumb__item"><a href="../working-memory-games.html">Working Memory Games</a></li>
+      <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Visual Pattern Recall</li>
+    </ol>
+  </nav>
+
+  <section class="game-hero container">
+    <div class="game-hero__meta">
+      <span class="game-hero__category">Working Memory</span>
+      <span class="game-hero__difficulty">30 Levels</span>
+    </div>
+    <h1 class="game-hero__title">Visual Pattern Recall</h1>
+    <p class="game-hero__desc">Watch a grid pattern illuminate briefly, then recreate it from memory by clicking the correct cells. A pure test of visual working memory and spatial pattern retention — no verbal labeling shortcuts!</p>
+  </section>
+
+  <main class="game-main container" id="game-root">
+    <div id="game-container">
+      <div id="level-select">
+        <h2 class="level-select__title">Select Level</h2>
+        <div id="level-select-grid"></div>
+      </div>
+      <div id="game-hud">
+        <div class="hud-item"><span class="hud-item__label">Level</span><span class="hud-item__value" id="hud-level">1</span></div>
+        <div class="hud-item"><span class="hud-item__label">Score</span><span class="hud-item__value" id="hud-score">0%</span></div>
+        <div class="hud-item hud-timer-wrap"><span id="hud-timer"></span><div class="hud-timer-bar-bg"><div class="hud-timer-bar" id="hud-timer-bar"></div></div></div>
+        <button id="pause-btn" aria-label="Pause game">&#9208;</button>
+      </div>
+      <div id="game-area"></div>
+      <div id="game-overlay"></div>
+    </div>
+  </main>
+
+  <section class="game-content container">
+    <article>
+      <h2>What Is Visual Pattern Recall?</h2>
+      <p>Visual Pattern Recall is a brain training game that directly targets your <strong>visual working memory</strong> — the cognitive system responsible for holding and manipulating visual information in mind over short intervals. In each trial, a grid of cells briefly illuminates in a random pattern. The pattern then disappears, and you must reconstruct it from memory by clicking the correct cells. No numbers, no words, no verbal hints — just pure visual and spatial memory.</p>
+      <p>The game spans 30 progressively harder levels. Early levels present small 3×3 grids with only 3 highlighted cells and generous display times of two full seconds. By the final levels, you are memorizing 16-cell patterns spread across an 8×8 grid with just half a second of exposure — a genuinely demanding challenge that approaches the limits of expert visual working memory capacity.</p>
+
+      <h2>How to Play</h2>
+      <p>Each trial proceeds in three phases. First, the <strong>display phase</strong>: a subset of grid cells lights up in teal. Study the pattern carefully and form a mental image of which cells are filled. The pattern is visible for a fixed duration that shrinks as you advance. Second, a brief <strong>blank pause</strong> of 500 ms clears the grid — this gap prevents a simple afterimage from carrying you through and forces genuine memory encoding. Third, the <strong>recall phase</strong>: the grid reappears blank and you click cells to reconstruct the pattern. When you have selected the correct number of cells, your answer is automatically evaluated.</p>
+      <p>After evaluation, color-coded feedback overlays your answer for 1.2 seconds: <strong>green</strong> cells are correct hits, <strong>red</strong> cells are false alarms (you clicked them but they were not in the pattern), and <strong>orange dashed</strong> cells are misses (pattern cells you did not select). This feedback helps you calibrate your mental image and identify systematic errors (e.g., consistently misremembering corner vs. edge positions).</p>
+
+      <h2>What Does This Game Measure?</h2>
+      <p>Visual Pattern Recall loads heavily on what Robert Logie termed the <em>visual cache</em> — the passive store within Baddeley's visuospatial sketchpad that retains static visual form and pattern information. Unlike the Corsi Block Test, which emphasizes the sequential spatial component (sometimes called the "inner scribe"), Visual Pattern Recall presents all pattern elements simultaneously, stressing the capacity to retain a whole-field snapshot rather than a temporal sequence.</p>
+      <p>The task also engages <strong>iconic memory consolidation</strong> — the process by which a brief visual stimulus is encoded from the sensory register into working memory. As display durations shorten across levels, the game increasingly tests how efficiently you can consolidate a visual pattern before it decays. This capacity is distinct from verbal or sequential working memory and is poorly predicted by phonological loop measures like digit span.</p>
+
+      <h2>Visual Working Memory in Cognitive Neuroscience</h2>
+      <p>The neural basis of visual pattern working memory is primarily right-hemisphere, with key contributions from the <strong>occipito-parietal cortex</strong> (especially the intraparietal sulcus), the <strong>prefrontal cortex</strong> (ventrolateral regions for maintenance, dorsolateral for manipulation), and the <strong>posterior temporal cortex</strong> for pattern recognition. Neuroimaging studies consistently show that holding visual patterns in working memory activates right posterior parietal areas, contrasting with the left-lateralized network typical of phonological storage.</p>
+      <p>The Wechsler Memory Scale Visual Reproduction subtest measures a related ability — reproducing geometric figures after a brief study period — and has been used clinically for decades to identify visual memory deficits following stroke, traumatic brain injury, and neurodegenerative disease. The grid-based format used here has the advantage of precise, objective scoring (each cell is either correct or incorrect) compared to free-hand drawing tasks.</p>
+      <p>Research by Logie and colleagues (1995, 2003) demonstrated a clear double dissociation between visual pattern memory and spatial sequence memory, supporting the theoretical partition of the visuospatial sketchpad into a visual cache and an inner scribe. Damage to posterior right-hemisphere regions tends to impair pattern memory disproportionately, while frontal or anterior damage more often disrupts sequential spatial tracking.</p>
+
+      <h2>Why "No Verbal Shortcuts"?</h2>
+      <p>Many grid-memory paradigms can be partially solved with verbal labeling — for example, encoding highlighted cells as "row 2, columns 1 and 3; row 4, column 2." The random, irregular patterns in Visual Pattern Recall are designed to be difficult to describe verbally, especially at higher grid sizes. The brief display times at advanced levels further prevent deliberate verbal recoding. This means the game truly taxes your visual imagery system rather than simply testing your ability to translate visual information into words and back — making it a more direct window into visuospatial cognitive capacity.</p>
+
+      <h2>Tips for Better Performance</h2>
+      <ul>
+        <li><strong>Form a holistic image.</strong> Rather than scanning cell by cell, try to perceive the whole pattern as a single gestalt shape — a letter, an arrow, a cluster. Pattern recognition is more efficient than enumeration.</li>
+        <li><strong>Anchor to the grid structure.</strong> Use rows and columns as implicit reference frames. Noting "there's a diagonal in the top-right quadrant" is a compact spatial code that uses the grid geometry without full verbal labeling.</li>
+        <li><strong>Use the feedback.</strong> After each trial, study which cells you missed and which you falsely selected. Systematic errors reveal biases in your spatial attention and imagery that you can consciously correct.</li>
+        <li><strong>Relax your gaze.</strong> Instead of fixating on individual cells, use a soft, distributed gaze that takes in the full grid. This activates peripheral vision and supports holistic encoding.</li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <details>
+        <summary>How is this different from the Corsi Block Test?</summary>
+        <p>Both games test visuospatial working memory, but they stress different subcomponents. The Corsi Block Test requires you to recall a <em>temporal sequence</em> of individual locations — it loads on the "inner scribe" (spatial sequence system). Visual Pattern Recall requires you to retain a <em>simultaneous pattern</em> of multiple locations — it loads on the "visual cache" (static pattern storage). The two tasks dissociate neuropsychologically, and many people find themselves significantly better at one than the other. Playing both gives a fuller picture of your visuospatial working memory profile.</p>
+      </details>
+
+      <details>
+        <summary>Does pattern complexity matter, or just the number of cells?</summary>
+        <p>Both matter. Research shows that visual working memory capacity is sensitive to the number of objects or "chunks" held, but also to the spatial regularity of patterns. Symmetric or structured patterns (like a cross or an L-shape) are easier to retain because they can be encoded as a single gestalt chunk rather than multiple independent locations. The BrainForge implementation uses randomized patterns that deliberately avoid common symmetric forms, keeping the demand on raw capacity rather than pattern recognition shortcuts.</p>
+      </details>
+
+      <details>
+        <summary>Can this game help with real-world visual memory tasks?</summary>
+        <p>Consistent practice on visual pattern memory tasks has been shown to improve performance on closely related visuospatial tasks (near-transfer), including navigation, visual search, and recognizing briefly glimpsed objects. Transfer to everyday tasks like remembering where you left an object or recalling visual details of a scene is plausible but depends on practice duration and variety. For maximum benefit, combine Visual Pattern Recall with other visuospatial training (Corsi test, spatial n-back) and physical activities that also stress spatial cognition, such as sport or drawing.</p>
+      </details>
+
+      <h2>Related Games</h2>
+      <ul>
+        <li><a href="corsi-block.html">Corsi Block Tapping Test</a> — The sequential spatial counterpart to this game; tests visuospatial span via block sequences.</li>
+        <li><a href="working-memory.html">Working Memory Matrix</a> — Combines spatial and verbal working memory demands in a dual-task format.</li>
+        <li><a href="pattern-match.html">Pattern Match</a> — Rapid visual pattern comparison for processing speed and visual discrimination.</li>
+        <li><a href="spatial-n-back.html">Spatial N-Back</a> — Continuous updating task that challenges both visual attention and working memory simultaneously.</li>
+      </ul>
+    </article>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer__inner container">
+      <div class="footer__brand">
+        <a class="nav__brand" href="../"><svg viewBox="0 0 32 32" fill="none" width="28" height="28"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg><span>BrainForge</span></a>
+        <p class="footer__tagline">Science-based cognitive training, free and in-browser.</p>
+      </div>
+      <div class="footer__col"><h3 class="footer__heading">Categories</h3><ul><li><a href="../working-memory-games.html">Working Memory</a></li><li><a href="../attention-games.html">Attention</a></li><li><a href="../processing-speed-games.html">Processing Speed</a></li><li><a href="../executive-function-games.html">Executive Function</a></li><li><a href="../reaction-time-games.html">Reaction Time</a></li><li><a href="../all-games.html">All Games</a></li></ul></div>
+      <div class="footer__col"><h3 class="footer__heading">Popular Games</h3><ul><li><a href="corsi-block.html">Corsi Block Test</a></li><li><a href="working-memory.html">Working Memory Matrix</a></li><li><a href="digit-span-forward.html">Digit Span</a></li><li><a href="spatial-n-back.html">Spatial N-Back</a></li><li><a href="dual-n-back.html">Dual N-Back</a></li></ul></div>
+      <div class="footer__col"><h3 class="footer__heading">Legal</h3><ul><li><a href="../legal/privacy-policy.html">Privacy Policy</a></li><li><a href="../legal/terms-of-service.html">Terms of Service</a></li><li><a href="../legal/cookie-policy.html">Cookie Policy</a></li></ul></div>
+    </div>
+    <p class="footer__copy container">&copy; 2026 BrainForge. All rights reserved.</p>
+  </footer>
+
+  <div class="cookie-banner" role="dialog" aria-label="Cookie consent">
+    <div class="cookie-banner__inner">
+      <p>We use cookies to save your progress. <a href="../legal/cookie-policy.html">Learn more</a>.</p>
+      <div class="cookie-banner__buttons">
+        <button class="btn btn--primary btn--sm cookie-accept">Accept</button>
+        <button class="btn btn--ghost btn--sm cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/audio.js"></script>
+  <script src="../js/core/game-engine.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/games/visual-pattern-recall.js"></script>
+</body>
+</html>
