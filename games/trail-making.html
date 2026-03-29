@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trail Making Test Online Free - Executive Function Assessment | BrainForge</title>
+  <meta name="description" content="Take the Trail Making Test online free. Connect numbered and lettered dots in sequence. Measures executive function and cognitive flexibility. Based on Reitan TMT." />
+  <meta name="keywords" content="trail making test online, TMT cognitive test, executive function test, trail making test free, cognitive flexibility assessment" />
+  <link rel="canonical" href="https://brainforge.com/games/trail-making.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Trail Making Test Online Free | BrainForge" />
+  <meta property="og:description" content="Connect numbered and lettered dots in sequence. Tests executive function and cognitive flexibility. Based on Reitan (1958) TMT." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://brainforge.com/games/trail-making.html" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Trail Making Test Online",
+    "applicationCategory": "Game",
+    "operatingSystem": "Any",
+    "description": "Online Trail Making Test based on Reitan (1958). Connect numbered and lettered nodes in sequence to assess executive function and cognitive flexibility.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "url": "https://brainforge.com/games/trail-making.html"
+  }
+  </script>
+
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/game.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-nav__inner">
+      <a class="site-nav__brand" href="../" aria-label="BrainForge Home">
+        <svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+        <span>BrainForge</span>
+      </a>
+      <ul class="site-nav__links">
+        <li><a href="../working-memory-games.html">Working Memory</a></li>
+        <li><a href="../attention-games.html">Attention</a></li>
+        <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+        <li><a href="../executive-function-games.html" aria-current="page">Executive Function</a></li>
+        <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+        <li><a href="../all-games.html">All Games</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol class="breadcrumb__list">
+        <li class="breadcrumb__item"><a href="../">Home</a></li>
+        <li class="breadcrumb__item"><a href="../executive-function-games.html">Executive Function Games</a></li>
+        <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Trail Making Test</li>
+      </ol>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="game-header">
+      <div class="game-header__inner">
+        <div class="game-header__badge">Executive Function</div>
+        <h1 class="game-header__title">Trail Making Test</h1>
+        <p class="game-header__desc">
+          Connect the dots in sequence. Switch between numbers and letters under time pressure to train cognitive flexibility and processing speed.
+        </p>
+        <div class="game-header__meta">
+          <span>30 Levels</span>
+          <span>&bull;</span>
+          <span>Type A &amp; B</span>
+          <span>&bull;</span>
+          <span>Based on Reitan (1958)</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Game Container -->
+    <div id="game-container">
+      <div id="level-select">
+        <h2 class="level-select__title">Select Level</h2>
+        <div id="level-select-grid"></div>
+      </div>
+
+      <div id="game-hud">
+        <div class="hud-item">
+          <span class="hud-item__label">Level</span>
+          <span class="hud-item__value" id="hud-level">1</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-item__label">Score</span>
+          <span class="hud-item__value" id="hud-score">0%</span>
+        </div>
+        <div class="hud-item hud-timer-wrap">
+          <span id="hud-timer"></span>
+          <div class="hud-timer-bar-bg">
+            <div class="hud-timer-bar" id="hud-timer-bar"></div>
+          </div>
+        </div>
+        <button id="pause-btn">&#9646;&#9646;</button>
+      </div>
+
+      <div id="game-area"></div>
+      <div id="game-overlay"></div>
+    </div>
+
+    <!-- SEO Content -->
+    <section class="game-content">
+
+      <h2>How to Play</h2>
+      <p>
+        <strong>Type A (Levels 1&ndash;12):</strong> Circles numbered 1 through N are scattered on the canvas. Click or tap them in ascending order: 1 &rarr; 2 &rarr; 3 &rarr; and so on. A line draws between each correctly connected node.
+      </p>
+      <p>
+        <strong>Type B (Levels 13&ndash;30):</strong> The sequence alternates between numbers and letters: 1 &rarr; A &rarr; 2 &rarr; B &rarr; 3 &rarr; C&hellip; This requires mental set-shifting between two categories simultaneously.
+      </p>
+      <p>
+        The <strong>current target node pulses</strong> with a teal glow to guide you. Wrong clicks flash red but do not end the trial &mdash; correct yourself and continue. Your score is based on correctly connected nodes, with a time limit that tightens as levels advance.
+      </p>
+
+      <h2>What It Measures</h2>
+      <p>
+        The Trail Making Test is one of the most widely used neuropsychological assessments. It evaluates three core cognitive domains:
+      </p>
+      <ul>
+        <li><strong>Visual scanning and sequencing (Type A)</strong> &mdash; the ability to quickly scan a visual field and execute a planned sequence.</li>
+        <li><strong>Cognitive flexibility / set-shifting (Type B)</strong> &mdash; the ability to alternate mental sets, dividing attention between two interleaved sequences.</li>
+        <li><strong>Processing speed</strong> &mdash; how efficiently you execute the task under time pressure.</li>
+      </ul>
+      <p>
+        The ratio of Type B completion time to Type A completion time (B/A ratio) is a classic index of executive dysfunction: a high ratio suggests disproportionate difficulty with the set-shifting demand beyond basic sequencing speed.
+      </p>
+
+      <h2>Research Background</h2>
+      <p>
+        The Trail Making Test was originally developed by <strong>Partington &amp; Leiter (1949)</strong> as the &ldquo;Partington Pathways Test&rdquo; and later adapted and standardized by <strong>Ralph Reitan (1958)</strong> as part of the Halstead&ndash;Reitan Neuropsychological Test Battery. It remains a standard tool in clinical neuropsychology for detecting brain injury, dementia, and frontal lobe dysfunction.
+      </p>
+      <p>
+        Normative data from large samples (Tombaugh, 2004; Strauss, Sherman &amp; Spreen, 2006) show strong age and education effects, with completion time increasing meaningfully after age 60. The test discriminates reliably between healthy adults and patients with Alzheimer&rsquo;s disease, traumatic brain injury, and schizophrenia.
+      </p>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <details>
+        <summary>What is the difference between TMT-A and TMT-B?</summary>
+        <p>
+          TMT-A requires connecting numbered circles in ascending order (1&ndash;2&ndash;3&hellip;). It primarily measures visual-motor speed and attention. TMT-B requires alternating between numbers and letters (1&ndash;A&ndash;2&ndash;B&hellip;), adding a set-shifting demand that taxes the prefrontal cortex. Clinicians often subtract A time from B time, or compute the B/A ratio, to isolate the executive function component independent of motor speed.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can I improve my Trail Making Test score with practice?</summary>
+        <p>
+          Yes &mdash; practice effects are well-documented in the TMT literature. Repeated testing yields faster completion times, largely due to learning the task demands rather than broad cognitive improvement. That said, the set-shifting skill engaged by Type B does transfer to real-world tasks requiring mental flexibility, such as multitasking and task-switching in dynamic environments.
+        </p>
+      </details>
+
+      <details>
+        <summary>How does the online version compare to the clinical paper version?</summary>
+        <p>
+          The clinical version is administered on paper with a pencil; the examiner records total time and error count. This online version captures the same sequencing and set-shifting demands using a touchscreen or mouse. Key differences: the online version randomizes node positions each attempt, includes a live timer displayed to the player (which may increase pressure), and uses click/tap rather than pencil drawing. Normative comparisons to paper-and-pencil standards should therefore be made cautiously.
+        </p>
+      </details>
+
+      <h2>Related Games</h2>
+      <ul class="related-games-list">
+        <li><a href="task-switching.html">Task Switching</a></li>
+        <li><a href="stroop-color-word.html">Stroop Color-Word Test</a></li>
+        <li><a href="go-no-go.html">Go/No-Go Task</a></li>
+        <li><a href="rule-shift.html">Rule Shift</a></li>
+      </ul>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__col">
+        <a class="site-footer__brand" href="../">
+          <svg viewBox="0 0 32 32" fill="none" width="24" height="24"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+          BrainForge
+        </a>
+        <p class="site-footer__tagline">Science-based cognitive training, free forever.</p>
+      </div>
+      <div class="site-footer__col">
+        <h3 class="site-footer__heading">Categories</h3>
+        <ul class="site-footer__links">
+          <li><a href="../working-memory-games.html">Working Memory</a></li>
+          <li><a href="../attention-games.html">Attention</a></li>
+          <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+          <li><a href="../executive-function-games.html">Executive Function</a></li>
+          <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+          <li><a href="../all-games.html">All Games</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <h3 class="site-footer__heading">Popular Games</h3>
+        <ul class="site-footer__links">
+          <li><a href="trail-making.html">Trail Making Test</a></li>
+          <li><a href="stroop-color-word.html">Stroop Test</a></li>
+          <li><a href="go-no-go.html">Go/No-Go Task</a></li>
+          <li><a href="task-switching.html">Task Switching</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <h3 class="site-footer__heading">Legal</h3>
+        <ul class="site-footer__links">
+          <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../legal/terms-of-service.html">Terms of Service</a></li>
+          <li><a href="../legal/cookie-policy.html">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p>&copy; 2026 BrainForge. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner">
+    <div class="cookie-banner__inner">
+      <p>We use cookies. <a href="../legal/cookie-policy.html">Learn more</a>.</p>
+      <div class="cookie-banner__buttons">
+        <button class="btn btn--primary btn--sm cookie-accept">Accept</button>
+        <button class="btn btn--ghost btn--sm cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/audio.js"></script>
+  <script src="../js/core/game-engine.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/games/trail-making.js"></script>
+</body>
+</html>

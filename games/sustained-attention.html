@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sustained Attention Test Online - Focus Training | BrainForge</title>
+  <meta name="description" content="Test your sustained attention with the SART online. Monitor continuous stimuli and respond selectively. Measures attention span and cognitive control. Free." />
+  <meta name="keywords" content="sustained attention test, SART test online, sustained attention to response task, attention span test, cognitive control, focus training" />
+  <link rel="canonical" href="https://www.brainforge.gg/games/sustained-attention.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sustained Attention Test Online (SART) | BrainForge" />
+  <meta property="og:description" content="Test your sustained attention with the SART online. Measures attention span, vigilance decrement, and cognitive control. Free brain training." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.brainforge.gg/games/sustained-attention.html" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/game.css" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Sustained Attention Test Online (SART)",
+    "description": "Test your sustained attention with the SART online. Monitor continuous stimuli and respond selectively. Measures attention span and cognitive control.",
+    "url": "https://www.brainforge.gg/games/sustained-attention.html",
+    "applicationCategory": "Game",
+    "genre": "Brain Training",
+    "operatingSystem": "Any"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-nav__inner">
+      <a class="site-nav__brand" href="../">
+        <svg viewBox="0 0 32 32" fill="none" width="32" height="32" aria-hidden="true"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+        <span>BrainForge</span>
+      </a>
+      <ul class="site-nav__links">
+        <li><a href="../working-memory-games.html">Working Memory</a></li>
+        <li><a href="../attention-games.html" aria-current="page">Attention</a></li>
+        <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+        <li><a href="../executive-function-games.html">Executive Function</a></li>
+        <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+        <li><a href="../all-games.html">All Games</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol class="breadcrumb__list">
+        <li class="breadcrumb__item"><a href="../">Home</a></li>
+        <li class="breadcrumb__item"><a href="../attention-games.html">Attention Games</a></li>
+        <li class="breadcrumb__item" aria-current="page">Sustained Attention Task</li>
+      </ol>
+    </nav>
+
+    <!-- Page header -->
+    <header class="game-header">
+      <div class="game-header__inner">
+        <h1 class="game-header__title">Sustained Attention Task (SART)</h1>
+        <p class="game-header__subtitle">Press for every number — except 3. A classic test of attention, vigilance, and cognitive control.</p>
+      </div>
+    </header>
+
+    <!-- Game container -->
+    <div id="game-container">
+      <!-- Level select -->
+      <div id="level-select">
+        <h2 class="level-select__title">Select Level</h2>
+        <div id="level-select-grid"></div>
+      </div>
+
+      <!-- HUD -->
+      <div id="game-hud">
+        <div class="hud-item">
+          <span class="hud-item__label">Level</span>
+          <span class="hud-item__value" id="hud-level">1</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-item__label">Score</span>
+          <span class="hud-item__value" id="hud-score">0%</span>
+        </div>
+        <div class="hud-item hud-timer-wrap">
+          <span id="hud-timer"></span>
+          <div class="hud-timer-bar-bg">
+            <div class="hud-timer-bar" id="hud-timer-bar"></div>
+          </div>
+        </div>
+        <button id="pause-btn" aria-label="Pause game">&#9646;&#9646;</button>
+      </div>
+
+      <!-- Game area -->
+      <div id="game-area"></div>
+
+      <!-- Overlay -->
+      <div id="game-overlay"></div>
+    </div>
+
+    <!-- SEO content -->
+    <section class="game-content">
+      <h2>How to Play the Sustained Attention Task</h2>
+      <p>The Sustained Attention to Response Task (SART) presents digits 1–9 in rapid succession. Your job: <strong>press SPACE (or the on-screen button) for every digit you see — except the number 3</strong>. When 3 appears (roughly one in every nine digits), you must withhold your response entirely.</p>
+      <p>Because you spend most of the task pressing, the rhythmic habit of responding becomes automatic. Withholding at the right moment requires you to stay fully alert and break that habit. It's deceptively challenging — especially over longer runs where your mind naturally wanders.</p>
+      <ul>
+        <li><strong>Correct go response:</strong> You pressed for a non-3 digit.</li>
+        <li><strong>Omission error:</strong> You missed pressing for a non-3 digit — an attention lapse.</li>
+        <li><strong>Commission error:</strong> You pressed when 3 appeared — an inhibitory failure.</li>
+      </ul>
+      <p>Score = correct responses / total trials × 100. Reach 80% to pass a level. Thirty levels progressively shorten digit display time from 250 ms down to 80 ms and close the inter-stimulus interval from 1200 ms to 450 ms.</p>
+
+      <h2>What the Sustained Attention Task Measures</h2>
+      <p>The SART targets three overlapping cognitive capacities:</p>
+      <ul>
+        <li><strong>Sustained attention:</strong> Maintaining a consistent, alert mental state across hundreds of repetitive trials without flagging.</li>
+        <li><strong>Vigilance decrement:</strong> The tendency for performance to worsen over time as fatigue and mind-wandering accumulate — a hallmark finding in attention research.</li>
+        <li><strong>Response inhibition:</strong> Suppressing a dominant, prepotent response (pressing) at precisely the right moment.</li>
+      </ul>
+      <p>Commission errors (pressing for 3) are the classic measure of sustained attention failure. Research shows they cluster during periods of mind-wandering, making the SART a sensitive probe of real-world attentional control.</p>
+
+      <h2>Research Behind the SART</h2>
+      <p>The Sustained Attention to Response Task was developed by <strong>Robertson, Manly, Andrade, Baddeley, and Yiend (1997)</strong> as a sensitive behavioural measure of sustained attention and mind-wandering. The influential work of <strong>Raja Parasuraman (1998)</strong> established the theoretical framework of the vigilance decrement — the reliable drop in detection performance over time — which the SART is specifically designed to capture. Subsequent research linked SART commission errors to self-reported mind-wandering episodes, confirming the task's ecological validity. The SART is now used in clinical populations (acquired brain injury, ADHD, aging) and in basic cognitive neuroscience to study the neural substrates of sustained attention.</p>
+
+      <section class="game-faq">
+        <h2>Frequently Asked Questions</h2>
+
+        <details>
+          <summary>Why press for everything except 3 instead of the other way around?</summary>
+          <p>Making the "press" response the dominant habit is essential to the test's design. If you rarely pressed, there would be no prepotent response to inhibit. The SART forces you to build automatic responding and then override it at infrequent, unpredictable moments — exactly where attention lapses are most revealing.</p>
+        </details>
+
+        <details>
+          <summary>What is a good score on the Sustained Attention Task?</summary>
+          <p>Scoring 80% or above passes each level in BrainForge. In research settings, healthy adults typically achieve accuracy above 90% on slower-paced SART variants, but performance degrades noticeably as pace increases. Regular practice helps reduce both omission and commission error rates over time.</p>
+        </details>
+
+        <details>
+          <summary>How long does each level take?</summary>
+          <p>Level durations range from about 45 seconds (early levels, 36 trials at 1200 ms ISI) to roughly 50–60 seconds for later levels (108 trials at 450 ms ISI). The faster pace of advanced levels means more trials fit into a similar window.</p>
+        </details>
+
+        <details>
+          <summary>What causes the vigilance decrement?</summary>
+          <p>Sustained performance on monotonous tasks draws on limited attentional resources. Over time, the mind defaults to task-unrelated thought (mind-wandering), neural activity related to sustained attention decreases, and response readiness fluctuates. Caffeine, sleep, stress, and individual differences in attention control all modulate how quickly this decrement sets in.</p>
+        </details>
+
+        <details>
+          <summary>Is this test useful for ADHD screening?</summary>
+          <p>The SART shows elevated commission error rates in individuals with ADHD and acquired attention difficulties, making it a research-grade tool for studying those groups. However, a single online game cannot diagnose any clinical condition. For ADHD evaluation, consult a qualified healthcare professional.</p>
+        </details>
+      </section>
+
+      <h2>Related Games</h2>
+      <ul class="related-games">
+        <li><a href="continuous-performance.html">Continuous Performance Test (CPT)</a></li>
+        <li><a href="vigilance.html">Vigilance Task</a></li>
+        <li><a href="flanker-task.html">Flanker Task</a></li>
+        <li><a href="go-no-go.html">Go/No-Go Task</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <svg viewBox="0 0 32 32" fill="none" width="28" height="28" aria-hidden="true"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+        <span>BrainForge</span>
+      </div>
+      <div class="site-footer__cols">
+        <div class="site-footer__col">
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="../working-memory-games.html">Working Memory</a></li>
+            <li><a href="../attention-games.html">Attention</a></li>
+            <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+            <li><a href="../executive-function-games.html">Executive Function</a></li>
+            <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+            <li><a href="../all-games.html">All Games</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h3>Popular Games</h3>
+          <ul>
+            <li><a href="continuous-performance.html">Continuous Performance Test</a></li>
+            <li><a href="sustained-attention.html">Sustained Attention Task</a></li>
+            <li><a href="flanker-task.html">Flanker Task</a></li>
+            <li><a href="go-no-go.html">Go/No-Go Task</a></li>
+            <li><a href="vigilance.html">Vigilance Task</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../legal/terms-of-service.html">Terms of Service</a></li>
+            <li><a href="../legal/cookie-policy.html">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie banner -->
+  <div class="cookie-banner">
+    <div class="cookie-banner__inner">
+      <p>We use cookies. <a href="../legal/cookie-policy.html">Learn more</a>.</p>
+      <div class="cookie-banner__buttons">
+        <button class="btn btn--primary btn--sm cookie-accept">Accept</button>
+        <button class="btn btn--ghost btn--sm cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/audio.js"></script>
+  <script src="../js/core/game-engine.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/games/sustained-attention.js"></script>
+</body>
+</html>

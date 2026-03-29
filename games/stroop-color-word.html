@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stroop Test Online - Cognitive Interference Test | BrainForge</title>
+  <meta name="description" content="Take the classic Stroop Color-Word Test online free. Identify ink colors while ignoring conflicting color words. Measures executive function and inhibitory control." />
+  <meta name="keywords" content="stroop test online, stroop color word test, cognitive interference test, executive function test, inhibitory control, brain training" />
+  <meta property="og:title" content="Stroop Test Online - Cognitive Interference Test | BrainForge" />
+  <meta property="og:description" content="Take the classic Stroop Color-Word Test online free. Identify ink colors while ignoring conflicting color words. Measures executive function and inhibitory control." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://brainforge.app/games/stroop-color-word.html" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/game.css" />
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="nav__brand" href="../">
+        <svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+        <span>BrainForge</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="../working-memory-games.html">Working Memory</a></li>
+        <li><a href="../attention-games.html">Attention</a></li>
+        <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+        <li><a href="../executive-function-games.html" class="active">Executive Function</a></li>
+        <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+        <li><a href="../all-games.html">All Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ── Breadcrumb ── -->
+  <nav class="breadcrumb container" aria-label="Breadcrumb">
+    <ol class="breadcrumb__list">
+      <li class="breadcrumb__item"><a href="../">Home</a></li>
+      <li class="breadcrumb__item"><a href="../executive-function-games.html">Executive Function Games</a></li>
+      <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Stroop Color-Word Test</li>
+    </ol>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="game-hero container">
+    <div class="game-hero__meta">
+      <span class="game-hero__category">Executive Function</span>
+      <span class="game-hero__difficulty">30 Levels</span>
+    </div>
+    <h1 class="game-hero__title">Stroop Color-Word Test</h1>
+    <p class="game-hero__desc">
+      The classic cognitive interference paradigm. You'll see a <strong>color word</strong> displayed in a potentially
+      different ink color — click the <strong>ink color</strong>, not what the word says. Trains inhibitory control
+      and executive function by forcing you to override an automatic reading response.
+    </p>
+  </section>
+
+  <!-- ── Game Container ── -->
+  <main class="game-main container" id="game-root">
+    <div id="game-container">
+
+      <!-- Level Select -->
+      <div id="level-select">
+        <h2 class="level-select__title">Select Level</h2>
+        <div id="level-select-grid"></div>
+      </div>
+
+      <!-- HUD -->
+      <div id="game-hud">
+        <div class="hud-item">
+          <span class="hud-item__label">Level</span>
+          <span class="hud-item__value" id="hud-level">1</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-item__label">Score</span>
+          <span class="hud-item__value" id="hud-score">0%</span>
+        </div>
+        <div class="hud-item hud-timer-wrap">
+          <span id="hud-timer"></span>
+          <div class="hud-timer-bar-bg">
+            <div class="hud-timer-bar" id="hud-timer-bar"></div>
+          </div>
+        </div>
+        <button id="pause-btn" aria-label="Pause game">⏸</button>
+      </div>
+
+      <!-- Game Area -->
+      <div id="game-area"></div>
+
+      <!-- Overlay (pause/complete/fail) -->
+      <div id="game-overlay"></div>
+
+    </div>
+  </main>
+
+  <!-- ── SEO Content ── -->
+  <section class="game-content container">
+
+    <h2>How to Play the Stroop Test</h2>
+    <p>
+      Each trial shows a <strong>color word</strong> (e.g., the word "RED") printed in an ink color that may or may not match
+      the word itself. Your task is to click the button matching the <strong>ink color</strong> — completely ignoring what the
+      word says. Early levels begin with congruent trials (word and ink match) to build familiarity. As you progress, more
+      incongruent trials appear and response time windows shrink, ramping up the cognitive demand across all 30 levels.
+    </p>
+    <ul>
+      <li>Click the colored button that matches the <strong>ink color</strong> of the displayed word.</li>
+      <li>Ignore the word's meaning — focus only on the color it is printed in.</li>
+      <li>Respond before the timer expires. Score 80% or higher to advance.</li>
+      <li>Levels 1–3 are fully congruent to warm up; incongruent trials increase progressively.</li>
+      <li>Levels 28–30 feature 100% incongruent trials with only 1.2 seconds per response.</li>
+    </ul>
+
+    <h2>What the Stroop Test Measures</h2>
+    <p>
+      The Stroop Color-Word Test is one of the most robust measures of <strong>executive function</strong> in cognitive
+      psychology. It specifically targets:
+    </p>
+    <ul>
+      <li><strong>Inhibitory control</strong> — suppressing the automatic, dominant response (reading the word) in favor of a
+        controlled response (naming the ink color).</li>
+      <li><strong>Selective attention</strong> — attending to one stimulus dimension (ink color) while filtering out another
+        (word meaning).</li>
+      <li><strong>Cognitive interference</strong> — the "Stroop effect" is the processing cost that arises when two stimulus
+        features conflict.</li>
+      <li><strong>Processing speed under conflict</strong> — the ability to resolve interference quickly under time pressure.</li>
+    </ul>
+
+    <h2>Research Background</h2>
+    <p>
+      First described by John Ridley Stroop in his landmark 1935 paper <em>"Studies of Interference in Serial Verbal
+      Reactions"</em>, the Stroop task has been replicated thousands of times and remains a cornerstone of neuropsychological
+      assessment. The <strong>Stroop interference effect</strong> — slower and more error-prone responses to incongruent
+      stimuli — is one of the most reliable findings in cognitive psychology.
+    </p>
+    <p>
+      Neuroimaging studies (e.g., MacLeod, 1991; Milham et al., 2001) consistently implicate the <strong>anterior cingulate
+      cortex (ACC)</strong> and <strong>prefrontal cortex</strong> in resolving Stroop conflict. Deficits in Stroop performance
+      are associated with ADHD, traumatic brain injury, aging, and conditions affecting frontal lobe function. Regular
+      practice on interference tasks like the Stroop test is associated with improvements in broader inhibitory control
+      (Diamond, 2013).
+    </p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+      <summary>Why is it harder to name the ink color when the word says a different color?</summary>
+      <p>
+        Reading is a highly practiced, automatic process — your brain processes the word's meaning faster than it processes
+        ink color. When the two conflict, your executive control system must actively suppress the faster "read the word"
+        response and select the slower "name the color" response instead. This competition creates the Stroop interference
+        effect: slower reaction times and more errors on incongruent trials.
+      </p>
+    </details>
+
+    <details>
+      <summary>What score is considered "good" on the Stroop test?</summary>
+      <p>
+        In this implementation, passing requires 80% accuracy per level. In clinical settings, performance is typically
+        measured as reaction time rather than accuracy alone. Healthy adults typically show robust interference effects
+        (200–300ms slower on incongruent vs. congruent trials) but high accuracy. Younger adults generally outperform older
+        adults on response speed, while accuracy differences are smaller across age groups.
+      </p>
+    </details>
+
+    <details>
+      <summary>Can practicing the Stroop test improve my inhibitory control?</summary>
+      <p>
+        Research supports the idea that repeated practice on Stroop-like inhibitory control tasks produces task-specific
+        improvements, and some studies show near-transfer to related executive function tasks. A 2013 meta-analysis by
+        Diamond and Ling found moderate evidence for cognitive training benefits. However, improvements are strongest for the
+        trained task itself and may be smaller for untrained daily-life situations. Combining multiple cognitive training
+        paradigms (like those on BrainForge) is the recommended approach for broader benefits.
+      </p>
+    </details>
+
+    <h2>Related Games</h2>
+    <ul class="related-games-list">
+      <li><a href="flanker-task.html">Flanker Task — Selective Attention &amp; Conflict Monitoring</a></li>
+      <li><a href="go-no-go.html">Go/No-Go Task — Response Inhibition</a></li>
+      <li><a href="task-switching.html">Task Switching Test — Cognitive Flexibility</a></li>
+      <li><a href="rule-shift.html">Rule Shift Cards — Set Shifting</a></li>
+    </ul>
+
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="site-footer">
+    <div class="footer__inner container">
+      <div class="footer__brand">
+        <a class="nav__brand" href="../">
+          <svg viewBox="0 0 32 32" fill="none" width="28" height="28"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+          <span>BrainForge</span>
+        </a>
+        <p class="footer__tagline">Science-based cognitive training, free and in-browser.</p>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__heading">Categories</h3>
+        <ul>
+          <li><a href="../working-memory-games.html">Working Memory</a></li>
+          <li><a href="../attention-games.html">Attention</a></li>
+          <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+          <li><a href="../executive-function-games.html">Executive Function</a></li>
+          <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+          <li><a href="../all-games.html">All Games</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__heading">Popular Games</h3>
+        <ul>
+          <li><a href="stroop-color-word.html">Stroop Color-Word Test</a></li>
+          <li><a href="task-switching.html">Task Switching Test</a></li>
+          <li><a href="flanker-task.html">Flanker Task</a></li>
+          <li><a href="go-no-go.html">Go/No-Go Task</a></li>
+          <li><a href="n-back.html">N-Back Task</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__heading">Legal</h3>
+        <ul>
+          <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../legal/terms-of-service.html">Terms of Service</a></li>
+          <li><a href="../legal/cookie-policy.html">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__copy container">&copy; 2026 BrainForge. All rights reserved.</p>
+  </footer>
+
+  <!-- ── Cookie Banner ── -->
+  <div class="cookie-banner">
+    <div class="cookie-banner__inner">
+      <p>We use cookies. <a href="../legal/cookie-policy.html">Learn more</a>.</p>
+      <div class="cookie-banner__buttons">
+        <button class="btn btn--primary btn--sm cookie-accept">Accept</button>
+        <button class="btn btn--ghost btn--sm cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Scripts ── -->
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/audio.js"></script>
+  <script src="../js/core/game-engine.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/games/stroop-color-word.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reaction Time Test Online — Measure Your Response Speed | BrainForge</title>
+  <meta name="description" content="Test your simple reaction time online. Click the target when it appears and track your response speed in milliseconds across 30 levels." />
+  <meta name="keywords" content="reaction time test online, simple reaction time, measure response speed, neural processing speed, reflex test, RT test milliseconds" />
+  <meta property="og:title" content="Reaction Time Test Online — Measure Your Response Speed | BrainForge" />
+  <meta property="og:description" content="Test your simple reaction time online. Click the target when it appears and track your response speed in milliseconds across 30 levels." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://brainforge.app/games/reaction-time.html" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/game.css" />
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Reaction Time Test",
+      "description": "Test your simple reaction time online. Click the target when it appears and track your response speed in milliseconds across 30 levels.",
+      "url": "https://brainforge.app/games/reaction-time.html",
+      "genre": "Brain Training",
+      "gamePlatform": "Web Browser",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://brainforge.app/" },
+        { "@type": "ListItem", "position": 2, "name": "Reaction Time Games", "item": "https://brainforge.app/reaction-time-games.html" },
+        { "@type": "ListItem", "position": 3, "name": "Reaction Time Test", "item": "https://brainforge.app/games/reaction-time.html" }
+      ]
+    }
+  ]
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="nav__brand" href="../">
+        <svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+        <span>BrainForge</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="../working-memory-games.html">Working Memory</a></li>
+        <li><a href="../attention-games.html">Attention</a></li>
+        <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+        <li><a href="../executive-function-games.html">Executive Function</a></li>
+        <li><a href="../reaction-time-games.html" class="active">Reaction Time</a></li>
+        <li><a href="../all-games.html">All Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav class="breadcrumb container" aria-label="Breadcrumb">
+    <ol class="breadcrumb__list">
+      <li class="breadcrumb__item"><a href="../">Home</a></li>
+      <li class="breadcrumb__item"><a href="../reaction-time-games.html">Reaction Time Games</a></li>
+      <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Reaction Time Test</li>
+    </ol>
+  </nav>
+
+  <section class="game-hero container">
+    <div class="game-hero__meta">
+      <span class="game-hero__category">Reaction Time</span>
+      <span class="game-hero__difficulty">30 Levels</span>
+    </div>
+    <h1 class="game-hero__title">Reaction Time Test</h1>
+    <p class="game-hero__desc">
+      Measure your raw neural processing speed. A <strong>green circle</strong> appears after a random delay —
+      click it as fast as possible. Based on the classic simple reaction time paradigm used in neuroscience
+      research, with a high-resolution timer that tracks your speed in milliseconds.
+    </p>
+  </section>
+
+  <main class="game-main container" id="game-root">
+    <div id="game-container">
+      <div id="level-select">
+        <h2 class="level-select__title">Select Level</h2>
+        <div id="level-select-grid"></div>
+      </div>
+      <div id="game-hud">
+        <div class="hud-item"><span class="hud-item__label">Level</span><span class="hud-item__value" id="hud-level">1</span></div>
+        <div class="hud-item"><span class="hud-item__label">Score</span><span class="hud-item__value" id="hud-score">0%</span></div>
+        <div class="hud-item hud-timer-wrap"><span id="hud-timer"></span><div class="hud-timer-bar-bg"><div class="hud-timer-bar" id="hud-timer-bar"></div></div></div>
+        <button id="pause-btn" aria-label="Pause game">⏸</button>
+      </div>
+      <div id="game-area"></div>
+      <div id="game-overlay"></div>
+    </div>
+  </main>
+
+  <section class="game-content container">
+
+    <h2>How to Play the Reaction Time Test</h2>
+    <p>
+      Each trial starts with a fixation cross displayed on a dark background. After a randomized waiting period — called the <em>foreperiod</em> — a large <strong>green circle</strong> appears. Your task is to click the screen (or press <kbd>Space</kbd>) as quickly as possible the instant you detect it. Your response time is captured with millisecond precision using <code>performance.now()</code>.
+    </p>
+    <ul>
+      <li>Wait patiently for the green circle — the foreperiod is deliberately randomized to prevent temporal anticipation.</li>
+      <li>Click anywhere on the game area, or press <kbd>Space</kbd>, the moment the circle appears.</li>
+      <li>If you click before the circle appears, you receive a <strong>false start penalty</strong> of 500 ms added to that trial's recorded time.</li>
+      <li>Each level consists of 20 trials. Your score equals the percentage of trials completed under the level's speed threshold.</li>
+    </ul>
+    <p>
+      The 30 levels progress from an 800 ms threshold at Level 1 (very generous, allowing almost anyone to pass) down to a 370 ms threshold at Level 30 — approaching the 90th percentile for untrained adults on web-based tests. At the end of each level you see your mean, median, and best reaction time, plus a bar chart of every individual trial so you can spot variability in your performance.
+    </p>
+
+    <h2>What the Reaction Time Test Measures</h2>
+    <p>
+      Simple reaction time (SRT) is one of the most fundamental measurements in all of cognitive neuroscience. A single SRT trial captures several distinct biological and cognitive stages:
+    </p>
+    <ul>
+      <li><strong>Peripheral sensory latency:</strong> The time for photoreceptors in your retina to fire and transmit signals along the optic nerve to primary visual cortex (V1) — roughly 20–40 ms in healthy adults.</li>
+      <li><strong>Neural processing speed:</strong> The general rate at which the nervous system encodes, classifies, and routes the stimulus signal through perceptual and decision circuits. This component is what IQ researchers refer to when they link RT to general mental speed.</li>
+      <li><strong>Motor execution time:</strong> The time to generate a motor command in premotor and primary motor cortex, propagate it down corticospinal tracts, and produce a finger movement — typically 50–80 ms.</li>
+      <li><strong>Sustained alertness:</strong> Maintaining peak readiness across 20 consecutive trials without either zoning out (slow omissions) or anticipating (false starts) is a genuine attentional demand that interacts with reaction speed.</li>
+    </ul>
+
+    <h2>Research Background</h2>
+    <p>
+      Reaction time was first studied systematically by Dutch physiologist <strong>Franciscus Donders (1868)</strong>, who invented the subtractive method: by comparing simple RT (one stimulus, one response) to choice RT (multiple stimuli, multiple responses), he isolated the time cost of perception and decision — the first experimental measurement of mental operations. This framework became the foundation of cognitive chronometry.
+    </p>
+    <p>
+      More than a century later, psychologist <strong>Arthur Jensen</strong> revived interest in the RT–intelligence link by demonstrating in large samples that simple and choice reaction times correlate reliably with IQ scores, even when motor speed and practice effects are controlled. The interpretation — that general mental speed underlies both faster RT and higher IQ — remains influential and debated in differential psychology.
+    </p>
+    <p>
+      The population norm for simple visual RT in young adults under controlled laboratory conditions is approximately <strong>200–250 ms</strong>. Web-based measurements using JavaScript typically run 50–100 ms slower due to monitor refresh latency (up to 16 ms for 60 Hz displays), USB input device polling, and event-loop scheduling. Results from this tool are internally consistent within a session and suitable for tracking personal progress, though direct comparison to laboratory norms requires this offset to be considered. Hick's Law formalizes how RT scales with the number of response alternatives — each doubling of options adds roughly a constant amount of time, illustrating the distinction between simple RT (no choice) and choice RT (multiple options).
+    </p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+      <summary>What is considered a good reaction time?</summary>
+      <p>
+        In a controlled laboratory setting, healthy adults aged 18–35 typically show mean simple visual RT of 200–250 ms. On web-based tests like this one, mean RTs of 250–350 ms are common due to technical latency from monitor refresh cycles and input device polling. Elite athletes, professional gamers, and individuals who train extensively for rapid responses can achieve consistent means below 200 ms on specialized hardware. The difficulty tiers in this test reflect real-world web performance: Level 1 (800 ms threshold) is achievable by almost everyone, while Level 30 (370 ms threshold) represents top-quartile performance for untrained adults on browser-based tasks.
+      </p>
+    </details>
+
+    <details>
+      <summary>Why is the waiting period random rather than fixed?</summary>
+      <p>
+        The variable foreperiod is a methodological safeguard against temporal anticipation — the strategy of timing your click to coincide with an expected stimulus rather than genuinely detecting it. If the wait were always exactly 2,000 ms, experienced users could mentally count to two and click at the right moment regardless of whether a circle appeared. Randomizing the foreperiod across a range forces every response to be driven by actual visual detection. This design principle dates back to Donders himself and remains standard in all modern RT research protocols.
+      </p>
+    </details>
+
+    <details>
+      <summary>Why do my times vary so much between trials?</summary>
+      <p>
+        Reaction time variability is completely normal and actually informative. Within a session, trial-to-trial fluctuations of 50–100 ms are expected due to natural variation in alertness, attention, and neural noise. Systematic trends — such as getting faster across the first few trials (warm-up effect) or slowing toward the end (fatigue) — can be read directly from the bar chart shown after each level. Outlier slow trials often reflect brief attentional lapses rather than degraded processing speed. Researchers often use median RT rather than mean RT precisely because the distribution is right-skewed: one distracted trial can substantially inflate the average, whereas the median remains stable.
+      </p>
+    </details>
+
+    <h2>Related Games</h2>
+    <ul class="related-games-list">
+      <li><a href="choice-reaction-time.html">Choice Reaction Time — Hick's Law in Action</a></li>
+      <li><a href="stop-signal.html">Stop Signal Task — Cancel a Response in Flight</a></li>
+      <li><a href="flanker-task.html">Flanker Task — Speed Under Conflict</a></li>
+      <li><a href="go-no-go.html">Go/No-Go Task — Response Inhibition</a></li>
+    </ul>
+
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer__inner container">
+      <div class="footer__brand">
+        <a class="nav__brand" href="../"><svg viewBox="0 0 32 32" fill="none" width="28" height="28"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg><span>BrainForge</span></a>
+        <p class="footer__tagline">Science-based cognitive training, free and in-browser.</p>
+      </div>
+      <div class="footer__col"><h3 class="footer__heading">Categories</h3><ul><li><a href="../working-memory-games.html">Working Memory</a></li><li><a href="../attention-games.html">Attention</a></li><li><a href="../processing-speed-games.html">Processing Speed</a></li><li><a href="../executive-function-games.html">Executive Function</a></li><li><a href="../reaction-time-games.html">Reaction Time</a></li><li><a href="../all-games.html">All Games</a></li></ul></div>
+      <div class="footer__col"><h3 class="footer__heading">Popular Games</h3><ul><li><a href="stroop-color-word.html">Stroop Color-Word Test</a></li><li><a href="reaction-time.html">Reaction Time Test</a></li><li><a href="go-no-go.html">Go/No-Go Task</a></li><li><a href="flanker-task.html">Flanker Task</a></li><li><a href="dual-n-back.html">Dual N-Back</a></li></ul></div>
+      <div class="footer__col"><h3 class="footer__heading">Legal</h3><ul><li><a href="../legal/privacy-policy.html">Privacy Policy</a></li><li><a href="../legal/terms-of-service.html">Terms of Service</a></li><li><a href="../legal/cookie-policy.html">Cookie Policy</a></li></ul></div>
+    </div>
+    <p class="footer__copy container">&copy; 2026 BrainForge. All rights reserved.</p>
+  </footer>
+
+  <div class="cookie-banner" role="dialog" aria-label="Cookie consent">
+    <div class="cookie-banner__inner">
+      <p>We use cookies to save your progress. <a href="../legal/cookie-policy.html">Learn more</a>.</p>
+      <div class="cookie-banner__buttons">
+        <button class="btn btn--primary btn--sm cookie-accept">Accept</button>
+        <button class="btn btn--ghost btn--sm cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/audio.js"></script>
+  <script src="../js/core/game-engine.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/games/reaction-time.js"></script>
+</body>
+</html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spatial N-Back Test Online - Free Working Memory Game | BrainForge</title>
+  <meta name="description" content="Train spatial working memory with the Spatial N-Back test. Track visual positions across N trials back. 30 difficulty levels. Free brain training online." />
+  <meta name="keywords" content="spatial n-back test, visual n-back, spatial working memory test, brain training" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://brainforge.app/games/spatial-n-back.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Spatial N-Back Test Online - Free Working Memory Game | BrainForge" />
+  <meta property="og:description" content="Train spatial working memory with the Spatial N-Back test. Track visual positions across N trials back. 30 difficulty levels." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://brainforge.app/games/spatial-n-back.html" />
+
+  <!-- Structured Data: VideoGame -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Spatial N-Back Test",
+    "description": "Train spatial working memory with the Spatial N-Back paradigm. Watch a sequence of highlighted grid positions and respond when the current position matches the one from N trials ago.",
+    "url": "https://brainforge.app/games/spatial-n-back.html",
+    "genre": ["Brain Training", "Memory Game", "Cognitive Training"],
+    "gamePlatform": "Web Browser",
+    "applicationCategory": "Game",
+    "numberOfPlayers": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 1 },
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "BrainForge", "url": "https://brainforge.app" }
+  }
+  </script>
+
+  <!-- Structured Data: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://brainforge.app/" },
+      { "@type": "ListItem", "position": 2, "name": "Working Memory Games", "item": "https://brainforge.app/working-memory-games.html" },
+      { "@type": "ListItem", "position": 3, "name": "Spatial N-Back Test", "item": "https://brainforge.app/games/spatial-n-back.html" }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the Spatial N-Back test?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Spatial N-Back test is a working memory task where you watch a series of highlighted positions on a grid and press a button whenever the current position matches the one that appeared N trials earlier. The 'N' increases with difficulty, requiring you to hold more positions in working memory simultaneously."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does N-Back training actually improve working memory?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Research by Jaeggi et al. (2008) showed that N-Back training can improve fluid intelligence and working memory capacity with consistent practice. While findings vary across studies, regular training at the edge of your ability — where you're neither too comfortable nor overwhelmed — is associated with the greatest cognitive benefits."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is the spatial n-back different from the dual n-back?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Spatial N-Back uses only one stimulus stream: grid positions. The Dual N-Back adds a simultaneous auditory stream (spoken letters), requiring you to track two independent sequences at once. Spatial N-Back is a great starting point for beginners, while Dual N-Back places a significantly higher load on divided attention and working memory."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    /* ── Spatial N-Back local styles ── */
+    .snb-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 1rem 0;
+    }
+
+    /* Progress bar */
+    .snb-progress {
+      width: 100%;
+      max-width: 360px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .snb-progress-bar-bg {
+      width: 100%;
+      height: 6px;
+      background: var(--bg-elevated);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .snb-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--primary-500), var(--accent-500));
+      border-radius: 999px;
+      transition: width 0.3s ease;
+    }
+    #snb-progress-label {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      text-align: right;
+    }
+
+    /* Grid overrides for 5x5 */
+    .game-grid--5x5 {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    /* Controls */
+    .snb-controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .snb-match-btn {
+      min-width: 200px;
+      font-size: 1.05rem;
+      padding: 0.75rem 2rem;
+      transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+    }
+    .snb-match-btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+    .snb-match-btn--correct {
+      background: var(--success) !important;
+      box-shadow: 0 0 0 4px rgba(34,197,94,0.35);
+    }
+    .snb-match-btn--wrong {
+      background: var(--error) !important;
+      box-shadow: 0 0 0 4px rgba(239,68,68,0.35);
+    }
+    .snb-hint {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin: 0;
+      text-align: center;
+    }
+
+    /* Instructions overlay */
+    .snb-instructions {
+      background: var(--bg-surface);
+      border: 1px solid var(--bg-elevated);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      max-width: 380px;
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+    }
+    .snb-instructions h2 {
+      margin: 0;
+      font-size: 1.4rem;
+      color: var(--text-primary);
+    }
+    .snb-instructions__desc {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin: 0;
+      line-height: 1.55;
+    }
+    .snb-instructions__details {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      background: var(--bg-elevated);
+      border-radius: 0.5rem;
+      padding: 0.9rem 1.1rem;
+      text-align: left;
+    }
+    .snb-instructions__details li {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+    .snb-instructions__details li::before {
+      content: '▸ ';
+      color: var(--accent-500);
+    }
+
+    /* SEO content area */
+    .game-content {
+      max-width: 760px;
+      margin: 2.5rem auto 0;
+      padding: 0 1rem 3rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .game-content h2 {
+      color: var(--text-primary);
+      font-size: 1.25rem;
+      margin: 2rem 0 0.6rem;
+      border-bottom: 1px solid var(--bg-elevated);
+      padding-bottom: 0.4rem;
+    }
+    .game-content p { margin: 0.6rem 0; }
+    .game-content details {
+      background: var(--bg-surface);
+      border: 1px solid var(--bg-elevated);
+      border-radius: 0.5rem;
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.6rem;
+    }
+    .game-content summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--text-primary);
+      font-size: 0.95rem;
+    }
+    .game-content details p {
+      margin-top: 0.6rem;
+      font-size: 0.9rem;
+    }
+
+    /* Related games */
+    .more-games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+    }
+    .more-game-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: var(--bg-surface);
+      border: 1px solid var(--bg-elevated);
+      border-radius: var(--radius-lg);
+      padding: 1rem 0.75rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .more-game-link:hover {
+      border-color: var(--primary-500);
+      background: var(--bg-elevated);
+    }
+    .more-game-link__icon {
+      font-size: 1.6rem;
+      margin-bottom: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation ─────────────────────────────────────────────────────── -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="../" class="nav__brand" aria-label="BrainForge Home">
+        <svg viewBox="0 0 32 32" fill="none" width="32" height="32" aria-hidden="true"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+        <span>BrainForge</span>
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="../">Home</a></li>
+        <li><a href="../working-memory-games.html">Working Memory</a></li>
+        <li><a href="../attention-games.html">Attention</a></li>
+        <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+        <li><a href="../executive-function-games.html">Executive Function</a></li>
+        <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+        <li><a href="../all-games.html">All Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ── Breadcrumb ─────────────────────────────────────────────────────── -->
+  <nav class="breadcrumb container" aria-label="Breadcrumb">
+    <ol class="breadcrumb__list" role="list">
+      <li class="breadcrumb__item"><a href="../">Home</a></li>
+      <li class="breadcrumb__item breadcrumb__separator" aria-hidden="true">›</li>
+      <li class="breadcrumb__item"><a href="../working-memory-games.html">Working Memory Games</a></li>
+      <li class="breadcrumb__item breadcrumb__separator" aria-hidden="true">›</li>
+      <li class="breadcrumb__item" aria-current="page">Spatial N-Back Test</li>
+    </ol>
+  </nav>
+
+  <!-- ── Page Header ────────────────────────────────────────────────────── -->
+  <main class="container" id="main-content">
+    <div class="page-header">
+      <h1 class="page-header__title">Spatial N-Back Test</h1>
+      <p class="page-header__subtitle">Track grid positions across N trials back to strengthen visual-spatial working memory.</p>
+    </div>
+
+    <!-- ── Instruction Banner ──────────────────────────────────────────── -->
+    <div class="instruction-banner" role="note" aria-label="Quick instructions">
+      Watch the highlighted cell each trial. Press <strong>Position Match</strong> (or <kbd>Space</kbd> / <kbd>A</kbd>) when the current position matches the one from N trials ago.
+    </div>
+
+    <!-- ── Game Container ──────────────────────────────────────────────── -->
+    <div id="game-container">
+
+      <!-- Level Select (managed by GameEngine) -->
+      <div id="level-select">
+        <h2 class="level-select__title">Select Level</h2>
+        <div id="level-select-grid"></div>
+      </div>
+
+      <!-- HUD (managed by GameEngine) -->
+      <div id="game-hud">
+        <div class="hud-item">
+          <span class="hud-item__label">Level</span>
+          <span class="hud-item__value" id="hud-level">1</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-item__label">Score</span>
+          <span class="hud-item__value" id="hud-score">0%</span>
+        </div>
+        <div class="hud-item hud-timer-wrap">
+          <span id="hud-timer"></span>
+          <div class="hud-timer-bar-bg">
+            <div class="hud-timer-bar" id="hud-timer-bar"></div>
+          </div>
+        </div>
+        <button id="pause-btn" aria-label="Pause">⏸</button>
+      </div>
+
+      <!-- Game Area (populated by JS) -->
+      <div id="game-area"></div>
+
+      <!-- Overlay (instructions + end-of-level, managed by JS & GameEngine) -->
+      <div id="game-overlay"></div>
+
+    </div><!-- /#game-container -->
+
+    <!-- ── SEO Content ─────────────────────────────────────────────────── -->
+    <div class="game-content">
+
+      <h2>How to Play Spatial N-Back</h2>
+      <p>
+        Each round consists of a series of trials. In every trial, one cell in a 4×4 (or 5×5 at higher levels)
+        grid lights up briefly. Your goal is to decide whether the cell that just lit up is in the <em>same position</em>
+        as the cell that appeared exactly <strong>N trials earlier</strong>.
+      </p>
+      <p>
+        Press the <strong>Position Match</strong> button — or tap <kbd>Space</kbd> / <kbd>A</kbd> on your keyboard —
+        whenever you detect a match. Stay silent (do nothing) when the position is new.
+        You can respond during the stimulus or the blank gap that follows, so you always have a generous window.
+      </p>
+      <p>
+        Levels 1–18 use a 4×4 grid with N ranging from 1 to 3. From Level 19 onwards the grid expands to
+        5×5 (25 cells) and N climbs to 7, dramatically increasing the spatial load. Reach 80% accuracy to unlock
+        the next level.
+      </p>
+
+      <h2>What It Measures</h2>
+      <p>
+        The Spatial N-Back is a widely used measure of <strong>visual-spatial working memory</strong> — the ability
+        to temporarily store and mentally manipulate information about where objects appear in space. This faculty
+        is central to navigation, mental rotation, engineering design, and many everyday tasks.
+      </p>
+      <p>
+        As N increases the task demands a larger mental buffer: you must hold and continuously update a list of recent
+        positions, dropping the oldest and adding the newest with each trial. This places heavy load on the
+        <em>visuospatial sketchpad</em> component of working memory described in Baddeley's model.
+      </p>
+      <p>
+        Your score is calculated as: <strong>(Hits + Correct Rejections) / Total Trials × 100</strong>.
+        A hit is correctly detecting a match; a correct rejection is correctly ignoring a non-match.
+        False alarms (pressing when there is no match) and misses (not pressing when there is a match) both
+        reduce accuracy.
+      </p>
+
+      <h2>Research Background</h2>
+      <p>
+        The N-Back paradigm was introduced by Wayne Kirchner in 1958 as a clinical tool to assess working memory
+        and prefrontal lobe function. It was substantially popularised in neuroscience research through the
+        landmark 2008 study by Jaeggi, Buschkuehl, Jonides, and Perrig, who found that adaptive N-Back training
+        produced gains in fluid intelligence — the ability to reason and solve novel problems — that transferred
+        beyond the trained task.
+      </p>
+      <p>
+        Neuroimaging studies consistently show that N-Back performance activates the dorsolateral prefrontal
+        cortex (DLPFC) and the parietal cortex, regions associated with executive control and spatial processing.
+        Higher N values recruit additional frontal resources and are associated with greater DLPFC activation.
+      </p>
+      <p>
+        While debates continue about the size and specificity of transfer effects, a broad consensus supports
+        N-Back training as a reliable, scientifically grounded way to challenge and practise working memory
+        processes in a controlled, measurable manner.
+      </p>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <details>
+        <summary>What is the Spatial N-Back test?</summary>
+        <p>
+          The Spatial N-Back test is a working memory task where you watch a series of highlighted positions
+          on a grid and press a button whenever the current position matches the one that appeared N trials
+          earlier. The "N" increases with difficulty, requiring you to hold more positions in working memory
+          simultaneously.
+        </p>
+      </details>
+
+      <details>
+        <summary>Does N-Back training actually improve working memory?</summary>
+        <p>
+          Research by Jaeggi et al. (2008) showed that N-Back training can improve fluid intelligence and
+          working memory capacity with consistent practice. While findings vary across studies, regular
+          training at the edge of your ability — where you are neither too comfortable nor overwhelmed —
+          is associated with the greatest cognitive benefits.
+        </p>
+      </details>
+
+      <details>
+        <summary>How is the Spatial N-Back different from the Dual N-Back?</summary>
+        <p>
+          The Spatial N-Back uses only one stimulus stream: grid positions. The Dual N-Back adds a
+          simultaneous auditory stream (spoken letters), requiring you to track two independent sequences
+          at once. Spatial N-Back is a great starting point for beginners, while Dual N-Back places a
+          significantly higher load on divided attention and working memory.
+        </p>
+      </details>
+
+      <h2>Related Games</h2>
+      <div class="more-games-grid">
+        <a href="dual-n-back.html" class="more-game-link">
+          <span class="more-game-link__icon" aria-hidden="true">🔊</span>
+          Dual N-Back
+        </a>
+        <a href="working-memory.html" class="more-game-link">
+          <span class="more-game-link__icon" aria-hidden="true">🟦</span>
+          Working Memory Matrix
+        </a>
+        <a href="corsi-block.html" class="more-game-link">
+          <span class="more-game-link__icon" aria-hidden="true">🟪</span>
+          Corsi Block Tapping Test
+        </a>
+        <a href="digit-span-forward.html" class="more-game-link">
+          <span class="more-game-link__icon" aria-hidden="true">🔢</span>
+          Digit Span Test
+        </a>
+      </div>
+
+    </div><!-- /.game-content -->
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="footer__inner container">
+
+      <div class="footer__col footer__col--brand">
+        <a href="../" class="nav__brand" aria-label="BrainForge Home">
+          <svg viewBox="0 0 32 32" fill="none" width="28" height="28" aria-hidden="true"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+          <span>BrainForge</span>
+        </a>
+        <p class="footer__desc">Free, science-based brain training games to sharpen memory, attention, and cognitive performance.</p>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__heading">Categories</h3>
+        <ul class="footer__list" role="list">
+          <li><a href="../working-memory-games.html">Working Memory</a></li>
+          <li><a href="../attention-games.html">Attention</a></li>
+          <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+          <li><a href="../executive-function-games.html">Executive Function</a></li>
+          <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+          <li><a href="../all-games.html">All Games</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__heading">Popular Games</h3>
+        <ul class="footer__list" role="list">
+          <li><a href="spatial-n-back.html">Spatial N-Back</a></li>
+          <li><a href="dual-n-back.html">Dual N-Back</a></li>
+          <li><a href="corsi-block.html">Corsi Block</a></li>
+          <li><a href="digit-span-forward.html">Digit Span</a></li>
+          <li><a href="working-memory.html">Working Memory Matrix</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__heading">Legal</h3>
+        <ul class="footer__list" role="list">
+          <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../legal/terms-of-service.html">Terms of Service</a></li>
+          <li><a href="../legal/cookie-policy.html">Cookie Policy</a></li>
+          <li><a href="../legal/disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="footer__bottom container">
+      <p>&copy; <span id="footer-year">2026</span> BrainForge. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ── Cookie Banner ──────────────────────────────────────────────────── -->
+  <div class="cookie-banner" role="dialog" aria-label="Cookie consent">
+    <div class="cookie-banner__inner">
+      <p>We use cookies to save progress. <a href="../legal/cookie-policy.html">Learn more</a>.</p>
+      <div class="cookie-banner__buttons">
+        <button class="btn btn--primary btn--sm cookie-accept">Accept</button>
+        <button class="btn btn--ghost btn--sm cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Scripts ────────────────────────────────────────────────────────── -->
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/audio.js"></script>
+  <script src="../js/core/game-engine.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/games/spatial-n-back.js"></script>
+
+  <script>
+    // Footer year
+    var fyEl = document.getElementById('footer-year');
+    if (fyEl) fyEl.textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

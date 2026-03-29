@@ -3,6 +3,6 @@ Allow: /
 
 Sitemap: https://brainforge.app/sitemap.xml
 
-# Disallow access to admin or non-public areas
+# Disallow access to source files (not content pages)
 Disallow: /js/
 Disallow: /css/

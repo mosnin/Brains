@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Switching Test Online - Cognitive Flexibility Training | BrainForge</title>
+  <meta name="description" content="Train cognitive flexibility with the Task Switching Test. Rapidly switch between mental task rules. Based on Rogers &amp; Monsell paradigm. Free executive function training." />
+  <meta name="keywords" content="task switching test, cognitive flexibility test, set shifting, executive function, mental flexibility training, task switching cognitive" />
+  <meta property="og:title" content="Task Switching Test Online - Cognitive Flexibility Training | BrainForge" />
+  <meta property="og:description" content="Train cognitive flexibility with the Task Switching Test. Rapidly switch between mental task rules. Based on Rogers &amp; Monsell paradigm. Free executive function training." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://brainforge.app/games/task-switching.html" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/game.css" />
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="nav__brand" href="../">
+        <svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+        <span>BrainForge</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="../working-memory-games.html">Working Memory</a></li>
+        <li><a href="../attention-games.html">Attention</a></li>
+        <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+        <li><a href="../executive-function-games.html" class="active">Executive Function</a></li>
+        <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+        <li><a href="../all-games.html">All Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ── Breadcrumb ── -->
+  <nav class="breadcrumb container" aria-label="Breadcrumb">
+    <ol class="breadcrumb__list">
+      <li class="breadcrumb__item"><a href="../">Home</a></li>
+      <li class="breadcrumb__item"><a href="../executive-function-games.html">Executive Function Games</a></li>
+      <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Task Switching Test</li>
+    </ol>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="game-hero container">
+    <div class="game-hero__meta">
+      <span class="game-hero__category">Executive Function</span>
+      <span class="game-hero__difficulty">30 Levels</span>
+    </div>
+    <h1 class="game-hero__title">Task Switching Test</h1>
+    <p class="game-hero__desc">
+      A classic paradigm measuring <strong>cognitive flexibility</strong>. A number appears on screen along with a
+      task cue — you must rapidly apply the correct rule (<em>Odd/Even?</em>, <em>Small/Large?</em>, or
+      <em>Greater than 5?</em>) and respond before time runs out. Switching tasks costs time and effort; this game
+      trains you to minimize that "switch cost."
+    </p>
+  </section>
+
+  <!-- ── Game Container ── -->
+  <main class="game-main container" id="game-root">
+    <div id="game-container">
+
+      <!-- Level Select -->
+      <div id="level-select">
+        <h2 class="level-select__title">Select Level</h2>
+        <div id="level-select-grid"></div>
+      </div>
+
+      <!-- HUD -->
+      <div id="game-hud">
+        <div class="hud-item">
+          <span class="hud-item__label">Level</span>
+          <span class="hud-item__value" id="hud-level">1</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-item__label">Score</span>
+          <span class="hud-item__value" id="hud-score">0%</span>
+        </div>
+        <div class="hud-item hud-timer-wrap">
+          <span id="hud-timer"></span>
+          <div class="hud-timer-bar-bg">
+            <div class="hud-timer-bar" id="hud-timer-bar"></div>
+          </div>
+        </div>
+        <button id="pause-btn" aria-label="Pause game">⏸</button>
+      </div>
+
+      <!-- Game Area -->
+      <div id="game-area"></div>
+
+      <!-- Overlay (pause/complete/fail) -->
+      <div id="game-overlay"></div>
+
+    </div>
+  </main>
+
+  <!-- ── SEO Content ── -->
+  <section class="game-content container">
+
+    <h2>How to Play the Task Switching Test</h2>
+    <p>
+      A single-digit number (1–9) appears in the center of the screen. A colored <strong>task cue</strong> tells you
+      which rule to apply for that trial:
+    </p>
+    <ul>
+      <li><strong>ODD or EVEN?</strong> — Press <kbd>A</kbd> if the number is odd, <kbd>B</kbd> if even.</li>
+      <li><strong>SMALL or LARGE?</strong> — Press <kbd>A</kbd> if the number is 1–4 (small), <kbd>B</kbd> if 5–9 (large).</li>
+      <li><strong>GREATER THAN 5?</strong> — (Levels 19+) Press <kbd>A</kbd> for Yes, <kbd>B</kbd> for No.</li>
+    </ul>
+    <p>
+      Early levels focus on a single task with no switching. From Level 7 onward, the task rule changes unpredictably
+      between trials. A brief <strong>cue display window</strong> precedes the number — read the rule and prepare your
+      response. The cue window shrinks and switch probability rises as you advance, culminating in near-constant task
+      switching at the hardest levels.
+    </p>
+
+    <h2>What the Task Switching Test Measures</h2>
+    <p>
+      Task switching is one of the core operations of <strong>cognitive flexibility</strong> — the ability to
+      reorganize mental resources and shift between different goals or rule sets. Key constructs measured include:
+    </p>
+    <ul>
+      <li><strong>Set shifting</strong> — disengaging from one task rule and engaging a new one efficiently.</li>
+      <li><strong>Switch cost</strong> — the reaction time and accuracy penalty incurred immediately after a task switch,
+        reflecting residual interference from the previous task set ("task-set inertia").</li>
+      <li><strong>Working memory updating</strong> — holding the current task rule active in mind while monitoring the
+        cue for potential changes.</li>
+      <li><strong>Proactive interference management</strong> — overcoming the pull of the most recently active task
+        rule when it is no longer relevant.</li>
+    </ul>
+
+    <h2>Research Background</h2>
+    <p>
+      The alternating runs paradigm was formalized by <strong>Rogers and Monsell (1995)</strong>, who demonstrated
+      reliable "switch costs" even when participants fully prepared for a task switch during a long inter-trial interval.
+      This "residual switch cost" suggested that voluntary task preparation is incomplete without actual execution of the
+      new task — a key theoretical insight.
+    </p>
+    <p>
+      Subsequent work by Allport, Styles, and Hsieh (1994) introduced the concept of <strong>task-set inertia</strong>:
+      the previous task set continues to compete with the current one, slowing performance after switches. Neuroimaging
+      research (Dove et al., 2000; Braver et al., 2003) implicates the <strong>dorsolateral prefrontal cortex</strong>,
+      <strong>anterior cingulate cortex</strong>, and <strong>parietal cortex</strong> in task-switching operations.
+    </p>
+    <p>
+      Impaired task switching is a hallmark of conditions affecting the prefrontal cortex, including ADHD, schizophrenia,
+      and aging-related cognitive decline. Longitudinal training studies have shown that practiced task switchers show
+      reduced switch costs and more efficient prefrontal engagement over time (Karbach &amp; Kray, 2009).
+    </p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+      <summary>What is "switch cost" and why does it matter?</summary>
+      <p>
+        Switch cost is the performance penalty — in reaction time and/or accuracy — that occurs on a trial immediately
+        following a task change compared to a trial where the same task repeats. It reflects the cognitive effort required
+        to reconfigure mental processing for the new task: inhibiting the old task set, retrieving and applying the new
+        rules, and updating working memory. Minimizing switch cost is important in real-world multitasking situations
+        such as driving while navigating, managing competing work tasks, or switching between subjects in school.
+      </p>
+    </details>
+
+    <details>
+      <summary>What do the "A" and "B" buttons represent?</summary>
+      <p>
+        The A and B buttons are abstract response labels that are remapped to different meanings depending on the active
+        task rule. For <em>Odd/Even</em>, A=Odd and B=Even. For <em>Small/Large</em>, A=Small and B=Large. For
+        <em>Greater than 5</em> (Level 19+), A=Yes and B=No. The button labels update each trial to remind you of the
+        current mapping. This remapping is intentional — it adds to the cognitive load by requiring you to flexibly
+        reinterpret the same motor response across different task contexts.
+      </p>
+    </details>
+
+    <details>
+      <summary>How can I improve my task switching performance?</summary>
+      <p>
+        Consistent practice is the primary driver of improvement. Additionally, research suggests several strategies:
+        (1) <strong>Proactive preparation</strong> — use the cue display window to actively retrieve and mentally rehearse
+        the upcoming task rule before the number appears; (2) <strong>Minimize perseveration</strong> — consciously
+        "release" the previous task rule rather than letting it linger; (3) <strong>Cross-train</strong> with related
+        executive function tasks like the Stroop test and N-Back, which share inhibitory and updating components with
+        task switching; (4) <strong>Aerobic exercise</strong> has been shown to enhance prefrontal function and reduce
+        task-switching costs (Hillman et al., 2008).
+      </p>
+    </details>
+
+    <h2>Related Games</h2>
+    <ul class="related-games-list">
+      <li><a href="stroop-color-word.html">Stroop Color-Word Test — Inhibitory Control</a></li>
+      <li><a href="rule-shift.html">Rule Shift Cards — Set Shifting &amp; Reversal Learning</a></li>
+      <li><a href="trail-making.html">Trail Making Test — Mental Flexibility &amp; Sequencing</a></li>
+      <li><a href="go-no-go.html">Go/No-Go Task — Response Inhibition</a></li>
+    </ul>
+
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="site-footer">
+    <div class="footer__inner container">
+      <div class="footer__brand">
+        <a class="nav__brand" href="../">
+          <svg viewBox="0 0 32 32" fill="none" width="28" height="28"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+          <span>BrainForge</span>
+        </a>
+        <p class="footer__tagline">Science-based cognitive training, free and in-browser.</p>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__heading">Categories</h3>
+        <ul>
+          <li><a href="../working-memory-games.html">Working Memory</a></li>
+          <li><a href="../attention-games.html">Attention</a></li>
+          <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+          <li><a href="../executive-function-games.html">Executive Function</a></li>
+          <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+          <li><a href="../all-games.html">All Games</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__heading">Popular Games</h3>
+        <ul>
+          <li><a href="stroop-color-word.html">Stroop Color-Word Test</a></li>
+          <li><a href="task-switching.html">Task Switching Test</a></li>
+          <li><a href="flanker-task.html">Flanker Task</a></li>
+          <li><a href="go-no-go.html">Go/No-Go Task</a></li>
+          <li><a href="n-back.html">N-Back Task</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__heading">Legal</h3>
+        <ul>
+          <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../legal/terms-of-service.html">Terms of Service</a></li>
+          <li><a href="../legal/cookie-policy.html">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__copy container">&copy; 2026 BrainForge. All rights reserved.</p>
+  </footer>
+
+  <!-- ── Cookie Banner ── -->
+  <div class="cookie-banner">
+    <div class="cookie-banner__inner">
+      <p>We use cookies. <a href="../legal/cookie-policy.html">Learn more</a>.</p>
+      <div class="cookie-banner__buttons">
+        <button class="btn btn--primary btn--sm cookie-accept">Accept</button>
+        <button class="btn btn--ghost btn--sm cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Scripts ── -->
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/audio.js"></script>
+  <script src="../js/core/game-engine.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/games/task-switching.js"></script>
+
+</body>
+</html>

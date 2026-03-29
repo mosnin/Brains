@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Updating Task - Working Memory Training Online | BrainForge</title>
+  <meta name="description" content="Train executive working memory with the Memory Updating Task. Track and update mental representations. Based on Ecker's updating paradigm. Free online test.">
+  <meta name="keywords" content="memory updating task, working memory updating, executive function training, mental arithmetic, cognitive updating, Ecker paradigm">
+  <meta property="og:title" content="Memory Updating Task - Working Memory Training | BrainForge">
+  <meta property="og:description" content="Train executive working memory with the Memory Updating Task. Track and update mental representations. Based on Ecker's updating paradigm. Free.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://brainforge.com/games/memory-updating.html">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/game.css">
+  <style>
+    /* Memory Updating specific styles */
+    .mu-round-label {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+    .mu-slots {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 1.25rem;
+    }
+    .mu-slot {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 90px;
+      min-height: 90px;
+      background: var(--bg-elevated);
+      border: 2px solid var(--bg-elevated);
+      border-radius: 0.75rem;
+      padding: 0.5rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .mu-slot--active {
+      border-color: var(--accent-500);
+      box-shadow: 0 0 18px rgba(20, 184, 166, 0.3);
+    }
+    .mu-slot--correct {
+      border-color: var(--success);
+      background: rgba(34, 197, 94, 0.08);
+    }
+    .mu-slot--wrong {
+      border-color: var(--error);
+      background: rgba(239, 68, 68, 0.08);
+    }
+    .mu-slot__label {
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.35rem;
+    }
+    .mu-slot__value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1;
+    }
+    .mu-slot__input {
+      width: 64px;
+      padding: 0.4rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--bg-elevated);
+      border-radius: 0.4rem;
+      color: var(--text-primary);
+      font-size: 1.35rem;
+      font-weight: 600;
+      text-align: center;
+      -moz-appearance: textfield;
+    }
+    .mu-slot__input::-webkit-inner-spin-button,
+    .mu-slot__input::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+    }
+    .mu-slot__input:focus {
+      outline: none;
+      border-color: var(--primary-500);
+    }
+    .mu-badge {
+      display: block;
+      font-size: 1.2rem;
+      margin-top: 0.3rem;
+      font-weight: 700;
+    }
+    .mu-badge--correct { color: var(--success); }
+    .mu-badge--wrong   { color: var(--error); }
+    .mu-slot__correct-val {
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+      margin-top: 0.2rem;
+      text-align: center;
+    }
+    .mu-update-display {
+      text-align: center;
+      margin: 0 auto 1.25rem;
+      padding: 1rem 1.5rem;
+      background: var(--bg-surface);
+      border: 2px solid var(--accent-500);
+      border-radius: 0.75rem;
+      max-width: 320px;
+      box-shadow: 0 0 20px rgba(20, 184, 166, 0.2);
+    }
+    .mu-update-op {
+      font-size: 1.35rem;
+      color: var(--text-primary);
+      margin-bottom: 0.4rem;
+    }
+    .mu-update-op strong {
+      color: var(--accent-500);
+    }
+    .mu-update-progress {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+    .mu-submit-row {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    .mu-next-btn {
+      min-width: 160px;
+    }
+    @media (max-width: 480px) {
+      .mu-slot { width: 72px; min-height: 72px; }
+      .mu-slot__value { font-size: 1.5rem; }
+      .mu-slot__input { width: 52px; font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="site-nav container">
+      <a class="site-nav__brand" href="../">
+        <svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+        <span>BrainForge</span>
+      </a>
+      <ul class="site-nav__links">
+        <li><a href="../">Home</a></li>
+        <li><a href="../working-memory-games.html">Working Memory</a></li>
+        <li><a href="../attention-games.html">Attention</a></li>
+        <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+        <li><a href="../executive-function-games.html">Executive Function</a></li>
+        <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+        <li><a href="../all-games.html">All Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="game-page">
+    <div class="container">
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="../">Home</a></li>
+          <li class="breadcrumb__item"><a href="../working-memory-games.html">Working Memory Games</a></li>
+          <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Memory Updating Task</li>
+        </ol>
+      </nav>
+
+      <div class="game-header">
+        <h1 class="game-header__title">Memory Updating Task</h1>
+        <p class="game-header__desc">Track changing values across multiple mental slots. Each update forces you to discard old information and hold the new value — training the executive core of working memory.</p>
+      </div>
+
+      <!-- Game Container -->
+      <div id="game-container">
+        <div id="level-select">
+          <h2 class="level-select__title">Select Level</h2>
+          <div id="level-select-grid"></div>
+        </div>
+
+        <div id="game-hud">
+          <div class="hud-item">
+            <span class="hud-item__label">Level</span>
+            <span class="hud-item__value" id="hud-level">1</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-item__label">Score</span>
+            <span class="hud-item__value" id="hud-score">0%</span>
+          </div>
+          <div class="hud-item hud-timer-wrap">
+            <span id="hud-timer"></span>
+            <div class="hud-timer-bar-bg"><div class="hud-timer-bar" id="hud-timer-bar"></div></div>
+          </div>
+          <button id="pause-btn">&#9208;</button>
+        </div>
+
+        <div id="game-area"></div>
+        <div id="game-overlay"></div>
+      </div>
+      <!-- End Game Container -->
+
+      <div class="game-content">
+
+        <section class="content-section">
+          <h2>How to Play</h2>
+          <p>The Memory Updating task challenges your ability to continuously refresh information held in working memory.</p>
+          <ol>
+            <li><strong>Study the slots</strong> — Each round begins with numbered slots showing initial values (1–9). Memorize them.</li>
+            <li><strong>Watch the updates</strong> — Operations appear one at a time (e.g., "Slot 2 +3"). Mentally calculate and store the new value for that slot.</li>
+            <li><strong>Enter final values</strong> — After all updates, type the current value in each slot. Exact answers required.</li>
+            <li>Complete 5 rounds per level. Score 80% or higher to advance.</li>
+          </ol>
+          <p>Operations include addition (+), subtraction (-), multiply by 2 (x2), and divide by 2 (÷2, rounded to nearest integer).</p>
+        </section>
+
+        <section class="content-section">
+          <h2>What It Measures</h2>
+          <p>Memory Updating directly targets <strong>working memory updating</strong>, one of three core executive functions identified by Miyake et al. (2000) alongside shifting and inhibition. Updating requires not just holding information but actively replacing outdated representations with current ones — a demanding executive process distinct from simple storage.</p>
+          <p>Strong updating ability is associated with fluid intelligence, academic achievement, and performance in complex real-world tasks such as following multi-step instructions or managing dynamic situations.</p>
+        </section>
+
+        <section class="content-section">
+          <h2>Research</h2>
+          <p>Ecker et al. (2010) developed the memory updating paradigm to isolate the updating component from storage and retrieval demands. Their work showed that updating ability is a distinct, trainable cognitive process. Subsequent training studies (e.g., Dahlin et al., 2008) demonstrated that intensive updating practice produces robust gains in working memory capacity with transfer to fluid intelligence tasks, particularly in younger and older adults. The task activates prefrontal and parietal networks associated with cognitive control.</p>
+        </section>
+
+        <section class="content-section">
+          <h2>Frequently Asked Questions</h2>
+
+          <details class="faq-item">
+            <summary class="faq-item__question">Why does this feel harder than simple memory tasks?</summary>
+            <p class="faq-item__answer">Unlike pure storage tasks, updating forces you to actively overwrite previous values rather than just hold them. This inhibition of old information while encoding new values engages the executive control system, which is more cognitively demanding than passive rehearsal.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-item__question">What is a good score on the Memory Updating Task?</summary>
+            <p class="faq-item__answer">Consistently clearing levels 1–10 (2–3 slots, basic operations) represents average performance. Levels 11–20 (4–5 slots with multiplication) indicate strong executive working memory. Levels 21–30 (5–7 slots, all operations, faster pacing) reflect exceptional updating capacity found in high-performers on fluid intelligence tests.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-item__question">Can this task improve fluid intelligence?</summary>
+            <p class="faq-item__answer">Research suggests updating training is one of the more promising routes to far-transfer cognitive gains. Dahlin et al. (2008) found that striatal activity during updating training predicted improvements on an independent intelligence measure. While findings vary across studies, consistent practice with demanding updating tasks is associated with broader cognitive benefits compared to simple memory training.</p>
+          </details>
+        </section>
+
+        <section class="content-section">
+          <h2>Related Games</h2>
+          <ul class="related-games">
+            <li><a href="dual-n-back.html">Dual N-Back</a> &mdash; Simultaneous visual and auditory working memory updating</li>
+            <li><a href="digit-span-backward.html">Digit Span Backward</a> &mdash; Recall digit sequences in reverse order</li>
+            <li><a href="working-memory.html">Working Memory Test</a> &mdash; Full working memory assessment</li>
+            <li><a href="spatial-n-back.html">Spatial N-Back</a> &mdash; Visual-spatial working memory challenge</li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">
+        <a class="site-nav__brand" href="../">
+          <svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+          <span>BrainForge</span>
+        </a>
+        <p>Science-backed cognitive training games designed to challenge and strengthen your mind.</p>
+      </div>
+      <div class="site-footer__links">
+        <div class="footer-col">
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="../working-memory-games.html">Working Memory</a></li>
+            <li><a href="../attention-games.html">Attention</a></li>
+            <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+            <li><a href="../executive-function-games.html">Executive Function</a></li>
+            <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+            <li><a href="../all-games.html">All Games</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Popular Games</h3>
+          <ul>
+            <li><a href="dual-n-back.html">Dual N-Back</a></li>
+            <li><a href="digit-span-forward.html">Digit Span Forward</a></li>
+            <li><a href="letter-span.html">Letter Span</a></li>
+            <li><a href="memory-updating.html">Memory Updating</a></li>
+            <li><a href="working-memory.html">Working Memory Test</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../legal/terms-of-service.html">Terms of Service</a></li>
+            <li><a href="../legal/cookie-policy.html">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner">
+    <div class="cookie-banner__inner">
+      <p>We use cookies. <a href="../legal/cookie-policy.html">Learn more</a>.</p>
+      <div class="cookie-banner__buttons">
+        <button class="btn btn--primary btn--sm cookie-accept">Accept</button>
+        <button class="btn btn--ghost btn--sm cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/audio.js"></script>
+  <script src="../js/core/game-engine.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/games/memory-updating.js"></script>
+</body>
+</html>

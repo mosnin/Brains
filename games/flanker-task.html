@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flanker Task Online - Attention &amp; Inhibition Test | BrainForge</title>
+  <meta name="description" content="Train selective attention with the Eriksen Flanker Task. Identify center arrow direction while ignoring flankers. Measures executive attention. Free online test." />
+  <meta name="keywords" content="flanker task online, Eriksen flanker task, inhibitory control test, selective attention, executive function game" />
+  <link rel="canonical" href="https://brainforge.app/games/flanker-task.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Flanker Task Online - Attention &amp; Inhibition Test | BrainForge" />
+  <meta property="og:description" content="Train selective attention with the Eriksen Flanker Task. Identify center arrow direction while ignoring flankers. Measures executive attention. Free online test." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/game.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Flanker Task Online",
+    "description": "Train selective attention with the Eriksen Flanker Task. Identify center arrow direction while ignoring flankers. Measures executive attention.",
+    "applicationCategory": "Game",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="nav__brand" href="../">
+        <svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+        <span>BrainForge</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="../">Home</a></li>
+        <li><a href="../working-memory-games.html">Working Memory</a></li>
+        <li><a href="../attention-games.html" aria-current="page">Attention</a></li>
+        <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+        <li><a href="../executive-function-games.html">Executive Function</a></li>
+        <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+        <li><a href="../all-games.html">All Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb container">
+    <nav aria-label="Breadcrumb">
+      <ol class="breadcrumb__list">
+        <li class="breadcrumb__item"><a href="../">Home</a></li>
+        <li class="breadcrumb__item"><a href="../attention-games.html">Attention Games</a></li>
+        <li class="breadcrumb__item" aria-current="page">Flanker Task</li>
+      </ol>
+    </nav>
+  </div>
+
+  <!-- Page Header -->
+  <main class="container">
+    <div class="game-page-header">
+      <h1 class="game-page-header__title">Flanker Task Online</h1>
+      <p class="game-page-header__subtitle">Press the arrow matching the <strong>center symbol</strong> and ignore the flankers. A classic test of inhibitory control and executive attention.</p>
+    </div>
+
+    <!-- Game Container -->
+    <div id="game-container">
+      <!-- Level Select -->
+      <div id="level-select">
+        <h2 class="level-select__title">Select Level</h2>
+        <div id="level-select-grid"></div>
+      </div>
+
+      <!-- HUD -->
+      <div id="game-hud">
+        <div class="hud-item">
+          <span class="hud-item__label">Level</span>
+          <span class="hud-item__value" id="hud-level">1</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-item__label">Score</span>
+          <span class="hud-item__value" id="hud-score">0%</span>
+        </div>
+        <div class="hud-item hud-timer-wrap">
+          <span id="hud-timer"></span>
+          <div class="hud-timer-bar-bg">
+            <div class="hud-timer-bar" id="hud-timer-bar"></div>
+          </div>
+        </div>
+        <button id="pause-btn" aria-label="Pause game">&#9208;</button>
+      </div>
+
+      <!-- Game Area -->
+      <div id="game-area"></div>
+
+      <!-- Overlay (for pause / level complete) -->
+      <div id="game-overlay"></div>
+    </div>
+
+    <!-- SEO Content -->
+    <section class="game-content">
+
+      <h2>How to Play</h2>
+      <p>Each trial begins with a brief fixation cross (<strong>+</strong>) displayed for 500 ms. Five arrows then appear in a horizontal row — for example: <strong>← ← → ← ←</strong>. Your task is to respond to the <strong>centre arrow only</strong> and ignore the four surrounding flanker arrows.</p>
+      <ul>
+        <li>Press the <kbd>&#8592;</kbd> Left arrow key (or tap the <strong>&#8592;</strong> button) if the centre arrow points left.</li>
+        <li>Press the <kbd>&#8594;</kbd> Right arrow key (or tap the <strong>&#8594;</strong> button) if the centre arrow points right.</li>
+      </ul>
+      <p>The centre arrow is highlighted in teal to help you identify it. At higher levels, a response time limit is imposed — respond before the window closes. You need <strong>80% accuracy</strong> to pass each level. Your average response time is reported after each level.</p>
+
+      <h2>What It Measures</h2>
+      <p>The Flanker Task measures <strong>selective attention</strong> and <strong>inhibitory control</strong> — two core components of executive function. On <em>congruent</em> trials (all arrows pointing the same way, e.g., &lt;&lt;&lt;&lt;&lt;) the flankers facilitate the correct response, producing fast, accurate performance. On <em>incongruent</em> trials (flankers oppose the centre, e.g., &lt;&lt;&gt;&lt;&lt;) the flankers generate a competing response tendency that must be actively suppressed. The difference in accuracy and response time between congruent and incongruent trials is called the <strong>flanker interference effect</strong> and is a sensitive index of executive attention efficiency.</p>
+
+      <h2>Research Background</h2>
+      <p>The Flanker Task was introduced by <strong>Barbara Eriksen and Charles Eriksen (1974)</strong> to study response competition — the idea that irrelevant stimulus features can activate their associated responses, creating interference that must be resolved by a central executive process. The task became one of the most widely used paradigms in cognitive neuroscience. <strong>Michael Posner and Steven Petersen (1990)</strong> later incorporated flanker interference into their tripartite model of attention, identifying an <em>executive attention network</em> centred on the anterior cingulate cortex (ACC) and lateral prefrontal cortex. Neuroimaging studies consistently show that incongruent flanker trials recruit the ACC more strongly than congruent trials, reflecting the need to resolve conflict between competing response representations. The Attention Network Test (ANT), developed by <strong>Fan and colleagues (2002)</strong>, extended this work by measuring alerting, orienting, and executive attention within a single task, with the flanker component forming its executive attention index.</p>
+
+      <h2>FAQ</h2>
+
+      <details>
+        <summary>What is the flanker interference effect?</summary>
+        <p>The flanker interference effect is the reduction in accuracy and/or increase in response time observed on incongruent trials (where flankers point in the opposite direction to the centre target) relative to congruent trials. It reflects the cost of having to suppress an automatically activated competing response. A smaller interference effect indicates more efficient inhibitory control.</p>
+      </details>
+
+      <details>
+        <summary>Can practising the Flanker Task improve real-world attention?</summary>
+        <p>Research suggests that repeated flanker training can improve the efficiency of the executive attention network, with some studies reporting transfer to untrained tasks requiring response inhibition and conflict monitoring. Training appears most effective when difficulty is progressively increased — which is why this game ramps up from 70% congruent, easy-paced trials to fast, predominantly incongruent trials with strict response time limits.</p>
+      </details>
+
+      <details>
+        <summary>Why does the game show a fixation cross before each arrow set?</summary>
+        <p>The fixation cross serves two purposes. First, it directs your gaze to the centre of the display so that all five arrows fall within a predictable region of your visual field when they appear. Second, the 500 ms fixation interval creates a preparatory period that engages alerting attention, ensuring you are ready to respond when the stimulus appears. This mimics the structure of laboratory flanker paradigms and makes response times more informative as a measure of pure decision and inhibition speed.</p>
+      </details>
+
+      <h2>Related Games</h2>
+      <div class="related-games">
+        <a class="related-game-card" href="stroop-color-word.html">
+          <div class="related-game-card__icon">&#127752;</div>
+          <div class="related-game-card__body">
+            <h3 class="related-game-card__title">Stroop Color-Word</h3>
+            <p class="related-game-card__desc">Name ink colours while ignoring word meaning. Classic interference task.</p>
+          </div>
+        </a>
+        <a class="related-game-card" href="go-no-go.html">
+          <div class="related-game-card__icon">&#9940;</div>
+          <div class="related-game-card__body">
+            <h3 class="related-game-card__title">Go / No-Go</h3>
+            <p class="related-game-card__desc">Respond fast to targets and withhold responses to non-targets.</p>
+          </div>
+        </a>
+        <a class="related-game-card" href="continuous-performance.html">
+          <div class="related-game-card__icon">&#9673;</div>
+          <div class="related-game-card__body">
+            <h3 class="related-game-card__title">Continuous Performance</h3>
+            <p class="related-game-card__desc">Sustain attention and inhibit responses over a long sequence.</p>
+          </div>
+        </a>
+        <a class="related-game-card" href="visual-search.html">
+          <div class="related-game-card__icon">&#9733;</div>
+          <div class="related-game-card__body">
+            <h3 class="related-game-card__title">Visual Search Test</h3>
+            <p class="related-game-card__desc">Find a target symbol hidden among visually similar distractors.</p>
+          </div>
+        </a>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a class="nav__brand" href="../">
+          <svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+          <span>BrainForge</span>
+        </a>
+        <p class="footer__tagline">Science-based cognitive training, free for everyone.</p>
+      </div>
+      <nav class="footer__col" aria-label="Categories">
+        <h4 class="footer__heading">Categories</h4>
+        <ul>
+          <li><a href="../working-memory-games.html">Working Memory</a></li>
+          <li><a href="../attention-games.html">Attention</a></li>
+          <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+          <li><a href="../executive-function-games.html">Executive Function</a></li>
+          <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+        </ul>
+      </nav>
+      <nav class="footer__col" aria-label="Popular games">
+        <h4 class="footer__heading">Popular Games</h4>
+        <ul>
+          <li><a href="flanker-task.html">Flanker Task</a></li>
+          <li><a href="visual-search.html">Visual Search Test</a></li>
+          <li><a href="stroop-color-word.html">Stroop Color-Word</a></li>
+          <li><a href="go-no-go.html">Go / No-Go</a></li>
+        </ul>
+      </nav>
+      <nav class="footer__col" aria-label="Legal">
+        <h4 class="footer__heading">Legal</h4>
+        <ul>
+          <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../legal/terms-of-service.html">Terms of Service</a></li>
+          <li><a href="../legal/cookie-policy.html">Cookie Policy</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="footer__copy container">&copy; 2026 BrainForge. All rights reserved.</p>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner">
+    <div class="cookie-banner__inner">
+      <p>We use cookies. <a href="../legal/cookie-policy.html">Learn more</a>.</p>
+      <div class="cookie-banner__buttons">
+        <button class="btn btn--primary btn--sm cookie-accept">Accept</button>
+        <button class="btn btn--ghost btn--sm cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/audio.js"></script>
+  <script src="../js/core/game-engine.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/games/flanker-task.js"></script>
+
+</body>
+</html>

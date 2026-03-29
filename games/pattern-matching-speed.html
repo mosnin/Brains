@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pattern Matching Speed Test Online - Processing Speed Training | BrainForge</title>
+  <meta name="description" content="Test your pattern matching speed online. Quickly judge if two patterns are identical. Measures perceptual processing speed. Free online cognitive speed test." />
+  <meta name="keywords" content="pattern matching speed test, perceptual speed test, processing speed game, cognitive speed test online, pattern recognition" />
+  <meta property="og:title" content="Pattern Matching Speed Test Online | BrainForge" />
+  <meta property="og:description" content="Test your pattern matching speed online. Quickly judge if two patterns are identical. Measures perceptual processing speed." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://brainforge.com/games/pattern-matching-speed.html" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/game.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="nav__brand" href="../">
+        <svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+        <span>BrainForge</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="../">Home</a></li>
+        <li><a href="../working-memory-games.html">Working Memory</a></li>
+        <li><a href="../attention-games.html">Attention</a></li>
+        <li><a href="../processing-speed-games.html" class="nav__link--active">Processing Speed</a></li>
+        <li><a href="../executive-function-games.html">Executive Function</a></li>
+        <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+        <li><a href="../all-games.html">All Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb container">
+    <ol class="breadcrumb__list">
+      <li class="breadcrumb__item"><a href="../">Home</a></li>
+      <li class="breadcrumb__item"><a href="../processing-speed-games.html">Processing Speed Games</a></li>
+      <li class="breadcrumb__item breadcrumb__item--current">Pattern Matching Speed Test</li>
+    </ol>
+  </div>
+
+  <!-- Main -->
+  <main class="main container">
+
+    <!-- Game Hero -->
+    <section class="game-hero">
+      <h1 class="game-hero__title">Pattern Matching Speed Test</h1>
+      <p class="game-hero__subtitle">See two patterns — decide <em>Same</em> or <em>Different</em> as fast as you can. 30 levels of increasing complexity.</p>
+    </section>
+
+    <!-- Game Container -->
+    <div id="game-container">
+      <div id="level-select">
+        <h2 class="level-select__title">Select Level</h2>
+        <div id="level-select-grid"></div>
+      </div>
+      <div id="game-hud">
+        <div class="hud-item">
+          <span class="hud-item__label">Level</span>
+          <span class="hud-item__value" id="hud-level">1</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-item__label">Score</span>
+          <span class="hud-item__value" id="hud-score">0%</span>
+        </div>
+        <div class="hud-item hud-timer-wrap">
+          <span id="hud-timer"></span>
+          <div class="hud-timer-bar-bg">
+            <div class="hud-timer-bar" id="hud-timer-bar"></div>
+          </div>
+        </div>
+        <button id="pause-btn">⏸</button>
+      </div>
+      <div id="game-area"></div>
+      <div id="game-overlay"></div>
+    </div>
+
+    <!-- SEO Content -->
+    <section class="game-content">
+
+      <h2>How to Play</h2>
+      <p>Each trial presents two patterns side by side. Your job is to decide as quickly and accurately as possible whether the two patterns are <strong>identical</strong> or <strong>different</strong>.</p>
+      <ul>
+        <li>Click the <strong>Same</strong> button (or press <kbd>S</kbd>) if the two patterns match exactly.</li>
+        <li>Click the <strong>Different</strong> button (or press <kbd>D</kbd>) if they differ by even one character.</li>
+        <li>Each level contains 20 trials. Score at least 80% correct to advance.</li>
+        <li>Patterns grow from simple symbols to complex mixed character strings across 30 levels.</li>
+      </ul>
+
+      <h2>What It Measures</h2>
+      <p>The <strong>Pattern Matching Speed Test</strong> measures <em>perceptual processing speed</em> — the ability to quickly and accurately compare visual information. This core cognitive skill underlies reading fluency, data entry accuracy, and many everyday tasks that require rapid visual discrimination.</p>
+      <p>Secondary metrics include average response time per trial, giving insight into your processing speed independent of accuracy. Faster, more accurate responders demonstrate superior perceptual efficiency.</p>
+
+      <h2>Research Background</h2>
+      <p>Perceptual matching tasks have been used in cognitive assessment since the early 20th century, most notably through Terman and Merrill's Stanford–Binet subtests and later standardised in batteries such as the Woodcock–Johnson Tests of Cognitive Abilities. Research by <strong>Salthouse (1996)</strong> established perceptual speed — the ability to quickly compare stimuli — as one of the most reliable indicators of general cognitive processing efficiency across the lifespan.</p>
+      <p>Pattern matching speed declines measurably with age (McGrew, 2009) but responds robustly to practice. Regular exposure to pattern comparison tasks has been shown to narrow the age-related performance gap through procedural learning and perceptual sharpening.</p>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <details>
+        <summary>What is a good score on the Pattern Matching Speed Test?</summary>
+        <p>Accuracy above 80% on each level is the passing threshold. For average response times, under 1,000 ms on early levels and under 600 ms on expert levels (29–30) indicates strong perceptual processing speed. Top performers maintain 95%+ accuracy even at the hardest levels.</p>
+      </details>
+
+      <details>
+        <summary>How does this differ from a reaction time test?</summary>
+        <p>Pure reaction time tests measure how fast you respond to a simple signal. Pattern matching speed adds a <em>discrimination component</em> — you must process and compare two stimuli before responding. This engages perceptual encoding and short-term visual comparison on top of basic motor response speed.</p>
+      </details>
+
+      <details>
+        <summary>Can I improve my pattern matching speed with practice?</summary>
+        <p>Yes. Research consistently shows that perceptual speed improves with targeted practice. Daily training of 10–15 minutes over four to six weeks produces measurable gains in both accuracy and response time. The key is progressive difficulty — this test's 30-level design ensures you are always training near your current limit.</p>
+      </details>
+
+      <h2>Related Games</h2>
+      <ul class="related-games">
+        <li><a href="symbol-digit-matching.html">Symbol Digit Matching</a></li>
+        <li><a href="visual-processing-speed.html">Visual Processing Speed</a></li>
+        <li><a href="timed-decision.html">Timed Decision Task</a></li>
+        <li><a href="rapid-categorization.html">Rapid Categorization</a></li>
+      </ul>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer__inner container">
+      <div class="footer__col footer__col--brand">
+        <a class="footer__brand" href="../">
+          <svg viewBox="0 0 32 32" fill="none" width="28" height="28"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+          BrainForge
+        </a>
+        <p class="footer__tagline">Free cognitive training games grounded in neuroscience research.</p>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__heading">Categories</h3>
+        <ul class="footer__links">
+          <li><a href="../working-memory-games.html">Working Memory</a></li>
+          <li><a href="../attention-games.html">Attention</a></li>
+          <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+          <li><a href="../executive-function-games.html">Executive Function</a></li>
+          <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+          <li><a href="../all-games.html">All Games</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__heading">Popular Games</h3>
+        <ul class="footer__links">
+          <li><a href="pattern-matching-speed.html">Pattern Matching Speed</a></li>
+          <li><a href="timed-decision.html">Timed Decision Task</a></li>
+          <li><a href="symbol-digit-matching.html">Symbol Digit Matching</a></li>
+          <li><a href="rapid-categorization.html">Rapid Categorization</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__heading">Legal</h3>
+        <ul class="footer__links">
+          <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../legal/terms-of-service.html">Terms of Service</a></li>
+          <li><a href="../legal/cookie-policy.html">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <p>&copy; 2026 BrainForge. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner">
+    <div class="cookie-banner__inner">
+      <p>We use cookies. <a href="../legal/cookie-policy.html">Learn more</a>.</p>
+      <div class="cookie-banner__buttons">
+        <button class="btn btn--primary btn--sm cookie-accept">Accept</button>
+        <button class="btn btn--ghost btn--sm cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/audio.js"></script>
+  <script src="../js/core/game-engine.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/games/pattern-matching-speed.js"></script>
+
+</body>
+</html>

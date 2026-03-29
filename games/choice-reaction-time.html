@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Choice Reaction Time Test Online - How Fast Do You Decide? | BrainForge</title>
+  <meta name="description" content="Test your choice reaction time online. Respond to directional stimuli as quickly as possible. Measures Hick's Law decision speed. Free RT test." />
+  <meta name="keywords" content="choice reaction time test, Hick's Law test, decision speed test, reaction time test online, Donders reaction time" />
+  <meta property="og:title" content="Choice Reaction Time Test Online | BrainForge" />
+  <meta property="og:description" content="Test your choice reaction time online. Respond to directional stimuli as quickly as possible. Free RT test." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://www.brainforge.com/games/choice-reaction-time.html" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/game.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Choice Reaction Time Test",
+    "description": "Test your choice reaction time online. Respond to directional stimuli as quickly as possible. Measures Hick's Law decision speed.",
+    "applicationCategory": "Game",
+    "genre": "Brain Training",
+    "browserRequirements": "Requires JavaScript",
+    "url": "https://www.brainforge.com/games/choice-reaction-time.html",
+    "provider": {
+      "@type": "Organization",
+      "name": "BrainForge"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav__logo" href="../" aria-label="BrainForge Home">
+        <svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+        <span>BrainForge</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="../">Home</a></li>
+        <li><a href="../working-memory-games.html">Working Memory</a></li>
+        <li><a href="../attention-games.html">Attention</a></li>
+        <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+        <li><a href="../executive-function-games.html">Executive Function</a></li>
+        <li><a href="../reaction-time-games.html" class="active">Reaction Time</a></li>
+        <li><a href="../all-games.html">All Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol class="breadcrumb__list">
+        <li class="breadcrumb__item"><a href="../">Home</a></li>
+        <li class="breadcrumb__item" aria-hidden="true">&rsaquo;</li>
+        <li class="breadcrumb__item"><a href="../reaction-time-games.html">Reaction Time Games</a></li>
+        <li class="breadcrumb__item" aria-hidden="true">&rsaquo;</li>
+        <li class="breadcrumb__item" aria-current="page">Choice Reaction Time Test</li>
+      </ol>
+    </nav>
+
+    <!-- Game section -->
+    <section class="game-section" aria-label="Choice Reaction Time Test game">
+      <div class="game-header">
+        <h1 class="game-header__title">Choice Reaction Time Test</h1>
+        <p class="game-header__subtitle">React to directional stimuli as fast as you can. Tests Hick's Law &amp; decision speed across 30 levels.</p>
+      </div>
+
+      <!-- Game container -->
+      <div id="game-container">
+        <!-- Level select -->
+        <div id="level-select">
+          <h2 class="level-select__title">Select Level</h2>
+          <div id="level-select-grid"></div>
+        </div>
+
+        <!-- HUD -->
+        <div id="game-hud">
+          <div class="hud-item">
+            <span class="hud-item__label">Level</span>
+            <span class="hud-item__value" id="hud-level">1</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-item__label">Score</span>
+            <span class="hud-item__value" id="hud-score">0%</span>
+          </div>
+          <div class="hud-item hud-timer-wrap">
+            <span id="hud-timer"></span>
+            <div class="hud-timer-bar-bg">
+              <div class="hud-timer-bar" id="hud-timer-bar"></div>
+            </div>
+          </div>
+          <button id="pause-btn" aria-label="Pause">&#9208;</button>
+        </div>
+
+        <!-- Game area -->
+        <div id="game-area"></div>
+        <div id="game-overlay" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- SEO / editorial content -->
+    <article class="game-content">
+      <h2>How to Play Choice Reaction Time Test</h2>
+      <p>
+        A stimulus appears on screen — either a coloured circle or a directional arrow. Your job is to press
+        the matching key (or on-screen button) as quickly as possible. Use the <strong>Left arrow key</strong>
+        for leftward stimuli and the <strong>Right arrow key</strong> for rightward stimuli. In higher levels
+        you will also need to respond to Up and Down directions. Your score for each level is the percentage
+        of trials you answered correctly <em>within the time threshold</em>. Score 80% or more to pass.
+      </p>
+      <ul>
+        <li><strong>Levels 1–5:</strong> Coloured circles (Blue = Left, Red = Right). 900 ms threshold.</li>
+        <li><strong>Levels 6–10:</strong> Coloured circles with shorter foreperiods. 750 ms threshold.</li>
+        <li><strong>Levels 11–15:</strong> Arrow symbols (← →). 700 ms threshold.</li>
+        <li><strong>Levels 16–20:</strong> Arrows with unpredictable timing. 650 ms threshold.</li>
+        <li><strong>Levels 21–25:</strong> Four-choice arrows (↑ ↓ ← →). 600 ms threshold.</li>
+        <li><strong>Levels 26–30:</strong> Four choices with flanker distractors. 550 ms threshold.</li>
+      </ul>
+
+      <h2>What It Measures</h2>
+      <p>
+        Choice reaction time (CRT) is the time between a stimulus and a correct response when multiple
+        stimulus-response pairs are possible. Unlike simple reaction time, CRT requires decision-making,
+        making it sensitive to cognitive processing speed, perceptual discrimination, and response selection.
+        The task is a computerised version of the <strong>Donders Type C reaction time paradigm</strong>
+        (1868), updated with adaptive difficulty across 30 levels.
+      </p>
+      <p>
+        Average adult CRT to visual stimuli is approximately 350–500 ms, compared to 180–250 ms for simple
+        reaction time. The extra time reflects the cognitive cost of selecting among alternatives — a
+        phenomenon formalised as <strong>Hick's Law</strong> (1952), which states that reaction time increases
+        logarithmically with the number of equally probable choices.
+      </p>
+
+      <h2>Research Background</h2>
+      <p>
+        W.E. Hick (1952) and R. Hyman (1953) independently demonstrated that CRT grows as a linear function
+        of the information content (in bits) of the stimulus set. The Hick-Hyman Law has since been applied
+        in interface design, sports science, and clinical neuropsychology. Slowed CRT is an early marker of
+        cognitive decline, making it a useful screening measure. The four-choice condition in the upper levels
+        of this test adds approximately 50–80 ms of decision time versus the two-choice condition for most adults.
+      </p>
+      <p>
+        The flanker-distractor condition in levels 26–30 draws on Eriksen &amp; Eriksen (1974), who showed
+        that irrelevant flanking stimuli compatible or incompatible with the target produce measurable
+        interference, isolating the cost of selective attention and response conflict resolution.
+      </p>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <details>
+        <summary>What is a good choice reaction time score?</summary>
+        <p>
+          For two-choice tasks most healthy adults respond in 300–450 ms. Under 350 ms is considered fast.
+          For the four-choice condition, add roughly 50–80 ms. Performance varies with age, fatigue, and
+          practice. The thresholds in this test (550–900 ms) are set conservatively so beginners can still
+          score well while leaving room for improvement.
+        </p>
+      </details>
+
+      <details>
+        <summary>How is this different from a simple reaction time test?</summary>
+        <p>
+          A simple reaction time test has only one stimulus and one response — press any key when you see the
+          flash. Choice reaction time requires you to identify which stimulus appeared and select the matching
+          response. This extra decision step adds 100–300 ms of processing time and is far more sensitive to
+          changes in cognitive speed.
+        </p>
+      </details>
+
+      <details>
+        <summary>Does practice improve choice reaction time?</summary>
+        <p>
+          Yes. Research consistently shows that practice reduces CRT, primarily through faster response
+          selection rather than faster perceptual processing. The gains are largest early in training and
+          plateau after several hundred trials. This test tracks your performance across 30 levels so you
+          can observe your own improvement over time.
+        </p>
+      </details>
+
+      <h2>Related Games</h2>
+      <ul class="related-games">
+        <li><a href="reaction-time.html">Simple Reaction Time</a> — pure stimulus-response speed baseline</li>
+        <li><a href="stop-signal.html">Stop Signal Task</a> — inhibitory control and SSRT measurement</li>
+        <li><a href="timed-decision.html">Timed Decision</a> — accuracy under time pressure</li>
+        <li><a href="flanker-task.html">Flanker Task</a> — selective attention and conflict resolution</li>
+      </ul>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <a class="nav__logo" href="../" aria-label="BrainForge Home">
+          <svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+          <span>BrainForge</span>
+        </a>
+        <p>Science-backed cognitive training games.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <div class="footer__col">
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="../working-memory-games.html">Working Memory</a></li>
+            <li><a href="../attention-games.html">Attention</a></li>
+            <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+            <li><a href="../executive-function-games.html">Executive Function</a></li>
+            <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+            <li><a href="../all-games.html">All Games</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3>Popular Games</h3>
+          <ul>
+            <li><a href="choice-reaction-time.html">Choice Reaction Time</a></li>
+            <li><a href="stop-signal.html">Stop Signal Task</a></li>
+            <li><a href="flanker-task.html">Flanker Task</a></li>
+            <li><a href="reaction-time.html">Reaction Time</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../legal/terms-of-service.html">Terms of Service</a></li>
+            <li><a href="../legal/cookie-policy.html">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <p class="footer__copy">&copy; 2026 BrainForge. All rights reserved.</p>
+  </footer>
+
+  <!-- Cookie banner -->
+  <div class="cookie-banner">
+    <div class="cookie-banner__inner">
+      <p>We use cookies. <a href="../legal/cookie-policy.html">Learn more</a>.</p>
+      <div class="cookie-banner__buttons">
+        <button class="btn btn--primary btn--sm cookie-accept">Accept</button>
+        <button class="btn btn--ghost btn--sm cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/audio.js"></script>
+  <script src="../js/core/game-engine.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/games/choice-reaction-time.js"></script>
+</body>
+</html>

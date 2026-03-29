@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rule Shift Task — Cognitive Flexibility &amp; Set Shifting | BrainForge</title>
+  <meta name="description" content="Train cognitive flexibility with the Rule Shift Cards test. Sort cards by shifting rules, based on the Wisconsin Card Sorting Test paradigm." />
+  <meta name="keywords" content="rule shift task, cognitive flexibility test, set shifting, Wisconsin card sorting test online, WCST, executive function training, perseverative errors" />
+  <meta property="og:title" content="Rule Shift Task — Cognitive Flexibility &amp; Set Shifting | BrainForge" />
+  <meta property="og:description" content="Train cognitive flexibility with the Rule Shift Cards test. Sort cards by shifting rules, based on the Wisconsin Card Sorting Test paradigm." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://brainforge.app/games/rule-shift.html" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/game.css" />
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Rule Shift Task",
+      "description": "Train cognitive flexibility with the Rule Shift Cards test. Sort cards by shifting rules, based on the Wisconsin Card Sorting Test paradigm.",
+      "url": "https://brainforge.app/games/rule-shift.html",
+      "genre": "Brain Training",
+      "gamePlatform": "Web Browser",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://brainforge.app/" },
+        { "@type": "ListItem", "position": 2, "name": "Executive Function Games", "item": "https://brainforge.app/executive-function-games.html" },
+        { "@type": "ListItem", "position": 3, "name": "Rule Shift Task", "item": "https://brainforge.app/games/rule-shift.html" }
+      ]
+    }
+  ]
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="nav__brand" href="../">
+        <svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+        <span>BrainForge</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="../working-memory-games.html">Working Memory</a></li>
+        <li><a href="../attention-games.html">Attention</a></li>
+        <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+        <li><a href="../executive-function-games.html" class="active">Executive Function</a></li>
+        <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+        <li><a href="../all-games.html">All Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav class="breadcrumb container" aria-label="Breadcrumb">
+    <ol class="breadcrumb__list">
+      <li class="breadcrumb__item"><a href="../">Home</a></li>
+      <li class="breadcrumb__item"><a href="../executive-function-games.html">Executive Function Games</a></li>
+      <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Rule Shift Task</li>
+    </ol>
+  </nav>
+
+  <section class="game-hero container">
+    <div class="game-hero__meta">
+      <span class="game-hero__category">Executive Function</span>
+      <span class="game-hero__difficulty">30 Levels</span>
+    </div>
+    <h1 class="game-hero__title">Rule Shift Task</h1>
+    <p class="game-hero__desc">
+      A set-shifting test based on the WCST paradigm. Sort cards by an active rule — <strong>color</strong> or
+      <strong>shape</strong> — but the rule changes without warning! Measures your ability to update mental sets,
+      suppress old rules, and adapt flexibly when the environment changes.
+    </p>
+  </section>
+
+  <main class="game-main container" id="game-root">
+    <div id="game-container">
+      <div id="level-select">
+        <h2 class="level-select__title">Select Level</h2>
+        <div id="level-select-grid"></div>
+      </div>
+      <div id="game-hud">
+        <div class="hud-item"><span class="hud-item__label">Level</span><span class="hud-item__value" id="hud-level">1</span></div>
+        <div class="hud-item"><span class="hud-item__label">Score</span><span class="hud-item__value" id="hud-score">0%</span></div>
+        <div class="hud-item hud-timer-wrap"><span id="hud-timer"></span><div class="hud-timer-bar-bg"><div class="hud-timer-bar" id="hud-timer-bar"></div></div></div>
+        <button id="pause-btn" aria-label="Pause game">⏸</button>
+      </div>
+      <div id="game-area"></div>
+      <div id="game-overlay"></div>
+    </div>
+  </main>
+
+  <section class="game-content container">
+
+    <h2>How to Play the Rule Shift Task</h2>
+    <p>
+      Each trial presents a <strong>target card</strong> at the top and a row of <strong>response cards</strong> below it. Your job is to match the target card to the response card that shares a feature defined by the currently active sorting rule. The two rules are:
+    </p>
+    <ul>
+      <li><strong>Sort by Color:</strong> Match the target to the response card that has the same color, ignoring differences in shape entirely.</li>
+      <li><strong>Sort by Shape:</strong> Match the target to the response card that has the same shape, ignoring differences in color entirely.</li>
+    </ul>
+    <p>
+      The critical challenge: the active rule changes silently after a fixed run of consecutive correct responses — no warning is given, no announcement is made. You will discover the shift only when the feedback unexpectedly changes from green to red. At that moment you must abandon the strategy that was just working, form a new hypothesis about what dimension is now being rewarded, and verify it over the next few trials.
+    </p>
+    <p>
+      The 30 levels scale in two dimensions. Early levels (1–3) contain just 8 trials with 4 rule changes and generous response windows, allowing you to learn the mechanics at a comfortable pace. By levels 28–30, each session contains 60 trials with more than 12 rule changes at an accelerated pace, demanding rapid and accurate hypothesis updating. Score 80% or higher to advance.
+    </p>
+
+    <h2>What the Rule Shift Task Measures</h2>
+    <p>
+      The Rule Shift Task is a direct probe of <strong>cognitive flexibility</strong>, also called mental set-shifting — one of the three core executive functions alongside working memory updating and inhibitory control. Cognitive flexibility enables you to adapt behavior when rules, goals, or environmental contingencies change.
+    </p>
+    <ul>
+      <li><strong>Set shifting:</strong> Disengaging from one sorting dimension (e.g., color) and engaging a new one (e.g., shape) when feedback signals a change. This is the central cognitive demand and the defining feature of the WCST paradigm.</li>
+      <li><strong>Perseverative errors:</strong> Continuing to respond according to the old rule after it has become incorrect. Perseveration is the primary failure mode tracked in WCST research and reflects an inability to release a dominant mental set — a key marker of frontal executive dysfunction.</li>
+      <li><strong>Working memory updating:</strong> Holding the current rule in working memory, updating it when evidence changes, and simultaneously suppressing interference from the previously valid rule.</li>
+      <li><strong>Rule abstraction from feedback:</strong> Unlike tasks with explicit cues, the Rule Shift Task requires you to infer the current sorting dimension through active hypothesis testing — a higher-order executive skill beyond simple rule following.</li>
+    </ul>
+
+    <h2>Research Background</h2>
+    <p>
+      The Rule Shift Task is grounded in the <strong>Wisconsin Card Sorting Test (WCST)</strong>, first developed by <strong>Esta A. Berg (1948)</strong> and extensively standardized by <strong>Grant &amp; Berg (1948)</strong> as a measure of abstract reasoning and adaptive behavior for use in clinical neuropsychological assessment.
+    </p>
+    <p>
+      The WCST became a neuropsychological landmark after research consistently demonstrated that patients with <strong>frontal lobe damage</strong> — particularly lesions of the dorsolateral prefrontal cortex — showed strikingly elevated perseverative error rates compared to patients with equivalent damage elsewhere in the brain. This dramatic frontal sensitivity established the WCST as the primary behavioral measure of prefrontal executive function for several decades.
+    </p>
+    <p>
+      Subsequent neuroimaging research refined the neural picture considerably. Successful rule shifts recruit a distributed network including the <strong>dorsolateral prefrontal cortex</strong> (maintaining and updating task-set representations), the <strong>anterior cingulate cortex</strong> (detecting conflict that signals a rule change is needed), and the <strong>caudate nucleus</strong> of the basal ganglia (which releases old procedural routines and allows new ones to be selected via the cortico-striato-thalamo-cortical loop). Verbruggen &amp; Logan (2008) and Monsell (2003) further elaborated how inhibitory and updating processes interact during set-shifting, showing that suppression of old rules is as important as learning new ones.
+    </p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+      <summary>Why doesn't the game announce when the rule changes?</summary>
+      <p>
+        The unannounced rule shift is the most scientifically important feature of the task. If the game told you when the rule changed, you would only need to follow explicit instructions — a much simpler cognitive demand. The clinically and theoretically relevant challenge is whether you can <em>detect</em> a change from negative feedback alone and <em>abandon</em> the now-incorrect habitual response even though it was recently being rewarded. This precise ability — releasing an old mental set and forming a new one from ambiguous feedback — is what the prefrontal cortex manages and what fails dramatically in dysexecutive syndromes such as frontal lobe damage.
+      </p>
+    </details>
+
+    <details>
+      <summary>What counts as a perseverative error?</summary>
+      <p>
+        A perseverative error is a response that would have been correct under the <em>previous</em> rule but is incorrect under the current rule. For example, if the sorting rule has shifted from color to shape, and you continue pressing the color-matched card, each such incorrect response is a perseverative error. The WCST carefully distinguishes perseverative errors from non-perseverative errors (which could reflect random guessing or attention lapses) because perseveration specifically implicates the prefrontal failure to release and update a dominant mental set.
+      </p>
+    </details>
+
+    <details>
+      <summary>Can practicing cognitive flexibility improve real-world adaptability?</summary>
+      <p>
+        Cognitive flexibility training shows the most consistent near-transfer to structurally similar set-shifting tasks and some evidence for transfer to related executive function measures. Research by Diamond &amp; Ling (2016) and others suggests that combining flexibility training with working memory and inhibitory control exercises — the three pillars of executive function — produces broader cognitive benefits than targeting any single component in isolation. BrainForge is designed with this multi-component approach: the Rule Shift Task trains shifting, while Dual N-Back trains updating, and Go/No-Go and Stop Signal Task train inhibition, together covering the core executive function triad.
+      </p>
+    </details>
+
+    <h2>Related Games</h2>
+    <ul class="related-games-list">
+      <li><a href="task-switching.html">Task Switching Test — Cued Set Shifting &amp; Switch Costs</a></li>
+      <li><a href="stroop-color-word.html">Stroop Color-Word Test — Inhibitory Control</a></li>
+      <li><a href="flanker-task.html">Flanker Task — Conflict Monitoring</a></li>
+      <li><a href="trail-making.html">Trail Making Test — Visual Scanning &amp; Flexibility</a></li>
+    </ul>
+
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer__inner container">
+      <div class="footer__brand">
+        <a class="nav__brand" href="../"><svg viewBox="0 0 32 32" fill="none" width="28" height="28"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg><span>BrainForge</span></a>
+        <p class="footer__tagline">Science-based cognitive training, free and in-browser.</p>
+      </div>
+      <div class="footer__col"><h3 class="footer__heading">Categories</h3><ul><li><a href="../working-memory-games.html">Working Memory</a></li><li><a href="../attention-games.html">Attention</a></li><li><a href="../processing-speed-games.html">Processing Speed</a></li><li><a href="../executive-function-games.html">Executive Function</a></li><li><a href="../reaction-time-games.html">Reaction Time</a></li><li><a href="../all-games.html">All Games</a></li></ul></div>
+      <div class="footer__col"><h3 class="footer__heading">Popular Games</h3><ul><li><a href="stroop-color-word.html">Stroop Color-Word Test</a></li><li><a href="reaction-time.html">Reaction Time Test</a></li><li><a href="go-no-go.html">Go/No-Go Task</a></li><li><a href="flanker-task.html">Flanker Task</a></li><li><a href="dual-n-back.html">Dual N-Back</a></li></ul></div>
+      <div class="footer__col"><h3 class="footer__heading">Legal</h3><ul><li><a href="../legal/privacy-policy.html">Privacy Policy</a></li><li><a href="../legal/terms-of-service.html">Terms of Service</a></li><li><a href="../legal/cookie-policy.html">Cookie Policy</a></li></ul></div>
+    </div>
+    <p class="footer__copy container">&copy; 2026 BrainForge. All rights reserved.</p>
+  </footer>
+
+  <div class="cookie-banner" role="dialog" aria-label="Cookie consent">
+    <div class="cookie-banner__inner">
+      <p>We use cookies to save your progress. <a href="../legal/cookie-policy.html">Learn more</a>.</p>
+      <div class="cookie-banner__buttons">
+        <button class="btn btn--primary btn--sm cookie-accept">Accept</button>
+        <button class="btn btn--ghost btn--sm cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/audio.js"></script>
+  <script src="../js/core/game-engine.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/games/rule-shift.js"></script>
+</body>
+</html>

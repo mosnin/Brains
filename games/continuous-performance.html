@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Continuous Performance Test (CPT) Online - Attention Assessment | BrainForge</title>
+  <meta name="description" content="Take the Continuous Performance Test online. Measure sustained attention and inhibitory control. Based on Conners CPT-II protocol. Free attention training." />
+  <meta name="keywords" content="continuous performance test online, CPT test, Conners CPT, sustained attention test, inhibitory control, attention assessment" />
+  <link rel="canonical" href="https://www.brainforge.gg/games/continuous-performance.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Continuous Performance Test (CPT) Online | BrainForge" />
+  <meta property="og:description" content="Measure sustained attention and inhibitory control with the Continuous Performance Test. Free, science-based brain training." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.brainforge.gg/games/continuous-performance.html" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/game.css" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Continuous Performance Test (CPT) Online",
+    "description": "Take the Continuous Performance Test online. Measure sustained attention and inhibitory control. Based on Conners CPT-II protocol.",
+    "url": "https://www.brainforge.gg/games/continuous-performance.html",
+    "applicationCategory": "Game",
+    "genre": "Brain Training",
+    "operatingSystem": "Any"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-nav__inner">
+      <a class="site-nav__brand" href="../">
+        <svg viewBox="0 0 32 32" fill="none" width="32" height="32" aria-hidden="true"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+        <span>BrainForge</span>
+      </a>
+      <ul class="site-nav__links">
+        <li><a href="../working-memory-games.html">Working Memory</a></li>
+        <li><a href="../attention-games.html" aria-current="page">Attention</a></li>
+        <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+        <li><a href="../executive-function-games.html">Executive Function</a></li>
+        <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+        <li><a href="../all-games.html">All Games</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol class="breadcrumb__list">
+        <li class="breadcrumb__item"><a href="../">Home</a></li>
+        <li class="breadcrumb__item"><a href="../attention-games.html">Attention Games</a></li>
+        <li class="breadcrumb__item" aria-current="page">Continuous Performance Test</li>
+      </ol>
+    </nav>
+
+    <!-- Page header -->
+    <header class="game-header">
+      <div class="game-header__inner">
+        <h1 class="game-header__title">Continuous Performance Test (CPT)</h1>
+        <p class="game-header__subtitle">Press only when you see the letter X. Measure sustained attention and impulse control.</p>
+      </div>
+    </header>
+
+    <!-- Game container -->
+    <div id="game-container">
+      <!-- Level select -->
+      <div id="level-select">
+        <h2 class="level-select__title">Select Level</h2>
+        <div id="level-select-grid"></div>
+      </div>
+
+      <!-- HUD -->
+      <div id="game-hud">
+        <div class="hud-item">
+          <span class="hud-item__label">Level</span>
+          <span class="hud-item__value" id="hud-level">1</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-item__label">Score</span>
+          <span class="hud-item__value" id="hud-score">0%</span>
+        </div>
+        <div class="hud-item hud-timer-wrap">
+          <span id="hud-timer"></span>
+          <div class="hud-timer-bar-bg">
+            <div class="hud-timer-bar" id="hud-timer-bar"></div>
+          </div>
+        </div>
+        <button id="pause-btn" aria-label="Pause game">&#9646;&#9646;</button>
+      </div>
+
+      <!-- Game area -->
+      <div id="game-area"></div>
+
+      <!-- Overlay -->
+      <div id="game-overlay"></div>
+    </div>
+
+    <!-- SEO content -->
+    <section class="game-content">
+      <h2>How to Play the Continuous Performance Test</h2>
+      <p>The Continuous Performance Test (CPT) presents a rapid sequence of letters on screen, one at a time. Your task is simple but demanding: <strong>press SPACE (or the on-screen button) only when you see the letter X</strong>. For every other letter, stay still. The test measures how consistently you can maintain this rule over many trials — even as your mind drifts or speed increases.</p>
+      <ul>
+        <li><strong>Hit:</strong> You pressed when X appeared — correct response.</li>
+        <li><strong>Miss:</strong> X appeared but you didn't press — attention lapse.</li>
+        <li><strong>False Alarm:</strong> You pressed for a non-X letter — impulsive response.</li>
+      </ul>
+      <p>Your score is calculated as <em>(Hits + Correct Rejections) / Total Stimuli × 100</em>. Pass each level by scoring 80% or above. Thirty progressive levels ramp up speed, reduce target frequency, and introduce confusable letters like K to challenge your focus.</p>
+
+      <h2>What the Continuous Performance Test Measures</h2>
+      <p>The CPT assesses two core cognitive processes that underpin daily functioning:</p>
+      <ul>
+        <li><strong>Sustained attention:</strong> The ability to maintain alert, consistent focus over an extended period without deterioration in performance.</li>
+        <li><strong>Inhibitory control:</strong> The ability to suppress automatic responses to non-target stimuli — resisting the urge to press when you shouldn't.</li>
+      </ul>
+      <p>Miss rates reflect attention failures, while false alarm rates reflect impulsivity. Together they offer a nuanced picture of attentional control that simple reaction-time tasks cannot capture.</p>
+
+      <h2>Research Behind the CPT</h2>
+      <p>The Continuous Performance Test was pioneered by <strong>Rosvold et al. (1956)</strong> as a measure of sustained attention in patients with brain lesions. Decades later, Keith Conners developed the <strong>Conners' CPT-II</strong>, a standardised clinical instrument widely used to evaluate ADHD and attention deficits. Research consistently shows that CPT performance — particularly signal detection metrics derived from hits and false alarms — discriminates between clinical and non-clinical populations and tracks treatment response. Regular training on CPT-style tasks has been linked to improvements in vigilance and reduced mind-wandering in healthy adults.</p>
+
+      <section class="game-faq">
+        <h2>Frequently Asked Questions</h2>
+
+        <details>
+          <summary>Is this the same as the clinical Conners CPT-II?</summary>
+          <p>This game is inspired by and follows the core paradigm of the Conners CPT-II but is not a clinical diagnostic tool. It is designed for cognitive training and self-assessment. For clinical evaluation, please consult a licensed neuropsychologist.</p>
+        </details>
+
+        <details>
+          <summary>How long does each level take?</summary>
+          <p>Level duration scales with difficulty. Early levels with 40 stimuli at 1500 ms ISI take about one minute; later levels with 100 stimuli at 450 ms ISI take around 45 seconds. Most levels fall between 30 seconds and 90 seconds.</p>
+        </details>
+
+        <details>
+          <summary>Why does the test get harder with fewer targets?</summary>
+          <p>When X appears less frequently (down to 10% in later levels), your brain cannot rely on frequent confirmation that you're in the right state of readiness. Fewer targets demand a higher and more consistent state of vigilance across longer stretches of non-target stimuli.</p>
+        </details>
+
+        <details>
+          <summary>What does a high false alarm rate mean?</summary>
+          <p>A high false alarm rate suggests impulsivity — your response system is too "trigger-happy." This is distinct from an attention problem and maps to poor inhibitory control. Both can be trained independently through practice.</p>
+        </details>
+
+        <details>
+          <summary>Can this test detect ADHD?</summary>
+          <p>No. While CPT measures correlate with ADHD symptoms in research settings, a single online game cannot diagnose any condition. ADHD is diagnosed by qualified clinicians using multiple assessment tools, clinical history, and standardised norms. Use this game for training and self-awareness only.</p>
+        </details>
+      </section>
+
+      <h2>Related Games</h2>
+      <ul class="related-games">
+        <li><a href="sustained-attention.html">Sustained Attention Task (SART)</a></li>
+        <li><a href="vigilance.html">Vigilance Task</a></li>
+        <li><a href="flanker-task.html">Flanker Task</a></li>
+        <li><a href="go-no-go.html">Go/No-Go Task</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <svg viewBox="0 0 32 32" fill="none" width="28" height="28" aria-hidden="true"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+        <span>BrainForge</span>
+      </div>
+      <div class="site-footer__cols">
+        <div class="site-footer__col">
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="../working-memory-games.html">Working Memory</a></li>
+            <li><a href="../attention-games.html">Attention</a></li>
+            <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+            <li><a href="../executive-function-games.html">Executive Function</a></li>
+            <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+            <li><a href="../all-games.html">All Games</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h3>Popular Games</h3>
+          <ul>
+            <li><a href="continuous-performance.html">Continuous Performance Test</a></li>
+            <li><a href="sustained-attention.html">Sustained Attention Task</a></li>
+            <li><a href="flanker-task.html">Flanker Task</a></li>
+            <li><a href="go-no-go.html">Go/No-Go Task</a></li>
+            <li><a href="vigilance.html">Vigilance Task</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../legal/terms-of-service.html">Terms of Service</a></li>
+            <li><a href="../legal/cookie-policy.html">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie banner -->
+  <div class="cookie-banner">
+    <div class="cookie-banner__inner">
+      <p>We use cookies. <a href="../legal/cookie-policy.html">Learn more</a>.</p>
+      <div class="cookie-banner__buttons">
+        <button class="btn btn--primary btn--sm cookie-accept">Accept</button>
+        <button class="btn btn--ghost btn--sm cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/audio.js"></script>
+  <script src="../js/core/game-engine.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/games/continuous-performance.js"></script>
+</body>
+</html>

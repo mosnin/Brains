@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stop Signal Task Online - Inhibitory Control Test | BrainForge</title>
+  <meta name="description" content="Test your inhibitory control with the Stop Signal Task online. Measure how quickly you can stop a planned response. Measures SSRT. Free cognitive test." />
+  <meta name="keywords" content="stop signal task online, inhibitory control test, SSRT test, stop signal reaction time, Logan Cowan stop task" />
+  <meta property="og:title" content="Stop Signal Task Online - Inhibitory Control Test | BrainForge" />
+  <meta property="og:description" content="Test your inhibitory control with the Stop Signal Task online. Measure how quickly you can stop a planned response. Free cognitive test." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://www.brainforge.com/games/stop-signal.html" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/game.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Stop Signal Task",
+    "description": "Test your inhibitory control with the Stop Signal Task online. Measure your Stop-Signal Reaction Time (SSRT) across 30 levels.",
+    "applicationCategory": "Game",
+    "genre": "Brain Training",
+    "browserRequirements": "Requires JavaScript",
+    "url": "https://www.brainforge.com/games/stop-signal.html",
+    "provider": {
+      "@type": "Organization",
+      "name": "BrainForge"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav__logo" href="../" aria-label="BrainForge Home">
+        <svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+        <span>BrainForge</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="../">Home</a></li>
+        <li><a href="../working-memory-games.html">Working Memory</a></li>
+        <li><a href="../attention-games.html">Attention</a></li>
+        <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+        <li><a href="../executive-function-games.html">Executive Function</a></li>
+        <li><a href="../reaction-time-games.html" class="active">Reaction Time</a></li>
+        <li><a href="../all-games.html">All Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol class="breadcrumb__list">
+        <li class="breadcrumb__item"><a href="../">Home</a></li>
+        <li class="breadcrumb__item" aria-hidden="true">&rsaquo;</li>
+        <li class="breadcrumb__item"><a href="../reaction-time-games.html">Reaction Time Games</a></li>
+        <li class="breadcrumb__item" aria-hidden="true">&rsaquo;</li>
+        <li class="breadcrumb__item" aria-current="page">Stop Signal Task</li>
+      </ol>
+    </nav>
+
+    <!-- Game section -->
+    <section class="game-section" aria-label="Stop Signal Task game">
+      <div class="game-header">
+        <h1 class="game-header__title">Stop Signal Task</h1>
+        <p class="game-header__subtitle">Respond to arrows — but stop immediately when you see ✕. Tests inhibitory control and measures your Stop-Signal Reaction Time (SSRT).</p>
+      </div>
+
+      <!-- Game container -->
+      <div id="game-container">
+        <!-- Level select -->
+        <div id="level-select">
+          <h2 class="level-select__title">Select Level</h2>
+          <div id="level-select-grid"></div>
+        </div>
+
+        <!-- HUD -->
+        <div id="game-hud">
+          <div class="hud-item">
+            <span class="hud-item__label">Level</span>
+            <span class="hud-item__value" id="hud-level">1</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-item__label">Score</span>
+            <span class="hud-item__value" id="hud-score">0%</span>
+          </div>
+          <div class="hud-item hud-timer-wrap">
+            <span id="hud-timer"></span>
+            <div class="hud-timer-bar-bg">
+              <div class="hud-timer-bar" id="hud-timer-bar"></div>
+            </div>
+          </div>
+          <button id="pause-btn" aria-label="Pause">&#9208;</button>
+        </div>
+
+        <!-- Game area -->
+        <div id="game-area"></div>
+        <div id="game-overlay" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- SEO / editorial content -->
+    <article class="game-content">
+      <h2>How to Play the Stop Signal Task</h2>
+      <p>
+        Each trial begins with a fixation cross, then an arrow (← or →) appears. Your goal is to
+        <strong>press the matching key as fast as possible</strong>. On roughly 25% of trials a red
+        <strong>✕ stop signal</strong> appears shortly after the arrow. When you see ✕ you must
+        <strong>withhold your response</strong> — do not press any key.
+      </p>
+      <ul>
+        <li>Use the <strong>Left arrow key</strong> (or Left button) for ← arrows.</li>
+        <li>Use the <strong>Right arrow key</strong> (or Right button) for → arrows.</li>
+        <li>When ✕ appears — stop immediately, no matter how certain you were about pressing.</li>
+        <li>Score is based on combined Go accuracy and inhibition success rate. Pass 80% to advance.</li>
+      </ul>
+      <p>
+        The <strong>Stop-Signal Delay (SSD)</strong> adapts each trial. Stop successfully and the delay
+        lengthens, making the next stop harder. Fail to stop and the delay shortens. This
+        <em>staircase procedure</em> homes in on your inhibition threshold automatically.
+      </p>
+
+      <h2>What It Measures</h2>
+      <p>
+        The Stop Signal Task measures <strong>inhibitory control</strong> — the ability to cancel a
+        motor response that is already being prepared. The key metric is the
+        <strong>Stop-Signal Reaction Time (SSRT)</strong>, estimated as the mean Go RT minus the
+        converged SSD. SSRT reflects the speed of your internal inhibition process, which runs in
+        parallel with (and races against) your Go process.
+      </p>
+      <p>
+        Typical SSRT in healthy adults ranges from 150–250 ms. Longer SSRT is associated with ADHD,
+        addiction, and other conditions involving impaired inhibitory control. Shorter SSRT indicates
+        faster and more efficient inhibition. Because this is a covert latency that cannot be directly
+        observed, the race model and staircase tracking method are used to estimate it.
+      </p>
+
+      <h2>Research Background</h2>
+      <p>
+        The Stop Signal Task was formalised by Gordon D. Logan and Matthew C. Cowan (1984), building on
+        earlier work by Lappin and Eriksen (1966). Their <em>race model</em> posits that the Go process
+        and a countermanding Stop process race to completion; whether you stop depends on which process
+        finishes first. The model generates quantitative predictions about inhibition probability and
+        SSRT that can be verified empirically.
+      </p>
+      <p>
+        The task has become a cornerstone of cognitive neuroscience. fMRI studies implicate the
+        right inferior frontal cortex and the subthalamic nucleus (via the hyperdirect pathway) in
+        stop-signal inhibition. Deficits in stop-signal inhibition are among the most replicated
+        findings in ADHD research, making computerised versions like this one valuable for both
+        research and public education.
+      </p>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <details>
+        <summary>Why is stopping sometimes impossible even when I try?</summary>
+        <p>
+          That is expected and by design. The adaptive SSD ensures you stop successfully about 50% of
+          the time on stop trials. When SSD is long enough, the stop signal arrives too late for your
+          inhibition process to win the race, and stopping becomes impossible regardless of effort.
+          A failure rate around 50% on stop trials is actually the mathematically ideal point for
+          measuring SSRT, so it is a feature, not a flaw.
+        </p>
+      </details>
+
+      <details>
+        <summary>What is a good SSRT score?</summary>
+        <p>
+          Typical healthy adult SSRT is 150–250 ms. Under 200 ms is considered fast inhibition.
+          Above 300 ms may suggest weaker inhibitory control, though factors like fatigue, age,
+          and practice all affect the estimate. The value displayed after each level is an approximation
+          based on the staircase-tracking method (GoRT minus converged SSD).
+        </p>
+      </details>
+
+      <details>
+        <summary>Should I slow down to stop more easily?</summary>
+        <p>
+          You should not deliberately slow your Go responses. The race model only yields a valid
+          SSRT estimate when Go responses are made as fast as possible. Intentionally slowing down
+          biases the SSRT estimate upward and defeats the purpose of the task. The go and stop
+          instructions are intentionally in conflict — embrace it.
+        </p>
+      </details>
+
+      <h2>Related Games</h2>
+      <ul class="related-games">
+        <li><a href="reaction-time.html">Simple Reaction Time</a> — baseline go-signal speed measurement</li>
+        <li><a href="go-no-go.html">Go/No-Go Task</a> — simpler inhibition without stop-signal dynamics</li>
+        <li><a href="choice-reaction-time.html">Choice Reaction Time Test</a> — Hick's Law and decision speed</li>
+        <li><a href="flanker-task.html">Flanker Task</a> — response conflict and selective attention</li>
+      </ul>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <a class="nav__logo" href="../" aria-label="BrainForge Home">
+          <svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+          <span>BrainForge</span>
+        </a>
+        <p>Science-backed cognitive training games.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <div class="footer__col">
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="../working-memory-games.html">Working Memory</a></li>
+            <li><a href="../attention-games.html">Attention</a></li>
+            <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+            <li><a href="../executive-function-games.html">Executive Function</a></li>
+            <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+            <li><a href="../all-games.html">All Games</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3>Popular Games</h3>
+          <ul>
+            <li><a href="stop-signal.html">Stop Signal Task</a></li>
+            <li><a href="choice-reaction-time.html">Choice Reaction Time</a></li>
+            <li><a href="flanker-task.html">Flanker Task</a></li>
+            <li><a href="go-no-go.html">Go/No-Go Task</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../legal/terms-of-service.html">Terms of Service</a></li>
+            <li><a href="../legal/cookie-policy.html">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <p class="footer__copy">&copy; 2026 BrainForge. All rights reserved.</p>
+  </footer>
+
+  <!-- Cookie banner -->
+  <div class="cookie-banner">
+    <div class="cookie-banner__inner">
+      <p>We use cookies. <a href="../legal/cookie-policy.html">Learn more</a>.</p>
+      <div class="cookie-banner__buttons">
+        <button class="btn btn--primary btn--sm cookie-accept">Accept</button>
+        <button class="btn btn--ghost btn--sm cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/audio.js"></script>
+  <script src="../js/core/game-engine.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/games/stop-signal.js"></script>
+</body>
+</html>

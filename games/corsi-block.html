@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corsi Block Tapping Test — Visuospatial Memory | BrainForge</title>
+  <meta name="description" content="Take the classic Corsi Block Tapping Test online free. Test and train your visuospatial working memory by reproducing sequences of lit blocks." />
+  <meta property="og:title" content="Corsi Block Tapping Test — Visuospatial Memory | BrainForge" />
+  <meta property="og:description" content="Take the classic Corsi Block Tapping Test online free. Test and train your visuospatial working memory by reproducing sequences of lit blocks." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://brainforge.app/games/corsi-block.html" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/game.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Corsi Block Tapping Test","description":"Classic visuospatial working memory test. Watch blocks light up in sequence, then tap them in the same order.","url":"https://brainforge.app/games/corsi-block.html","genre":"Brain Training","gamePlatform":"Web Browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="nav__brand" href="../">
+        <svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+        <span>BrainForge</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="../working-memory-games.html" class="active">Working Memory</a></li>
+        <li><a href="../attention-games.html">Attention</a></li>
+        <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+        <li><a href="../executive-function-games.html">Executive Function</a></li>
+        <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+        <li><a href="../all-games.html">All Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav class="breadcrumb container" aria-label="Breadcrumb">
+    <ol class="breadcrumb__list">
+      <li class="breadcrumb__item"><a href="../">Home</a></li>
+      <li class="breadcrumb__item"><a href="../working-memory-games.html">Working Memory Games</a></li>
+      <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Corsi Block Test</li>
+    </ol>
+  </nav>
+
+  <section class="game-hero container">
+    <div class="game-hero__meta">
+      <span class="game-hero__category">Working Memory</span>
+      <span class="game-hero__difficulty">30 Levels</span>
+    </div>
+    <h1 class="game-hero__title">Corsi Block Tapping Test</h1>
+    <p class="game-hero__desc">The gold standard visuospatial working memory test. Watch the sequence of blocks light up, then tap them in the same order. Measures your visuospatial span, a key component of working memory distinct from verbal memory.</p>
+  </section>
+
+  <main class="game-main container" id="game-root">
+    <div id="game-container">
+      <div id="level-select">
+        <h2 class="level-select__title">Select Level</h2>
+        <div id="level-select-grid"></div>
+      </div>
+      <div id="game-hud">
+        <div class="hud-item"><span class="hud-item__label">Level</span><span class="hud-item__value" id="hud-level">1</span></div>
+        <div class="hud-item"><span class="hud-item__label">Score</span><span class="hud-item__value" id="hud-score">0%</span></div>
+        <div class="hud-item hud-timer-wrap"><span id="hud-timer"></span><div class="hud-timer-bar-bg"><div class="hud-timer-bar" id="hud-timer-bar"></div></div></div>
+        <button id="pause-btn" aria-label="Pause game">&#9208;</button>
+      </div>
+      <div id="game-area"></div>
+      <div id="game-overlay"></div>
+    </div>
+  </main>
+
+  <section class="game-content container">
+    <article>
+      <h2>What Is the Corsi Block Tapping Test?</h2>
+      <p>The Corsi Block Tapping Test is one of the most widely used neuropsychological assessments of <strong>visuospatial working memory</strong>. Originally developed by Philip M. Corsi in 1972 as part of his doctoral dissertation at McGill University (under Brenda Milner), the task has been replicated, validated, and studied in thousands of research papers over the past five decades. On BrainForge, you can take a full 30-level adaptive version directly in your browser — no download required.</p>
+
+      <h2>How to Play</h2>
+      <p>Nine blocks are arranged in an irregular pattern on screen — the same asymmetric layout used in Milner's original lab version to prevent participants from chunking positions into simple rows or shapes. At the start of each sequence, the blocks light up one by one. Your job is to <strong>watch carefully</strong> and remember the order in which they illuminated. When the encoding phase ends, the blocks go dark and your recall phase begins: tap each block in the exact order it lit up.</p>
+      <p>Early levels present short sequences of just two or three blocks with generous timing. As you advance through the 30 levels, sequences grow longer (up to nine blocks), the highlight duration shortens, and the inter-stimulus gap compresses — all increasing the demand on your visuospatial working memory. A score of 80% or higher on each level unlocks the next.</p>
+
+      <h2>What Does the Corsi Span Measure?</h2>
+      <p>Your <em>Corsi span</em> is the longest sequence you can reliably reproduce. In healthy adults, the average Corsi span is approximately 5 to 6 items — somewhat lower than the classic digit span of 7 ± 2, a difference that has been noted repeatedly in the literature and attributed to the additional spatial processing required. Crucially, Corsi performance is only weakly correlated with verbal span measures like digit span forward, confirming that visuospatial and phonological components of working memory are largely independent systems.</p>
+
+      <h2>Visuospatial vs. Verbal Working Memory</h2>
+      <p>Alan Baddeley's influential multi-component model of working memory distinguishes a <strong>phonological loop</strong> — responsible for holding verbal and acoustic information — from a <strong>visuospatial sketchpad</strong>, which maintains and manipulates visual and spatial representations. The Corsi task loads almost exclusively on the visuospatial sketchpad, making it invaluable for isolating deficits in that subsystem. Patients with right-hemisphere lesions, particularly affecting the posterior parietal cortex and hippocampal regions, often show disproportionate Corsi span reductions while retaining near-normal digit span — dissociating the two systems cleanly.</p>
+
+      <h2>Research Background</h2>
+      <p>Corsi's original (1972) unpublished dissertation documented the task and established norms. Milner's group at the Montreal Neurological Institute used it extensively to characterize memory deficits in patients with temporal lobe resections. Later work by Baddeley and Della Sala (1996) situated the Corsi task within a broader theoretical framework of working memory components. De Renzi and Nichelli (1975) published influential standardized norms for the task. More recently, neuroimaging studies (e.g., Zimmer et al., 2004; Rudner &amp; Rönnberg, 2008) have confirmed right-hemisphere parietal and frontal involvement in visuospatial span tasks, with activation patterns distinct from those observed during verbal span tasks.</p>
+      <p>The task is also widely used in developmental psychology to trace the maturation of visuospatial working memory through childhood and adolescence, and in clinical screening for conditions including Alzheimer's disease, ADHD, and traumatic brain injury.</p>
+
+      <h2>Tips for Improving Your Score</h2>
+      <ul>
+        <li><strong>Avoid verbal labeling.</strong> Resist the urge to name block positions (e.g., "top-left, center, bottom-right"). The task is harder with verbal strategies and you'll reach a ceiling faster — use pure spatial imagery instead.</li>
+        <li><strong>Trace a path mentally.</strong> As each block lights up, imagine drawing a line connecting the sequence positions. Some people find it helpful to trace lightly with a finger.</li>
+        <li><strong>Stay in the present block.</strong> Don't start rehearsing earlier blocks while watching new ones — keep attention on the current stimulus and trust your spatial memory to hold the trace.</li>
+        <li><strong>Practice consistently.</strong> Research shows visuospatial working memory is trainable with repeated practice. Even short daily sessions produce measurable improvements in span over two to four weeks.</li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <details>
+        <summary>What is a good Corsi block span score?</summary>
+        <p>In the general adult population, a Corsi span of 5 is average, 6 is above average, and 7 or more is excellent. Scores of 4 or below may warrant further evaluation, though performance is affected by age, fatigue, and practice effects. Norms for children are lower — typically 3–4 in early school age, rising to adult levels by mid-adolescence.</p>
+      </details>
+
+      <details>
+        <summary>Is the Corsi test the same as the digit span test?</summary>
+        <p>No. Both are span tests, but they measure different memory subsystems. Digit span (forward) loads on the phonological loop — verbal, acoustic working memory — whereas the Corsi block test loads on the visuospatial sketchpad. Many people have notably different scores on the two tests, reflecting individual strengths in one modality versus the other. Neurological patients can show dramatic dissociations, confirming these are distinct brain systems.</p>
+      </details>
+
+      <details>
+        <summary>Can I improve my visuospatial working memory with this test?</summary>
+        <p>Yes, with caveats. Repeated practice on the Corsi task reliably improves Corsi span itself (near-transfer). Evidence for far-transfer to untrained visuospatial tasks is more mixed, but moderate near-transfer effects to closely related tasks (like spatial n-back or pattern recall) are generally supported. For the best cognitive benefits, combine Corsi training with a variety of visuospatial challenges rather than a single task alone.</p>
+      </details>
+
+      <h2>Related Games</h2>
+      <ul>
+        <li><a href="working-memory.html">Working Memory Matrix</a> — Dual-task working memory challenge combining spatial and verbal demands.</li>
+        <li><a href="spatial-n-back.html">Spatial N-Back</a> — Track whether a square's position matches where it appeared N steps ago.</li>
+        <li><a href="visual-pattern-recall.html">Visual Pattern Recall</a> — Memorize a grid pattern and reconstruct it from memory.</li>
+        <li><a href="digit-span-forward.html">Digit Span Forward</a> — The verbal counterpart to the Corsi test; measures phonological loop capacity.</li>
+      </ul>
+    </article>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer__inner container">
+      <div class="footer__brand">
+        <a class="nav__brand" href="../"><svg viewBox="0 0 32 32" fill="none" width="28" height="28"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg><span>BrainForge</span></a>
+        <p class="footer__tagline">Science-based cognitive training, free and in-browser.</p>
+      </div>
+      <div class="footer__col"><h3 class="footer__heading">Categories</h3><ul><li><a href="../working-memory-games.html">Working Memory</a></li><li><a href="../attention-games.html">Attention</a></li><li><a href="../processing-speed-games.html">Processing Speed</a></li><li><a href="../executive-function-games.html">Executive Function</a></li><li><a href="../reaction-time-games.html">Reaction Time</a></li><li><a href="../all-games.html">All Games</a></li></ul></div>
+      <div class="footer__col"><h3 class="footer__heading">Popular Games</h3><ul><li><a href="corsi-block.html">Corsi Block Test</a></li><li><a href="working-memory.html">Working Memory Matrix</a></li><li><a href="digit-span-forward.html">Digit Span</a></li><li><a href="spatial-n-back.html">Spatial N-Back</a></li><li><a href="dual-n-back.html">Dual N-Back</a></li></ul></div>
+      <div class="footer__col"><h3 class="footer__heading">Legal</h3><ul><li><a href="../legal/privacy-policy.html">Privacy Policy</a></li><li><a href="../legal/terms-of-service.html">Terms of Service</a></li><li><a href="../legal/cookie-policy.html">Cookie Policy</a></li></ul></div>
+    </div>
+    <p class="footer__copy container">&copy; 2026 BrainForge. All rights reserved.</p>
+  </footer>
+
+  <div class="cookie-banner" role="dialog" aria-label="Cookie consent">
+    <div class="cookie-banner__inner">
+      <p>We use cookies to save your progress. <a href="../legal/cookie-policy.html">Learn more</a>.</p>
+      <div class="cookie-banner__buttons">
+        <button class="btn btn--primary btn--sm cookie-accept">Accept</button>
+        <button class="btn btn--ghost btn--sm cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/audio.js"></script>
+  <script src="../js/core/game-engine.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/games/corsi-block.js"></script>
+</body>
+</html>

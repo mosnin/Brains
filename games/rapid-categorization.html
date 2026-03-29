@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rapid Categorization Task - Processing Speed Brain Game | BrainForge</title>
+  <meta name="description" content="Train processing speed with the Rapid Categorization Task. Quickly categorize words into semantic groups. Measures semantic processing speed. Free brain training." />
+  <meta name="keywords" content="categorization task brain training, rapid categorization, semantic processing speed, processing speed game, cognitive training" />
+  <link rel="canonical" href="https://brainforge.app/games/rapid-categorization.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Rapid Categorization Task | BrainForge" />
+  <meta property="og:description" content="Train processing speed with the Rapid Categorization Task. Quickly categorize words into semantic groups. Measures semantic processing speed." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://brainforge.app/games/rapid-categorization.html" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/game.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Rapid Categorization Task",
+    "description": "Train processing speed with the Rapid Categorization Task. Quickly categorize words into semantic groups. Measures semantic processing speed.",
+    "url": "https://brainforge.app/games/rapid-categorization.html",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-nav__inner">
+      <a href="../" class="site-nav__logo" aria-label="BrainForge Home">
+        <svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+        <span>BrainForge</span>
+      </a>
+      <ul class="site-nav__links">
+        <li><a href="../working-memory-games.html">Working Memory</a></li>
+        <li><a href="../attention-games.html">Attention</a></li>
+        <li><a href="../processing-speed-games.html" aria-current="page">Processing Speed</a></li>
+        <li><a href="../executive-function-games.html">Executive Function</a></li>
+        <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+        <li><a href="../all-games.html">All Games</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol class="breadcrumb__list">
+      <li class="breadcrumb__item"><a href="../">Home</a></li>
+      <li class="breadcrumb__item"><a href="../processing-speed-games.html">Processing Speed Games</a></li>
+      <li class="breadcrumb__item" aria-current="page">Rapid Categorization Task</li>
+    </ol>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="game-hero">
+    <div class="game-hero__inner">
+      <div class="game-hero__badge">Processing Speed</div>
+      <h1 class="game-hero__title">Rapid Categorization Task</h1>
+      <p class="game-hero__subtitle">A word flashes on screen — press its category before the timer runs out. Train semantic processing speed across 30 progressive levels with increasingly abstract and multiple categories.</p>
+    </div>
+  </header>
+
+  <!-- Game Container -->
+  <main id="main-content">
+    <div class="game-wrap">
+
+      <div id="game-container">
+        <!-- Level Select -->
+        <div id="level-select">
+          <h2 class="level-select__title">Select Level</h2>
+          <div id="level-select-grid"></div>
+        </div>
+
+        <!-- HUD -->
+        <div id="game-hud">
+          <div class="hud-item">
+            <span class="hud-item__label">Level</span>
+            <span class="hud-item__value" id="hud-level">1</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-item__label">Score</span>
+            <span class="hud-item__value" id="hud-score">0%</span>
+          </div>
+          <div class="hud-item hud-timer-wrap">
+            <span id="hud-timer"></span>
+            <div class="hud-timer-bar-bg">
+              <div class="hud-timer-bar" id="hud-timer-bar"></div>
+            </div>
+          </div>
+          <button id="pause-btn" aria-label="Pause game">⏸</button>
+        </div>
+
+        <!-- Game Area -->
+        <div id="game-area"></div>
+
+        <!-- Overlay (results / pause) -->
+        <div id="game-overlay"></div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <section class="game-content">
+
+      <h2>How to Play</h2>
+      <p>A word appears in the center of the screen. At the bottom you will see two or four category buttons — your job is to press the correct category for the word before the per-item timer runs out. A shrinking color bar beneath the word shows how much time remains for each item.</p>
+      <p>There are 20 to 30 items per level, depending on the level. Pass with 80% or more correct to unlock the next level. Early levels use simple, clear-cut categories (Animal vs. Object). As you progress through 30 levels, categories become more abstract (Fast vs. Slow) and eventually expand to four simultaneous choices (Animal / Plant / Object / Person), demanding faster and more precise semantic retrieval.</p>
+
+      <h2>What It Measures</h2>
+      <p>This task measures <strong>semantic processing speed</strong> — how quickly your brain can retrieve the meaning of a word and match it to an abstract category. It taxes the speed of <strong>lexical access</strong>, the rate at which word meanings are activated in long-term memory, and <strong>categorical perception</strong>, the ability to rapidly assign stimuli to abstract conceptual groups. At higher levels, the short time limits additionally stress <strong>response selection speed</strong> under cognitive load.</p>
+
+      <h2>Research Background</h2>
+      <p>The rapid categorization paradigm has deep roots in cognitive neuroscience. Thorpe et al. (1996) famously demonstrated that the human visual system can categorize natural scenes in under 150 ms, with category-selective EEG signals emerging at around 150 ms post-stimulus. This work revealed that semantic categorization is far faster than previously believed and involves rapid feedforward processing in the visual cortex. More broadly, processing speed — as operationalized by tasks like this one — is one of the most heritable and longitudinally stable cognitive traits, and it predicts academic and occupational outcomes in multiple large-scale studies. Training semantic retrieval speed may strengthen the neural pathways linking visual word form areas to semantic memory stores in the temporal cortex.</p>
+
+      <h2>FAQ</h2>
+
+      <details>
+        <summary>What happens if I run out of time on an item?</summary>
+        <p>A timeout counts as an incorrect response. The correct category button lights up green so you can learn from the miss, and a timer icon appears in the feedback display. Missing items due to time pressure is normal, especially at higher levels — the goal is to push your speed while maintaining accuracy above 80%.</p>
+      </details>
+
+      <details>
+        <summary>How were the word lists chosen?</summary>
+        <p>Words were selected to be unambiguous members of their categories and to span a range of word frequencies. For concrete categories (Animal, Object, Food, Tool) the classifications are objective. For the abstract categories (Fast, Slow), words that colloquially imply speed (Jet, Bullet) or slowness (Snail, Glacier) are used — the task here measures how quickly you can retrieve the implied semantic feature rather than relying on perceptual judgment.</p>
+      </details>
+
+      <details>
+        <summary>Why does difficulty jump noticeably at levels 13 and 19?</summary>
+        <p>Levels 13–18 introduce the Living vs. Non-Living distinction, which requires attributing biological properties to words rather than simply matching surface-level features. Levels 19–24 use abstract dimensional categories (Fast/Slow), which require inferring a property from the word's typical referent. Both shifts require more conceptual processing than the earlier perceptual categories, which is why even experienced players often notice a step-change in difficulty.</p>
+      </details>
+
+      <h2>Related Games</h2>
+      <ul class="related-games-list">
+        <li><a href="symbol-digit-matching.html">Symbol-Digit Matching</a></li>
+        <li><a href="visual-processing-speed.html">Visual Processing Speed Test</a></li>
+        <li><a href="timed-decision.html">Timed Decision</a></li>
+        <li><a href="stroop-color-word.html">Stroop Color-Word</a></li>
+      </ul>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <a href="../" class="site-nav__logo" aria-label="BrainForge Home">
+          <svg viewBox="0 0 32 32" fill="none" width="28" height="28"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+          <span>BrainForge</span>
+        </a>
+        <p class="site-footer__tagline">Free cognitive training backed by science.</p>
+      </div>
+      <nav class="site-footer__nav" aria-label="Footer navigation">
+        <div class="site-footer__col">
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="../working-memory-games.html">Working Memory</a></li>
+            <li><a href="../attention-games.html">Attention</a></li>
+            <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+            <li><a href="../executive-function-games.html">Executive Function</a></li>
+            <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+            <li><a href="../all-games.html">All Games</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h3>Popular Games</h3>
+          <ul>
+            <li><a href="visual-processing-speed.html">Visual Processing Speed</a></li>
+            <li><a href="rapid-categorization.html">Rapid Categorization</a></li>
+            <li><a href="symbol-digit-matching.html">Symbol-Digit Matching</a></li>
+            <li><a href="stroop-color-word.html">Stroop Color-Word</a></li>
+            <li><a href="timed-decision.html">Timed Decision</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../legal/terms-of-service.html">Terms of Service</a></li>
+            <li><a href="../legal/cookie-policy.html">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+      <p>&copy; <span id="footer-year">2026</span> BrainForge. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner">
+    <div class="cookie-banner__inner">
+      <p>We use cookies. <a href="../legal/cookie-policy.html">Learn more</a>.</p>
+      <div class="cookie-banner__buttons">
+        <button class="btn btn--primary btn--sm cookie-accept">Accept</button>
+        <button class="btn btn--ghost btn--sm cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/audio.js"></script>
+  <script src="../js/core/game-engine.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/games/rapid-categorization.js"></script>
+
+  <script>
+    // Footer year
+    document.getElementById("footer-year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Letter Span Memory Test Online - Short-Term Memory Training | BrainForge</title>
+  <meta name="description" content="Test your verbal short-term memory with the Letter Span task. Memorize and recall letter sequences. Based on Baddeley's phonological loop model. Free.">
+  <meta name="keywords" content="letter span memory test, verbal short-term memory, phonological loop, working memory training, letter recall test">
+  <meta property="og:title" content="Letter Span Memory Test Online | BrainForge">
+  <meta property="og:description" content="Test your verbal short-term memory with the Letter Span task. Based on Baddeley's phonological loop model. Free online.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://brainforge.com/games/letter-span.html">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/game.css">
+  <style>
+    /* Letter Span specific styles */
+    .ls-letter-display {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 1.5rem;
+      border-radius: 1rem;
+      background: var(--bg-elevated);
+      border: 2px solid var(--primary-500);
+      font-size: 5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: 0;
+      box-shadow: 0 0 32px rgba(79, 107, 245, 0.25);
+      transition: opacity 0.1s ease;
+    }
+    .ls-letter-display.ls-letter-blank {
+      border-color: var(--bg-elevated);
+      box-shadow: none;
+      color: transparent;
+    }
+    .ls-phase-label {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    .ls-input-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .ls-typed-display {
+      min-width: 220px;
+      padding: 0.6rem 1rem;
+      background: var(--bg-elevated);
+      border: 2px solid var(--primary-500);
+      border-radius: 0.5rem;
+      color: var(--text-primary);
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .ls-clear-btn {
+      padding: 0.5rem 0.9rem;
+      font-size: 0.85rem;
+    }
+    .ls-instructions {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+      margin-bottom: 1rem;
+    }
+    .ls-keyboard {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 1.25rem;
+    }
+    .ls-keyboard-row {
+      display: flex;
+      gap: 5px;
+    }
+    .ls-key {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-elevated);
+      border: 1px solid var(--bg-elevated);
+      border-radius: 6px;
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.12s, transform 0.08s, border-color 0.12s;
+    }
+    .ls-key:hover {
+      background: var(--primary-500);
+      border-color: var(--primary-500);
+      transform: translateY(-1px);
+    }
+    .ls-key:active {
+      transform: translateY(1px);
+    }
+    .ls-key--vowel {
+      opacity: 0.35;
+      pointer-events: none;
+      cursor: default;
+    }
+    .ls-submit-row {
+      display: flex;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+    .ls-feedback {
+      text-align: center;
+      font-size: 1.2rem;
+      padding: 1.25rem 2rem;
+      border-radius: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .ls-feedback--correct {
+      background: rgba(34, 197, 94, 0.12);
+      color: var(--success);
+      border: 1px solid var(--success);
+    }
+    .ls-feedback--wrong {
+      background: rgba(239, 68, 68, 0.12);
+      color: var(--error);
+      border: 1px solid var(--error);
+    }
+    .ls-feedback--wrong strong {
+      color: var(--text-primary);
+    }
+    .ls-feedback-icon {
+      font-size: 1.3rem;
+      margin-right: 0.4rem;
+    }
+    .ls-icon--correct { color: var(--success); }
+    .ls-icon--wrong   { color: var(--error); }
+    .ls-trial-progress {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+    }
+    @media (max-width: 480px) {
+      .ls-letter-display { width: 120px; height: 120px; font-size: 3.5rem; }
+      .ls-key { width: 32px; height: 32px; font-size: 0.78rem; }
+      .ls-typed-display { min-width: 160px; font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="site-nav container">
+      <a class="site-nav__brand" href="../">
+        <svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+        <span>BrainForge</span>
+      </a>
+      <ul class="site-nav__links">
+        <li><a href="../">Home</a></li>
+        <li><a href="../working-memory-games.html">Working Memory</a></li>
+        <li><a href="../attention-games.html">Attention</a></li>
+        <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+        <li><a href="../executive-function-games.html">Executive Function</a></li>
+        <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+        <li><a href="../all-games.html">All Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="game-page">
+    <div class="container">
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="../">Home</a></li>
+          <li class="breadcrumb__item"><a href="../working-memory-games.html">Working Memory Games</a></li>
+          <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Letter Span Memory Test</li>
+        </ol>
+      </nav>
+
+      <div class="game-header">
+        <h1 class="game-header__title">Letter Span Memory Test</h1>
+        <p class="game-header__desc">Memorize sequences of letters and recall them in order. Trains your phonological loop and verbal short-term memory.</p>
+      </div>
+
+      <!-- Game Container -->
+      <div id="game-container">
+        <div id="level-select">
+          <h2 class="level-select__title">Select Level</h2>
+          <div id="level-select-grid"></div>
+        </div>
+
+        <div id="game-hud">
+          <div class="hud-item">
+            <span class="hud-item__label">Level</span>
+            <span class="hud-item__value" id="hud-level">1</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-item__label">Score</span>
+            <span class="hud-item__value" id="hud-score">0%</span>
+          </div>
+          <div class="hud-item hud-timer-wrap">
+            <span id="hud-timer"></span>
+            <div class="hud-timer-bar-bg"><div class="hud-timer-bar" id="hud-timer-bar"></div></div>
+          </div>
+          <button id="pause-btn">&#9208;</button>
+        </div>
+
+        <div id="game-area"></div>
+        <div id="game-overlay"></div>
+      </div>
+      <!-- End Game Container -->
+
+      <div class="game-content">
+
+        <section class="content-section">
+          <h2>How to Play</h2>
+          <p>The Letter Span task measures how many letters you can hold in short-term memory. Each trial shows a sequence of consonants one at a time on screen. Watch carefully, then use the on-screen keyboard (or your physical keyboard) to type the letters back <em>in the exact order</em> you saw them.</p>
+          <ul>
+            <li>Only consonants are used (B, C, D, F, G, H, J, K, L, M, N, P, Q, R, S, T, V, W, X, Z).</li>
+            <li>Each level contains 5 trials. Score 80% or higher to unlock the next level.</li>
+            <li>Sequences grow longer and are displayed faster as levels increase.</li>
+            <li>Both uppercase and lowercase input are accepted.</li>
+          </ul>
+        </section>
+
+        <section class="content-section">
+          <h2>What It Measures</h2>
+          <p>Letter Span is a classic measure of <strong>verbal short-term memory capacity</strong> — specifically the <strong>phonological loop</strong>, one of the core components of Baddeley and Hitch's (1974) multi-component working memory model. The phonological loop stores a limited amount of speech-based information and is linked to language learning, reading, and verbal reasoning.</p>
+          <p>Average adult forward span is 6–7 items. Scores below 5 may indicate reduced phonological working memory capacity, while consistently recalling 9+ letters suggests exceptional verbal memory.</p>
+        </section>
+
+        <section class="content-section">
+          <h2>Research</h2>
+          <p>Baddeley's (2000) updated working memory model identifies the phonological loop as critical for maintaining verbal information through subvocal rehearsal. Letter span tasks are used clinically to screen for dyslexia, ADHD, and language processing disorders (Gathercole et al., 2003). Training phonological working memory has been shown to transfer to improved reading comprehension in children (Dahlin, 2011) and older adults (Borella et al., 2010).</p>
+        </section>
+
+        <section class="content-section">
+          <h2>Frequently Asked Questions</h2>
+
+          <details class="faq-item">
+            <summary class="faq-item__question">Why are only consonants used, not all letters?</summary>
+            <p class="faq-item__answer">Consonants are harder to confuse acoustically than vowels and avoid accidental word formation, which would give some sequences an unfair memory advantage. Using consonants only keeps each trial difficulty consistent and isolates pure phonological span.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-item__question">What is a good letter span score?</summary>
+            <p class="faq-item__answer">Most adults score between 5 and 7 letters. Reaching level 9–12 (6–7 letters) is average. Levels 13–18 (7–9 letters) indicate above-average verbal memory, and levels 19+ (9+ letters) represent exceptional phonological capacity.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-item__question">Can I improve my letter span with practice?</summary>
+            <p class="faq-item__answer">Yes. Regular practice with span tasks strengthens the phonological loop and rehearsal strategies. Research suggests 4–6 weeks of consistent training can expand verbal memory capacity and improve related skills like reading and vocabulary retention.</p>
+          </details>
+        </section>
+
+        <section class="content-section">
+          <h2>Related Games</h2>
+          <ul class="related-games">
+            <li><a href="digit-span-forward.html">Digit Span Forward</a> &mdash; Classic number sequence memory test</li>
+            <li><a href="digit-span-backward.html">Digit Span Backward</a> &mdash; Recall digits in reverse order</li>
+            <li><a href="working-memory.html">Working Memory Test</a> &mdash; Comprehensive working memory assessment</li>
+            <li><a href="dual-n-back.html">Dual N-Back</a> &mdash; Advanced working memory training</li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">
+        <a class="site-nav__brand" href="../">
+          <svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+          <span>BrainForge</span>
+        </a>
+        <p>Science-backed cognitive training games designed to challenge and strengthen your mind.</p>
+      </div>
+      <div class="site-footer__links">
+        <div class="footer-col">
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="../working-memory-games.html">Working Memory</a></li>
+            <li><a href="../attention-games.html">Attention</a></li>
+            <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+            <li><a href="../executive-function-games.html">Executive Function</a></li>
+            <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+            <li><a href="../all-games.html">All Games</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Popular Games</h3>
+          <ul>
+            <li><a href="dual-n-back.html">Dual N-Back</a></li>
+            <li><a href="digit-span-forward.html">Digit Span Forward</a></li>
+            <li><a href="letter-span.html">Letter Span</a></li>
+            <li><a href="memory-updating.html">Memory Updating</a></li>
+            <li><a href="working-memory.html">Working Memory Test</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../legal/terms-of-service.html">Terms of Service</a></li>
+            <li><a href="../legal/cookie-policy.html">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner">
+    <div class="cookie-banner__inner">
+      <p>We use cookies. <a href="../legal/cookie-policy.html">Learn more</a>.</p>
+      <div class="cookie-banner__buttons">
+        <button class="btn btn--primary btn--sm cookie-accept">Accept</button>
+        <button class="btn btn--ghost btn--sm cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/audio.js"></script>
+  <script src="../js/core/game-engine.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/games/letter-span.js"></script>
+</body>
+</html>

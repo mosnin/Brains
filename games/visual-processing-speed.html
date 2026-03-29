@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visual Processing Speed Test - Perceptual Speed Training | BrainForge</title>
+  <meta name="description" content="Test your visual processing speed online. Identify briefly flashed patterns. Measures perceptual speed and processing efficiency. Free online cognitive test." />
+  <meta name="keywords" content="visual processing speed test, perceptual speed, processing efficiency, cognitive test, brain training, pattern recognition" />
+  <link rel="canonical" href="https://brainforge.app/games/visual-processing-speed.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Visual Processing Speed Test | BrainForge" />
+  <meta property="og:description" content="Test your visual processing speed online. Identify briefly flashed patterns. Measures perceptual speed and processing efficiency." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://brainforge.app/games/visual-processing-speed.html" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/game.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Visual Processing Speed Test",
+    "description": "Test your visual processing speed online. Identify briefly flashed patterns. Measures perceptual speed and processing efficiency.",
+    "url": "https://brainforge.app/games/visual-processing-speed.html",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-nav__inner">
+      <a href="../" class="site-nav__logo" aria-label="BrainForge Home">
+        <svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+        <span>BrainForge</span>
+      </a>
+      <ul class="site-nav__links">
+        <li><a href="../working-memory-games.html">Working Memory</a></li>
+        <li><a href="../attention-games.html">Attention</a></li>
+        <li><a href="../processing-speed-games.html" aria-current="page">Processing Speed</a></li>
+        <li><a href="../executive-function-games.html">Executive Function</a></li>
+        <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+        <li><a href="../all-games.html">All Games</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol class="breadcrumb__list">
+      <li class="breadcrumb__item"><a href="../">Home</a></li>
+      <li class="breadcrumb__item"><a href="../processing-speed-games.html">Processing Speed Games</a></li>
+      <li class="breadcrumb__item" aria-current="page">Visual Processing Speed Test</li>
+    </ol>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="game-hero">
+    <div class="game-hero__inner">
+      <div class="game-hero__badge">Processing Speed</div>
+      <h1 class="game-hero__title">Visual Processing Speed Test</h1>
+      <p class="game-hero__subtitle">A brief pattern flashes on screen — identify it from four choices. Trains perceptual speed and processing efficiency across 30 progressive levels.</p>
+    </div>
+  </header>
+
+  <!-- Game Container -->
+  <main id="main-content">
+    <div class="game-wrap">
+
+      <div id="game-container">
+        <!-- Level Select -->
+        <div id="level-select">
+          <h2 class="level-select__title">Select Level</h2>
+          <div id="level-select-grid"></div>
+        </div>
+
+        <!-- HUD -->
+        <div id="game-hud">
+          <div class="hud-item">
+            <span class="hud-item__label">Level</span>
+            <span class="hud-item__value" id="hud-level">1</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-item__label">Score</span>
+            <span class="hud-item__value" id="hud-score">0%</span>
+          </div>
+          <div class="hud-item hud-timer-wrap">
+            <span id="hud-timer"></span>
+            <div class="hud-timer-bar-bg">
+              <div class="hud-timer-bar" id="hud-timer-bar"></div>
+            </div>
+          </div>
+          <button id="pause-btn" aria-label="Pause game">⏸</button>
+        </div>
+
+        <!-- Game Area -->
+        <div id="game-area"></div>
+
+        <!-- Overlay (results / pause) -->
+        <div id="game-overlay"></div>
+      </div>
+
+    </div>
+
+    <!-- SEO Content -->
+    <section class="game-content">
+
+      <h2>How to Play</h2>
+      <p>Each round begins with a brief flash of a grid pattern — circles arranged in a grid, some filled and some empty. The pattern disappears after a short interval (ranging from 1,500 ms at beginner levels down to just 100 ms at expert levels). Your task is to select which of the four displayed options exactly matches the original pattern.</p>
+      <p>There are 10 rounds per level. Pass with 80% or more correct to unlock the next level. As you progress, grids grow from 3×3 to 6×6, and the flash duration shortens dramatically — pushing the limits of your perceptual speed.</p>
+
+      <h2>What It Measures</h2>
+      <p>This task directly targets <strong>visual processing speed</strong> — how quickly your brain can encode a visual scene into working memory. It also taxes <strong>perceptual speed</strong>, a core component of fluid intelligence, and <strong>short-term visual memory</strong>, since you must hold the pattern in mind after it disappears. The distractor choices require you to discriminate fine spatial differences, adding a component of <strong>pattern discrimination</strong>.</p>
+
+      <h2>Research Background</h2>
+      <p>Processing speed is one of the most studied cognitive constructs. Jensen (2006) demonstrated strong correlations between elementary perceptual speed measures and general intelligence (<em>g</em>), suggesting that raw speed of information encoding underlies higher-order cognition. The <em>Processing Speed Tests</em> (PST) battery and its predecessors have long used brief visual exposures (tachistoscopes historically, now software) to assess perceptual encoding rate. Research by Salthouse (1996) showed that age-related cognitive decline is largely mediated by processing speed slowing, making this kind of training particularly relevant for healthy aging.</p>
+
+      <h2>FAQ</h2>
+
+      <details>
+        <summary>Why does the pattern disappear so quickly at higher levels?</summary>
+        <p>The flash duration is the key manipulation. At 100 ms, the pattern is visible for roughly one saccade cycle — your eye barely has time to fixate on the stimulus before it is gone. This forces your visual system to rely on iconic memory, a brief high-capacity but rapidly-decaying store, and to rapidly transfer information to working memory. Training at these durations is thought to improve the speed of that transfer.</p>
+      </details>
+
+      <details>
+        <summary>How are the wrong choices (distractors) generated?</summary>
+        <p>Each distractor is created by swapping one or two filled cells with empty cells in the correct pattern. At easier levels, distractors differ by two cells, making them easier to reject. At harder levels, distractors differ by only one cell, requiring very precise encoding to identify the correct pattern.</p>
+      </details>
+
+      <details>
+        <summary>Is this test a valid measure of my IQ or cognitive ability?</summary>
+        <p>This game is designed for training and entertainment, not clinical assessment. While the underlying construct — perceptual speed — correlates moderately with IQ measures in research settings, a single casual game cannot produce a valid or reliable psychometric estimate of intelligence. For clinical cognitive assessment, please consult a qualified neuropsychologist.</p>
+      </details>
+
+      <h2>Related Games</h2>
+      <ul class="related-games-list">
+        <li><a href="symbol-digit-matching.html">Symbol-Digit Matching</a></li>
+        <li><a href="rapid-categorization.html">Rapid Categorization Task</a></li>
+        <li><a href="pattern-matching-speed.html">Pattern Matching Speed</a></li>
+        <li><a href="timed-decision.html">Timed Decision</a></li>
+      </ul>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <a href="../" class="site-nav__logo" aria-label="BrainForge Home">
+          <svg viewBox="0 0 32 32" fill="none" width="28" height="28"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+          <span>BrainForge</span>
+        </a>
+        <p class="site-footer__tagline">Free cognitive training backed by science.</p>
+      </div>
+      <nav class="site-footer__nav" aria-label="Footer navigation">
+        <div class="site-footer__col">
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="../working-memory-games.html">Working Memory</a></li>
+            <li><a href="../attention-games.html">Attention</a></li>
+            <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+            <li><a href="../executive-function-games.html">Executive Function</a></li>
+            <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+            <li><a href="../all-games.html">All Games</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h3>Popular Games</h3>
+          <ul>
+            <li><a href="visual-processing-speed.html">Visual Processing Speed</a></li>
+            <li><a href="rapid-categorization.html">Rapid Categorization</a></li>
+            <li><a href="symbol-digit-matching.html">Symbol-Digit Matching</a></li>
+            <li><a href="stroop-color-word.html">Stroop Color-Word</a></li>
+            <li><a href="timed-decision.html">Timed Decision</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../legal/terms-of-service.html">Terms of Service</a></li>
+            <li><a href="../legal/cookie-policy.html">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+      <p>&copy; <span id="footer-year">2026</span> BrainForge. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner">
+    <div class="cookie-banner__inner">
+      <p>We use cookies. <a href="../legal/cookie-policy.html">Learn more</a>.</p>
+      <div class="cookie-banner__buttons">
+        <button class="btn btn--primary btn--sm cookie-accept">Accept</button>
+        <button class="btn btn--ghost btn--sm cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/audio.js"></script>
+  <script src="../js/core/game-engine.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/games/visual-processing-speed.js"></script>
+
+  <script>
+    // Footer year
+    document.getElementById("footer-year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

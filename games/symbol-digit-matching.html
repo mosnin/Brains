@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Symbol Digit Matching Test Online - Processing Speed | BrainForge</title>
+  <meta name="description" content="Test processing speed with the Symbol Digit Matching Test (SDMT). Match symbols to digits as quickly as possible. Based on Smith's SDMT. Free online cognitive test." />
+  <meta name="keywords" content="symbol digit test online, SDMT, symbol digit modalities test, processing speed test, cognitive speed, Smith SDMT" />
+  <meta property="og:title" content="Symbol Digit Matching Test Online - Processing Speed | BrainForge" />
+  <meta property="og:description" content="Test processing speed with the Symbol Digit Matching Test (SDMT). Match symbols to digits as quickly as possible. Free online cognitive test." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://brainforge.io/games/symbol-digit-matching.html" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/game.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="nav__brand" href="../">
+        <svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+        <span>BrainForge</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="../working-memory-games.html">Working Memory</a></li>
+        <li><a href="../attention-games.html">Attention</a></li>
+        <li><a href="../processing-speed-games.html" class="active">Processing Speed</a></li>
+        <li><a href="../executive-function-games.html">Executive Function</a></li>
+        <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+        <li><a href="../all-games.html">All Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb container">
+    <ol class="breadcrumb__list">
+      <li class="breadcrumb__item"><a href="../">Home</a></li>
+      <li class="breadcrumb__item"><a href="../processing-speed-games.html">Processing Speed Games</a></li>
+      <li class="breadcrumb__item breadcrumb__item--active">Symbol Digit Matching Test</li>
+    </ol>
+  </div>
+
+  <main class="main container">
+
+    <!-- Game header -->
+    <div class="game-header">
+      <h1 class="game-header__title">Symbol Digit Matching Test</h1>
+      <p class="game-header__subtitle">Look up each symbol in the key and type its matching digit as fast as you can.</p>
+    </div>
+
+    <!-- Game container (engine-managed) -->
+    <div id="game-container">
+      <div id="level-select">
+        <h2 class="level-select__title">Select Level</h2>
+        <div id="level-select-grid"></div>
+      </div>
+      <div id="game-hud">
+        <div class="hud-item">
+          <span class="hud-item__label">Level</span>
+          <span class="hud-item__value" id="hud-level">1</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-item__label">Score</span>
+          <span class="hud-item__value" id="hud-score">0%</span>
+        </div>
+        <div class="hud-item hud-timer-wrap">
+          <span id="hud-timer"></span>
+          <div class="hud-timer-bar-bg">
+            <div class="hud-timer-bar" id="hud-timer-bar"></div>
+          </div>
+        </div>
+        <button id="pause-btn">&#9208;</button>
+      </div>
+      <div id="game-area"></div>
+      <div id="game-overlay"></div>
+    </div>
+
+    <!-- SEO / educational content -->
+    <section class="game-content">
+
+      <h2>How to Play</h2>
+      <p>A <strong>key table</strong> at the top of the game maps a set of symbols to digits. A single symbol is displayed large in the centre of the screen. Your task is to find that symbol in the key table and click (or type) its matching digit as quickly as possible. The next symbol appears immediately after your response — the goal is to process as many correct matches as you can before time runs out.</p>
+      <ul>
+        <li><strong>Early levels (1–3):</strong> only 4 symbols in the key — use click buttons.</li>
+        <li><strong>Mid levels (7–15):</strong> full 9-symbol key, increasing time pressure.</li>
+        <li><strong>Advanced levels (16+):</strong> keyboard input required for speed.</li>
+        <li><strong>Expert levels (22–30):</strong> 14 symbols in the key; some levels rotate the key every trial.</li>
+      </ul>
+      <p>Score = percentage of correct responses out of all attempted. Pass threshold is 80%.</p>
+
+      <h2>What It Measures</h2>
+      <p>The Symbol Digit Matching Test directly measures <strong>processing speed</strong> — how quickly the brain can perform a simple but effortful cognitive operation repeatedly. Unlike reaction time tasks, it requires looking up an association in working memory and executing the correct motor response, making it sensitive to:</p>
+      <ul>
+        <li>Psychomotor processing speed</li>
+        <li>Visual scanning efficiency</li>
+        <li>Working memory and associative learning</li>
+        <li>Sustained attention under time pressure</li>
+        <li>Cognitive flexibility (key-rotation levels)</li>
+      </ul>
+
+      <h2>Research</h2>
+      <p>The Symbol Digit Modalities Test (SDMT) was developed by Aaron Smith in 1982 as a brief, sensitive measure of brain dysfunction. Participants are given 90 seconds to pair symbols with their corresponding digits using a reference key — a format almost identical to what BrainForge implements here.</p>
+      <p>The SDMT is one of the most widely used neuropsychological screening tools in clinical practice. It is part of the <em>Minimal Assessment of Cognitive Function in Multiple Sclerosis (MACFIMS)</em> battery and has demonstrated sensitivity to subtle cognitive slowing in MS, traumatic brain injury, HIV-associated neurocognitive disorder, schizophrenia, and healthy ageing.</p>
+      <p>Because the task can be administered orally (spoken responses) or in written form, and now digitally with button presses, it remains versatile across populations. Processing speed measured by SDMT predicts functional outcomes including employment status, driving ability, and medication management in clinical samples (Sheridan et al., 2006; Benedict et al., 2006).</p>
+
+      <h2>FAQ</h2>
+
+      <details>
+        <summary>Why does the key table stay visible throughout the game?</summary>
+        <p>This is faithful to the original SDMT design — the key is always present because the task is measuring <em>how quickly</em> you can look up and execute associations, not whether you have memorised them. Over the course of a trial, most people develop increasing familiarity with the key through incidental learning, which itself reflects encoding speed and working memory efficiency. Advanced levels with a rotating key remove this advantage.</p>
+      </details>
+
+      <details>
+        <summary>Is typing faster than clicking?</summary>
+        <p>For most people, yes — especially at higher digit counts. Keyboard input removes the motor time needed to visually locate and click a button, allowing pure cognitive throughput to dominate the score. This is why BrainForge introduces keyboard-only mode at Level 16. If you find the keyboard levels noticeably harder, it may reflect a bottleneck in translating visual lookup into motor execution rather than in the lookup itself.</p>
+      </details>
+
+      <details>
+        <summary>What is a typical SDMT score?</summary>
+        <p>In standard clinical administration (90-second written or oral test), healthy adults aged 20–49 typically produce 55–70 correct responses. Performance declines with age; adults over 70 average around 35–45. On BrainForge's digital version the stimulus changes immediately after response, meaning the pacing differs from paper administration — your response count should not be compared directly to published norms, but relative improvement across sessions is meaningful.</p>
+      </details>
+
+      <h2>Related Games</h2>
+      <ul class="related-games">
+        <li><a href="visual-processing-speed.html">Visual Processing Speed</a></li>
+        <li><a href="rapid-categorization.html">Rapid Categorization</a></li>
+        <li><a href="pattern-matching-speed.html">Pattern Matching Speed</a></li>
+        <li><a href="timed-decision.html">Timed Decision Task</a></li>
+      </ul>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer__inner container">
+      <div class="footer__brand">
+        <a class="nav__brand" href="../">
+          <svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+          <span>BrainForge</span>
+        </a>
+        <p class="footer__tagline">Science-based cognitive training, free for everyone.</p>
+      </div>
+      <nav class="footer__nav">
+        <div class="footer__col">
+          <h3 class="footer__heading">Categories</h3>
+          <ul>
+            <li><a href="../working-memory-games.html">Working Memory</a></li>
+            <li><a href="../attention-games.html">Attention</a></li>
+            <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+            <li><a href="../executive-function-games.html">Executive Function</a></li>
+            <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+            <li><a href="../all-games.html">All Games</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__heading">Popular Games</h3>
+          <ul>
+            <li><a href="vigilance.html">Vigilance Task</a></li>
+            <li><a href="symbol-digit-matching.html">Symbol Digit Matching</a></li>
+            <li><a href="go-no-go.html">Go / No-Go Task</a></li>
+            <li><a href="flanker-task.html">Flanker Task</a></li>
+            <li><a href="continuous-performance.html">CPT</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__heading">Legal</h3>
+          <ul>
+            <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../legal/terms-of-service.html">Terms of Service</a></li>
+            <li><a href="../legal/cookie-policy.html">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <p class="footer__copy container">&copy; 2026 BrainForge. All rights reserved.</p>
+  </footer>
+
+  <!-- Cookie banner -->
+  <div class="cookie-banner">
+    <div class="cookie-banner__inner">
+      <p>We use cookies. <a href="../legal/cookie-policy.html">Learn more</a>.</p>
+      <div class="cookie-banner__buttons">
+        <button class="btn btn--primary btn--sm cookie-accept">Accept</button>
+        <button class="btn btn--ghost btn--sm cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/audio.js"></script>
+  <script src="../js/core/game-engine.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/games/symbol-digit-matching.js"></script>
+
+</body>
+</html>

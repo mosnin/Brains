@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visual Search Test Online - Selective Attention Game | BrainForge</title>
+  <meta name="description" content="Train selective attention with the Visual Search Task. Find target symbols among distractors. Based on Treisman's Feature Integration Theory. Free." />
+  <meta name="keywords" content="visual search test online, selective attention game, feature search, conjunction search, attention training" />
+  <link rel="canonical" href="https://brainforge.app/games/visual-search.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Visual Search Test Online - Selective Attention Game | BrainForge" />
+  <meta property="og:description" content="Train selective attention with the Visual Search Task. Find target symbols among distractors. Based on Treisman's Feature Integration Theory. Free." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/game.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Visual Search Test Online",
+    "description": "Train selective attention with the Visual Search Task. Find target symbols among distractors. Based on Treisman's Feature Integration Theory.",
+    "applicationCategory": "Game",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="nav__brand" href="../">
+        <svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+        <span>BrainForge</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="../">Home</a></li>
+        <li><a href="../working-memory-games.html">Working Memory</a></li>
+        <li><a href="../attention-games.html" aria-current="page">Attention</a></li>
+        <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+        <li><a href="../executive-function-games.html">Executive Function</a></li>
+        <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+        <li><a href="../all-games.html">All Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb container">
+    <nav aria-label="Breadcrumb">
+      <ol class="breadcrumb__list">
+        <li class="breadcrumb__item"><a href="../">Home</a></li>
+        <li class="breadcrumb__item"><a href="../attention-games.html">Attention Games</a></li>
+        <li class="breadcrumb__item" aria-current="page">Visual Search Test</li>
+      </ol>
+    </nav>
+  </div>
+
+  <!-- Page Header -->
+  <main class="container">
+    <div class="game-page-header">
+      <h1 class="game-page-header__title">Visual Search Test Online</h1>
+      <p class="game-page-header__subtitle">Find the target symbol hidden among distractors. Trains selective attention and visual filtering.</p>
+    </div>
+
+    <!-- Game Container -->
+    <div id="game-container">
+      <!-- Level Select -->
+      <div id="level-select">
+        <h2 class="level-select__title">Select Level</h2>
+        <div id="level-select-grid"></div>
+      </div>
+
+      <!-- HUD -->
+      <div id="game-hud">
+        <div class="hud-item">
+          <span class="hud-item__label">Level</span>
+          <span class="hud-item__value" id="hud-level">1</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-item__label">Score</span>
+          <span class="hud-item__value" id="hud-score">0%</span>
+        </div>
+        <div class="hud-item hud-timer-wrap">
+          <span id="hud-timer"></span>
+          <div class="hud-timer-bar-bg">
+            <div class="hud-timer-bar" id="hud-timer-bar"></div>
+          </div>
+        </div>
+        <button id="pause-btn" aria-label="Pause game">&#9208;</button>
+      </div>
+
+      <!-- Game Area -->
+      <div id="game-area"></div>
+
+      <!-- Overlay (for pause / level complete) -->
+      <div id="game-overlay"></div>
+    </div>
+
+    <!-- SEO Content -->
+    <section class="game-content">
+
+      <h2>How to Play</h2>
+      <p>A grid of symbols will appear on screen. Your goal is to find and click the <strong>target symbol</strong> shown at the top of the grid. The target appears exactly once; every other cell is a distractor. Click the correct symbol as quickly as possible to score maximum points. If you click the wrong cell, the trial is marked incorrect and the correct target is highlighted before the next trial begins.</p>
+      <p>As levels progress the grid grows larger, distractors become more similar to the target (conjunction search), and time limits per trial are introduced. You need at least <strong>80% accuracy across 10 trials</strong> to pass each level.</p>
+
+      <h2>What It Measures</h2>
+      <p>The Visual Search Task directly measures <strong>selective attention</strong> — the ability to focus on task-relevant information while filtering out irrelevant distractors. Early levels test <em>feature search</em>, where the target pops out immediately due to a unique property (colour or shape). Later levels introduce <em>conjunction search</em>, requiring serial inspection of items and engaging top-down attentional control. Performance metrics include accuracy, response time, and resistance to distractor interference.</p>
+
+      <h2>Research Background</h2>
+      <p>The visual search paradigm was formalised by <strong>Anne Treisman and Garry Gelade (1980)</strong> in their influential Feature Integration Theory (FIT). FIT proposes that basic features (colour, orientation, shape) are processed in parallel across the visual field, while conjunctions of features require focused serial attention. The theory introduced the concept of a <em>master map of locations</em> and <em>feature maps</em> that feed into object recognition. Subsequent work by <strong>Jeremy Wolfe</strong> (Guided Search model, 1994) showed that bottom-up salience and top-down knowledge guide the deployment of attention during search, dramatically reducing search times compared to purely random scanning. Modern neuroimaging studies implicate the fronto-parietal attention network — including the intraparietal sulcus and frontal eye fields — in controlling search priority maps.</p>
+
+      <h2>FAQ</h2>
+
+      <details>
+        <summary>What is the difference between feature search and conjunction search?</summary>
+        <p>In <strong>feature search</strong> the target differs from all distractors in a single basic attribute (e.g., a red item among blue items). It pops out automatically and search time is nearly constant regardless of how many distractors are present. In <strong>conjunction search</strong> the target is defined by a combination of features (e.g., a red vertical bar among red horizontal bars and blue vertical bars). This requires serial, item-by-item inspection and search time increases with set size.</p>
+      </details>
+
+      <details>
+        <summary>How does this game improve my attention?</summary>
+        <p>Repeated practice with visual search tasks strengthens the neural circuits responsible for deploying top-down attentional control. Training has been shown to speed target detection, reduce distractor interference, and improve the efficiency of attentional guidance — skills that transfer to everyday tasks such as reading, driving, and locating objects in cluttered environments.</p>
+      </details>
+
+      <details>
+        <summary>Why do later levels feel so much harder?</summary>
+        <p>At higher levels the distractors are deliberately chosen to share visual features with the target — a technique called <em>feature overlap</em>. This eliminates the pop-out effect, forcing your visual system to engage attentional resources for each item inspected. Combined with stricter time limits, this creates a demanding test of both accuracy and processing speed under interference.</p>
+      </details>
+
+      <h2>Related Games</h2>
+      <div class="related-games">
+        <a class="related-game-card" href="flanker-task.html">
+          <div class="related-game-card__icon">&#8592;&#8594;</div>
+          <div class="related-game-card__body">
+            <h3 class="related-game-card__title">Flanker Task</h3>
+            <p class="related-game-card__desc">Suppress flanker interference. Tests inhibitory control.</p>
+          </div>
+        </a>
+        <a class="related-game-card" href="continuous-performance.html">
+          <div class="related-game-card__icon">&#9673;</div>
+          <div class="related-game-card__body">
+            <h3 class="related-game-card__title">Continuous Performance</h3>
+            <p class="related-game-card__desc">Sustain attention across a long sequence of stimuli.</p>
+          </div>
+        </a>
+        <a class="related-game-card" href="vigilance.html">
+          <div class="related-game-card__icon">&#128065;</div>
+          <div class="related-game-card__body">
+            <h3 class="related-game-card__title">Vigilance Task</h3>
+            <p class="related-game-card__desc">Detect rare signals over extended monitoring periods.</p>
+          </div>
+        </a>
+        <a class="related-game-card" href="reaction-time.html">
+          <div class="related-game-card__icon">&#9889;</div>
+          <div class="related-game-card__body">
+            <h3 class="related-game-card__title">Reaction Time</h3>
+            <p class="related-game-card__desc">Measure and train your simple and choice reaction speed.</p>
+          </div>
+        </a>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a class="nav__brand" href="../">
+          <svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+          <span>BrainForge</span>
+        </a>
+        <p class="footer__tagline">Science-based cognitive training, free for everyone.</p>
+      </div>
+      <nav class="footer__col" aria-label="Categories">
+        <h4 class="footer__heading">Categories</h4>
+        <ul>
+          <li><a href="../working-memory-games.html">Working Memory</a></li>
+          <li><a href="../attention-games.html">Attention</a></li>
+          <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+          <li><a href="../executive-function-games.html">Executive Function</a></li>
+          <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+        </ul>
+      </nav>
+      <nav class="footer__col" aria-label="Popular games">
+        <h4 class="footer__heading">Popular Games</h4>
+        <ul>
+          <li><a href="visual-search.html">Visual Search Test</a></li>
+          <li><a href="flanker-task.html">Flanker Task</a></li>
+          <li><a href="continuous-performance.html">Continuous Performance</a></li>
+          <li><a href="reaction-time.html">Reaction Time</a></li>
+        </ul>
+      </nav>
+      <nav class="footer__col" aria-label="Legal">
+        <h4 class="footer__heading">Legal</h4>
+        <ul>
+          <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../legal/terms-of-service.html">Terms of Service</a></li>
+          <li><a href="../legal/cookie-policy.html">Cookie Policy</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="footer__copy container">&copy; 2026 BrainForge. All rights reserved.</p>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner">
+    <div class="cookie-banner__inner">
+      <p>We use cookies. <a href="../legal/cookie-policy.html">Learn more</a>.</p>
+      <div class="cookie-banner__buttons">
+        <button class="btn btn--primary btn--sm cookie-accept">Accept</button>
+        <button class="btn btn--ghost btn--sm cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/audio.js"></script>
+  <script src="../js/core/game-engine.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/games/visual-search.js"></script>
+
+</body>
+</html>

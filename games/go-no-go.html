@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Go/No-Go Task Online — Response Inhibition Test | BrainForge</title>
+  <meta name="description" content="Practice response inhibition with the Go/No-Go Task. Press for Go stimuli, withhold for No-Go. Free online test with 30 progressive levels." />
+  <meta name="keywords" content="go no-go task online, response inhibition test, impulse control test, go nogo cognitive test, inhibitory control brain training, ADHD attention test" />
+  <meta property="og:title" content="Go/No-Go Task Online — Response Inhibition Test | BrainForge" />
+  <meta property="og:description" content="Practice response inhibition with the Go/No-Go Task. Press for Go stimuli, withhold for No-Go. Free online test with 30 progressive levels." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://brainforge.app/games/go-no-go.html" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/game.css" />
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Go/No-Go Task",
+      "description": "Practice response inhibition with the Go/No-Go Task. Press for Go stimuli, withhold for No-Go. Free online test with 30 progressive levels.",
+      "url": "https://brainforge.app/games/go-no-go.html",
+      "genre": "Brain Training",
+      "gamePlatform": "Web Browser",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://brainforge.app/" },
+        { "@type": "ListItem", "position": 2, "name": "Executive Function Games", "item": "https://brainforge.app/executive-function-games.html" },
+        { "@type": "ListItem", "position": 3, "name": "Go/No-Go Task", "item": "https://brainforge.app/games/go-no-go.html" }
+      ]
+    }
+  ]
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="nav__brand" href="../">
+        <svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg>
+        <span>BrainForge</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="../working-memory-games.html">Working Memory</a></li>
+        <li><a href="../attention-games.html">Attention</a></li>
+        <li><a href="../processing-speed-games.html">Processing Speed</a></li>
+        <li><a href="../executive-function-games.html" class="active">Executive Function</a></li>
+        <li><a href="../reaction-time-games.html">Reaction Time</a></li>
+        <li><a href="../all-games.html">All Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav class="breadcrumb container" aria-label="Breadcrumb">
+    <ol class="breadcrumb__list">
+      <li class="breadcrumb__item"><a href="../">Home</a></li>
+      <li class="breadcrumb__item"><a href="../executive-function-games.html">Executive Function Games</a></li>
+      <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Go/No-Go Task</li>
+    </ol>
+  </nav>
+
+  <section class="game-hero container">
+    <div class="game-hero__meta">
+      <span class="game-hero__category">Executive Function</span>
+      <span class="game-hero__difficulty">30 Levels</span>
+    </div>
+    <h1 class="game-hero__title">Go/No-Go Task</h1>
+    <p class="game-hero__desc">
+      A fundamental test of response inhibition and impulse control. Press <strong>SPACE</strong> (or tap GO) for
+      the <strong>green circle</strong> (Go trial) and withhold completely for the <strong>red square</strong>
+      (No-Go trial). Measures your ability to stop automatic responses before they become actions.
+    </p>
+  </section>
+
+  <main class="game-main container" id="game-root">
+    <div id="game-container">
+      <div id="level-select">
+        <h2 class="level-select__title">Select Level</h2>
+        <div id="level-select-grid"></div>
+      </div>
+      <div id="game-hud">
+        <div class="hud-item"><span class="hud-item__label">Level</span><span class="hud-item__value" id="hud-level">1</span></div>
+        <div class="hud-item"><span class="hud-item__label">Score</span><span class="hud-item__value" id="hud-score">0%</span></div>
+        <div class="hud-item hud-timer-wrap"><span id="hud-timer"></span><div class="hud-timer-bar-bg"><div class="hud-timer-bar" id="hud-timer-bar"></div></div></div>
+        <button id="pause-btn" aria-label="Pause game">⏸</button>
+      </div>
+      <div id="game-area"></div>
+      <div id="game-overlay"></div>
+    </div>
+  </main>
+
+  <section class="game-content container">
+
+    <h2>How to Play the Go/No-Go Task</h2>
+    <p>
+      Each trial displays a shape in the center of the screen after a brief fixation cross. Your single job is to decide, in under a second, whether that shape warrants a response:
+    </p>
+    <ul>
+      <li><strong>Green circle — GO trial:</strong> Press <kbd>Space</kbd> or tap the on-screen <strong>GO</strong> button as quickly as you can. These are the majority of trials, making the pressing response feel automatic and habitual.</li>
+      <li><strong>Red square — NO-GO trial:</strong> Do <em>absolutely nothing</em>. Keep your hand still, resist the urge to press, and let the stimulus disappear on its own. Any key press or button tap on a NO-GO trial counts as a commission error.</li>
+    </ul>
+    <p>
+      The 30 levels systematically increase difficulty in two ways. First, the inter-stimulus interval shrinks: early levels give you 1,500 ms between stimuli, while late levels compress this to 550 ms, reducing the time your inhibitory control system has to prepare. Second, the ratio of NO-GO trials rises from 20% (Level 1) to 35% (Level 30), which paradoxically makes inhibition <em>harder</em> — the more often you see a GO, the stronger the prepotent press response becomes. Scoring 80% or higher on any level unlocks the next.
+    </p>
+    <p>
+      Your score on each level equals: <strong>(correct GO presses + correct NO-GO withholdings) ÷ total trials × 100%</strong>. Commission errors (pressing on NO-GO) and omission errors (failing to press on GO) both reduce your score.
+    </p>
+
+    <h2>What the Go/No-Go Task Measures</h2>
+    <p>
+      The Go/No-Go paradigm is the most widely used laboratory measure of <strong>response inhibition</strong> — the ability to suppress an action that has already been prepared or is about to be executed. This capacity is a cornerstone of executive function and daily impulse control.
+    </p>
+    <ul>
+      <li><strong>Response inhibition:</strong> The core construct — can you stop a habitual pressing response when context demands it? Commission error rate is the primary index of inhibitory failure.</li>
+      <li><strong>Impulsivity:</strong> High commission error rates correlate strongly with trait impulsivity, ADHD symptom severity, and substance use disorders across clinical and non-clinical populations.</li>
+      <li><strong>Sustained attention:</strong> Omission errors (missed GO trials) reflect lapses in vigilance across the level rather than true inhibitory failures — they separate inattention from impulsivity.</li>
+      <li><strong>Prepotent response suppression:</strong> The high GO percentage deliberately builds a strong automatic tendency to press. Inhibiting that tendency when a NO-GO appears requires active top-down executive control mediated by the right inferior frontal cortex.</li>
+    </ul>
+
+    <h2>Research Background</h2>
+    <p>
+      The theoretical roots of the Go/No-Go task trace to <strong>Franciscus Donders (1868)</strong>, who pioneered cognitive chronometry by measuring the time cost of adding a discrimination or selection requirement to a simple reaction time task. Donders's subtraction logic established that different cognitive operations consume measurable time and can be isolated experimentally — a framework that continues to shape cognitive neuroscience today.
+    </p>
+    <p>
+      The modern Go/No-Go paradigm specifically targets inhibitory control through the <strong>NoGo P3 ERP component</strong>: a positive-going brain wave peaking around 300–400 ms over right frontal electrodes, which is substantially larger on successful NO-GO trials than on GO trials. This ERP marker is used in research as an index of the neural resources deployed to suppress a response. Crucially, the amplitude of the NoGo P3 is reduced in individuals with ADHD, explaining their higher commission error rates even when they intend to stop.
+    </p>
+    <p>
+      Clinically, the Go/No-Go task is a standard component of ADHD neuropsychological assessments. Meta-analyses (Willcutt et al., 2005; Lijffijt et al., 2005) consistently show that children and adults with ADHD-Combined presentation commit significantly more commission errors than matched controls, while omission rates are elevated mainly in ADHD-Inattentive presentations. The task is also sensitive to the inhibition-disrupting effects of sleep deprivation, alcohol, and frontal lobe damage, making it a broad-purpose probe of behavioral control.
+    </p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+      <summary>Why are most stimuli GO signals?</summary>
+      <p>
+        Maintaining a high proportion of GO trials — typically 70–80% — is deliberate design, not arbitrary convenience. With mostly GO signals, your brain builds a strong prepotent (automatic, dominant) tendency to press on every stimulus. When a rare NO-GO then appears, you must actively inhibit that well-established habit in real time. If NO-GO stimuli were equally frequent, the task would primarily measure decision-making under uncertainty rather than inhibitory control of a prepotent response. The ratio is the key ingredient that creates the inhibitory demand.
+      </p>
+    </details>
+
+    <details>
+      <summary>What is the difference between a commission error and an omission error?</summary>
+      <p>
+        A <strong>commission error</strong> (false alarm) means you pressed on a NO-GO stimulus — the inhibitory brake failed and an impulsive response slipped through. A <strong>omission error</strong> (miss) means you failed to press on a GO stimulus — you either weren't attending or responded too slowly. These two error types have different cognitive interpretations: commission errors primarily reflect impulsivity and poor inhibitory control, while omission errors primarily reflect inattention or motor slowing. Research often reports them separately for this reason.
+      </p>
+    </details>
+
+    <details>
+      <summary>Can practicing the Go/No-Go Task improve real-world impulse control?</summary>
+      <p>
+        Research on cognitive training transfer is nuanced. Studies by Houben &amp; Wiers (2011) demonstrated that Go/No-Go training specifically directed at food- or alcohol-related stimuli can reduce consumption behavior in laboratory settings. For general impulse control, regular training shows most consistent improvement on the trained task itself and related inhibitory measures. Combining Go/No-Go practice with other executive function exercises — such as the Stop Signal Task and Stroop Test available on BrainForge — is the approach most likely to produce broader benefits, as it engages multiple facets of the inhibitory control system.
+      </p>
+    </details>
+
+    <h2>Related Games</h2>
+    <ul class="related-games-list">
+      <li><a href="stroop-color-word.html">Stroop Color-Word Test — Cognitive Interference &amp; Inhibitory Control</a></li>
+      <li><a href="stop-signal.html">Stop Signal Task — Cancel Responses in Progress</a></li>
+      <li><a href="flanker-task.html">Flanker Task — Selective Attention &amp; Conflict Monitoring</a></li>
+      <li><a href="sustained-attention.html">Sustained Attention — Vigilance Over Time</a></li>
+    </ul>
+
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer__inner container">
+      <div class="footer__brand">
+        <a class="nav__brand" href="../"><svg viewBox="0 0 32 32" fill="none" width="28" height="28"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg><span>BrainForge</span></a>
+        <p class="footer__tagline">Science-based cognitive training, free and in-browser.</p>
+      </div>
+      <div class="footer__col"><h3 class="footer__heading">Categories</h3><ul><li><a href="../working-memory-games.html">Working Memory</a></li><li><a href="../attention-games.html">Attention</a></li><li><a href="../processing-speed-games.html">Processing Speed</a></li><li><a href="../executive-function-games.html">Executive Function</a></li><li><a href="../reaction-time-games.html">Reaction Time</a></li><li><a href="../all-games.html">All Games</a></li></ul></div>
+      <div class="footer__col"><h3 class="footer__heading">Popular Games</h3><ul><li><a href="stroop-color-word.html">Stroop Color-Word Test</a></li><li><a href="reaction-time.html">Reaction Time Test</a></li><li><a href="go-no-go.html">Go/No-Go Task</a></li><li><a href="flanker-task.html">Flanker Task</a></li><li><a href="dual-n-back.html">Dual N-Back</a></li></ul></div>
+      <div class="footer__col"><h3 class="footer__heading">Legal</h3><ul><li><a href="../legal/privacy-policy.html">Privacy Policy</a></li><li><a href="../legal/terms-of-service.html">Terms of Service</a></li><li><a href="../legal/cookie-policy.html">Cookie Policy</a></li></ul></div>
+    </div>
+    <p class="footer__copy container">&copy; 2026 BrainForge. All rights reserved.</p>
+  </footer>
+
+  <div class="cookie-banner" role="dialog" aria-label="Cookie consent">
+    <div class="cookie-banner__inner">
+      <p>We use cookies to save your progress. <a href="../legal/cookie-policy.html">Learn more</a>.</p>
+      <div class="cookie-banner__buttons">
+        <button class="btn btn--primary btn--sm cookie-accept">Accept</button>
+        <button class="btn btn--ghost btn--sm cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/audio.js"></script>
+  <script src="../js/core/game-engine.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/games/go-no-go.js"></script>
+</body>
+</html>
