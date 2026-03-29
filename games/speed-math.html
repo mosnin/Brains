@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Speed Training Games - Free Mental Math Online | BrainForge</title>
+    <meta name="description" content="Challenge your brain speed training games skills with free mental math exercises. 30 progressive levels from basic arithmetic to advanced estimation. Train your brain online!">
+    <meta name="keywords" content="brain speed training games, mental math, brain training, arithmetic practice, math games online, free math training">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://brainforge.app/games/speed-math.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/game.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "Speed Mental Math",
+        "description": "A brain speed training game with 30 progressive levels of mental math challenges, from basic addition to advanced estimation.",
+        "url": "https://brainforge.app/games/speed-math.html",
+        "genre": "Brain Training",
+        "numberOfPlayers": {
+            "@type": "QuantitativeValue",
+            "value": 1
+        },
+        "gamePlatform": "Web Browser",
+        "applicationCategory": "Game",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://brainforge.app/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Games",
+                "item": "https://brainforge.app/games/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Speed Mental Math",
+                "item": "https://brainforge.app/games/speed-math.html"
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How does Speed Mental Math improve brain speed?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Speed Mental Math trains your brain to process numerical information faster through timed practice. Each level progressively increases difficulty, strengthening neural pathways associated with arithmetic processing, working memory, and quick decision-making."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What math skills are covered in the 30 levels?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The game covers addition, subtraction, multiplication, division, mixed operations, multi-step expressions, squares and square roots, percentages, fractions, estimation, and chain operations. Difficulty scales from single-digit arithmetic to complex multi-operation problems."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How is my score calculated?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Each level presents 10 problems. Your score is the percentage of correct answers (correct answers divided by 10, times 100). You need at least 80% (8 out of 10 correct) to pass a level and unlock the next one."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body class="game-page">
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="../" class="nav__logo"><svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg><span>BrainForge</span></a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+      <ul id="nav-menu" class="nav__menu" role="list">
+        <li><a href="../">Home</a></li>
+        <li><a href="dual-n-back.html">Dual N-Back</a></li>
+        <li><a href="working-memory.html">Working Memory</a></li>
+        <li><a href="pattern-match.html">Pattern Match</a></li>
+        <li><a href="speed-math.html">Speed Math</a></li>
+        <li><a href="word-recall.html">Word Recall</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../">Home</a><span class="breadcrumb__separator">&#8250;</span><a href="../#games">Games</a><span class="breadcrumb__separator">&#8250;</span><span class="breadcrumb__current">Speed Mental Math</span>
+      </nav>
+    </div>
+
+    <section class="game-info">
+      <h1>Speed <span class="text-gradient">Mental Math</span></h1>
+      <p>Sharpen your arithmetic speed across 30 challenging levels.</p>
+    </section>
+
+    <div class="container container--narrow">
+      <div id="level-select">
+        <h2 class="level-select__title">Select Level</h2>
+        <div id="level-select-grid"></div>
+      </div>
+
+      <div id="game-hud">
+        <div class="hud-item"><span class="hud-item__label">Level</span><span class="hud-item__value" id="hud-level">1</span></div>
+        <div class="hud-item"><span class="hud-item__label">Score</span><span class="hud-item__value" id="hud-score">0%</span></div>
+        <div class="hud-item hud-timer-wrap"><span id="hud-timer"></span><div class="hud-timer-bar-bg"><div class="hud-timer-bar" id="hud-timer-bar"></div></div></div>
+        <button id="pause-btn" aria-label="Pause">&#9208;</button>
+      </div>
+
+      <div id="game-area"></div>
+      <div id="game-overlay"></div>
+
+        <!-- SEO Content -->
+        <section class="seo-content">
+            <h2>How to Play</h2>
+            <p>Speed Mental Math is a brain speed training game designed to improve your mental arithmetic. Each level presents 10 math problems that you must solve before time runs out. In early levels, select from four multiple-choice answers. As you progress, you will type your answers directly. Score at least 80% to advance to the next level.</p>
+
+            <h2>Benefits of Mental Math Training</h2>
+            <p>Regular mental math practice strengthens working memory, improves processing speed, and builds numerical fluency. Research shows that brain speed training games like mental arithmetic exercises can enhance cognitive performance across many areas of daily life, from financial calculations to better decision-making under pressure. By training with progressively harder problems, you build lasting mental agility.</p>
+
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>How does Speed Mental Math improve brain speed?</h3>
+                    <p>Speed Mental Math trains your brain to process numerical information faster through timed practice. Each level progressively increases difficulty, strengthening neural pathways associated with arithmetic processing, working memory, and quick decision-making.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What math skills are covered in the 30 levels?</h3>
+                    <p>The game covers addition, subtraction, multiplication, division, mixed operations, multi-step expressions, squares and square roots, percentages, fractions, estimation, and chain operations. Difficulty scales from single-digit arithmetic to complex multi-operation problems.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How is my score calculated?</h3>
+                    <p>Each level presents 10 problems. Your score is the percentage of correct answers (correct answers divided by 10, times 100). You need at least 80% (8 out of 10 correct) to pass a level and unlock the next one.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- More Games -->
+        <section class="more-games">
+            <h2>More Games</h2>
+            <div class="games-grid">
+                <a href="dual-n-back.html" class="game-card">
+                    <h3>Dual N-Back</h3>
+                    <p>Train working memory with simultaneous audio-visual challenges.</p>
+                </a>
+                <a href="working-memory.html" class="game-card">
+                    <h3>Working Memory</h3>
+                    <p>Strengthen your short-term memory with sequence recall tasks.</p>
+                </a>
+                <a href="pattern-match.html" class="game-card">
+                    <h3>Pattern Match</h3>
+                    <p>Improve pattern recognition speed and visual processing.</p>
+                </a>
+                <a href="word-recall.html" class="game-card">
+                    <h3>Word Recall</h3>
+                    <p>Boost verbal memory by memorizing and recalling word lists.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+  <footer class="site-footer">
+    <div class="footer__grid">
+      <div class="footer__brand"><a href="../" class="nav__logo"><svg viewBox="0 0 32 32" fill="none" width="28" height="28"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg><span>BrainForge</span></a><p>Free brain games online to train your memory, focus, and cognitive abilities.</p></div>
+      <div class="footer__section"><h4>Games</h4><a href="dual-n-back.html">Dual N-Back</a><a href="working-memory.html">Working Memory</a><a href="pattern-match.html">Pattern Recognition</a><a href="speed-math.html">Speed Mental Math</a><a href="word-recall.html">Word Recall</a></div>
+      <div class="footer__section"><h4>Legal</h4><a href="../legal/privacy-policy.html">Privacy Policy</a><a href="../legal/terms-of-service.html">Terms of Service</a><a href="../legal/cookie-policy.html">Cookie Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div>
+    </div>
+    <div class="footer__bottom"><p>&copy; 2026 BrainForge. All rights reserved.</p></div>
+  </footer>
+
+  <div class="cookie-banner" role="dialog" aria-label="Cookie consent"><div class="cookie-banner__inner"><p>We use cookies to save your game progress and improve your experience. <a href="../legal/cookie-policy.html">Learn more</a>.</p><div class="cookie-banner__buttons"><button class="btn btn--primary btn--sm cookie-accept">Accept</button><button class="btn btn--ghost btn--sm cookie-decline">Decline</button></div></div></div>
+
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/audio.js"></script>
+  <script src="../js/core/game-engine.js"></script>
+  <script src="../js/games/speed-math.js"></script>
+  <script src="../js/navigation.js"></script>
+</body>
+</html>

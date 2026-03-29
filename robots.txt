@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brainforge.app/sitemap.xml
+
+# Disallow access to admin or non-public areas
+Disallow: /js/
+Disallow: /css/

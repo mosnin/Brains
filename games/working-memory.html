@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working Memory Games - Free Online Brain Training | BrainForge</title>
+    <meta name="description" content="Strengthen your working memory with free online brain training games. Practice spatial and sequential recall across 30 progressive levels. Improve focus, concentration, and cognitive performance.">
+    <meta name="keywords" content="working memory games, brain training, memory training, cognitive training, working memory exercises, spatial memory, sequential memory">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://brainforge.app/games/working-memory.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/game.css">
+    <style>
+        .wm-color-picker {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .wm-color-picker__label {
+            font-weight: 600;
+            margin-right: 0.25rem;
+        }
+        .wm-color-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            cursor: pointer;
+            transition: transform 0.15s, border-color 0.15s;
+        }
+        .wm-color-btn:hover {
+            transform: scale(1.15);
+        }
+        .wm-color-btn--active {
+            border-color: #fff;
+            box-shadow: 0 0 8px rgba(255,255,255,0.5);
+            transform: scale(1.15);
+        }
+        .faq-accordion { max-width: 720px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            color: inherit;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 1rem 0;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-question::after { content: '+'; font-size: 1.4rem; transition: transform 0.2s; }
+        .faq-item.open .faq-question::after { content: '\2212'; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-item.open .faq-answer { max-height: 300px; }
+        .faq-answer p { padding: 0 0 1rem; margin: 0; opacity: 0.85; line-height: 1.6; }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "Working Memory Matrix",
+        "description": "A progressive brain training game that challenges spatial and sequential working memory through pattern recall across 30 difficulty levels.",
+        "genre": "Brain Training",
+        "numberOfPlayers": 1,
+        "gamePlatform": "Web Browser",
+        "applicationCategory": "Game",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://brainforge.app/" },
+            { "@type": "ListItem", "position": 2, "name": "Games", "item": "https://brainforge.app/games/" },
+            { "@type": "ListItem", "position": 3, "name": "Working Memory", "item": "https://brainforge.app/games/working-memory.html" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is working memory and why is it important?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Working memory is the cognitive system that temporarily holds and manipulates information needed for complex tasks like reasoning, learning, and comprehension. It is essential for academic performance, problem-solving, and everyday decision-making."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can working memory be improved with training?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Research suggests that consistent working memory training can lead to improvements in working memory capacity. Regular practice with progressively challenging tasks, like those in the Working Memory Matrix game, can help strengthen these cognitive abilities over time."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How often should I practice working memory games?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For best results, aim for 15-20 minutes of working memory training 3-5 times per week. Consistency is more important than session length. The 30-level progression system ensures the difficulty scales with your ability."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body class="game-page">
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="../" class="nav__logo"><svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg><span>BrainForge</span></a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+      <ul id="nav-menu" class="nav__menu" role="list">
+        <li><a href="../">Home</a></li>
+        <li><a href="dual-n-back.html">Dual N-Back</a></li>
+        <li><a href="working-memory.html">Working Memory</a></li>
+        <li><a href="pattern-match.html">Pattern Match</a></li>
+        <li><a href="speed-math.html">Speed Math</a></li>
+        <li><a href="word-recall.html">Word Recall</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../">Home</a><span class="breadcrumb__separator">&#8250;</span><a href="../#games">Games</a><span class="breadcrumb__separator">&#8250;</span><span class="breadcrumb__current">Working Memory</span>
+      </nav>
+    </div>
+
+    <section class="game-info">
+      <h1>Working Memory <span class="text-gradient">Matrix</span></h1>
+      <p>Train your spatial and sequential working memory across 30 progressive levels.</p>
+    </section>
+
+        <div class="container">
+            <div id="game-container" class="game-container">
+                <div id="level-select">
+                    <h2 class="level-select__title">Select Level</h2>
+                    <div id="level-select-grid"></div>
+                </div>
+
+                <div id="game-hud" class="game-hud" style="display:none;">
+                    <div class="game-hud__item">
+                        <span class="game-hud__label">Level</span>
+                        <span id="hud-level" class="game-hud__value">1</span>
+                    </div>
+                    <div class="game-hud__item">
+                        <span class="game-hud__label">Score</span>
+                        <span id="hud-score" class="game-hud__value">0%</span>
+                    </div>
+                    <div class="game-hud__item game-hud__timer">
+                        <span id="hud-timer" class="game-hud__value">--</span>
+                        <div id="hud-timer-bar" class="game-hud__timer-bar"></div>
+                    </div>
+                    <button id="pause-btn" class="game-hud__pause" aria-label="Pause game">&#10074;&#10074;</button>
+                </div>
+
+                <div id="game-area" class="game-area"></div>
+
+                <div id="game-overlay" class="game-overlay" style="display:none;"></div>
+            </div>
+        </div>
+
+        <section class="seo-content">
+            <div class="container">
+                <article class="content-block">
+                    <h2>How to Play Working Memory Games</h2>
+                    <p>The Working Memory Matrix challenges you to remember and reproduce patterns on a grid. Each level tests a different aspect of your working memory:</p>
+                    <ol>
+                        <li><strong>Watch</strong> - Cells on the grid will light up in a pattern. In spatial mode, they flash all at once. In sequential mode, they light up one by one.</li>
+                        <li><strong>Remember</strong> - Pay close attention to which cells light up, their order, and in advanced levels, their colors.</li>
+                        <li><strong>Recall</strong> - Click the cells to reproduce the pattern. In sequential mode, order matters. In reverse mode, tap them in reverse order.</li>
+                        <li><strong>Score</strong> - You need 80% accuracy to pass each level and unlock the next one.</li>
+                    </ol>
+                    <p>The game progresses from simple 3x3 grids with 3 cells all the way to complex 8x8 grids with 14 cells, multiple colors, and reverse recall. This graduated difficulty ensures your working memory is constantly challenged.</p>
+                </article>
+
+                <article class="content-block">
+                    <h2>Benefits of Working Memory Training</h2>
+                    <p>Working memory is one of the most critical cognitive functions. It acts as a mental workspace where you hold and manipulate information in real time. Research has shown that working memory capacity is linked to:</p>
+                    <ul>
+                        <li><strong>Academic performance</strong> - Strong working memory predicts success in reading comprehension and mathematics.</li>
+                        <li><strong>Fluid intelligence</strong> - Working memory is closely tied to your ability to solve novel problems and reason abstractly.</li>
+                        <li><strong>Attention control</strong> - Training working memory can help improve your ability to focus and filter distractions.</li>
+                        <li><strong>Everyday functioning</strong> - From following multi-step directions to managing tasks at work, working memory plays a role in daily life.</li>
+                    </ul>
+                    <p>Consistent practice with working memory games can help maintain and potentially improve these cognitive abilities across all ages.</p>
+                </article>
+
+                <article class="content-block">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-accordion">
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">What is working memory and why is it important?</button>
+                            <div class="faq-answer">
+                                <p>Working memory is the cognitive system that temporarily holds and manipulates information needed for complex tasks like reasoning, learning, and comprehension. Unlike short-term memory which simply stores information, working memory actively processes it. It is essential for academic performance, problem-solving, following instructions, and everyday decision-making.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">Can working memory be improved with training?</button>
+                            <div class="faq-answer">
+                                <p>Research suggests that consistent working memory training can lead to improvements in working memory capacity. Studies have shown that regular practice with progressively challenging tasks, like those in the Working Memory Matrix game, can help strengthen these cognitive abilities over time. The key is consistency and progressive overload - gradually increasing difficulty as you improve.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">How often should I practice working memory games?</button>
+                            <div class="faq-answer">
+                                <p>For best results, aim for 15-20 minutes of working memory training 3-5 times per week. Consistency is more important than session length. Short, regular sessions are more effective than occasional long sessions. The 30-level progression system in Working Memory Matrix ensures the difficulty scales with your ability, keeping each session productive and challenging.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="content-block">
+                    <h2>More Games</h2>
+                    <div class="more-games">
+                        <a href="games/dual-n-back.html" class="more-games__card">
+                            <h3>Dual N-Back</h3>
+                            <p>The gold standard of brain training. Track visual and auditory stimuli simultaneously.</p>
+                        </a>
+                        <a href="games/pattern-match.html" class="more-games__card">
+                            <h3>Pattern Match</h3>
+                            <p>Test your pattern recognition speed and visual processing abilities.</p>
+                        </a>
+                        <a href="games/speed-math.html" class="more-games__card">
+                            <h3>Speed Math</h3>
+                            <p>Sharpen mental arithmetic with timed math challenges of increasing difficulty.</p>
+                        </a>
+                        <a href="games/word-recall.html" class="more-games__card">
+                            <h3>Word Recall</h3>
+                            <p>Strengthen verbal working memory by memorizing and recalling word sequences.</p>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+  <footer class="site-footer">
+    <div class="footer__grid">
+      <div class="footer__brand"><a href="../" class="nav__logo"><svg viewBox="0 0 32 32" fill="none" width="28" height="28"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg><span>BrainForge</span></a><p>Free brain games online to train your memory, focus, and cognitive abilities.</p></div>
+      <div class="footer__section"><h4>Games</h4><a href="dual-n-back.html">Dual N-Back</a><a href="working-memory.html">Working Memory</a><a href="pattern-match.html">Pattern Recognition</a><a href="speed-math.html">Speed Mental Math</a><a href="word-recall.html">Word Recall</a></div>
+      <div class="footer__section"><h4>Legal</h4><a href="../legal/privacy-policy.html">Privacy Policy</a><a href="../legal/terms-of-service.html">Terms of Service</a><a href="../legal/cookie-policy.html">Cookie Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div>
+    </div>
+    <div class="footer__bottom"><p>&copy; 2026 BrainForge. All rights reserved.</p></div>
+  </footer>
+
+  <div class="cookie-banner" role="dialog" aria-label="Cookie consent"><div class="cookie-banner__inner"><p>We use cookies to save your game progress and improve your experience. <a href="../legal/cookie-policy.html">Learn more</a>.</p><div class="cookie-banner__buttons"><button class="btn btn--primary btn--sm cookie-accept">Accept</button><button class="btn btn--ghost btn--sm cookie-decline">Decline</button></div></div></div>
+
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/audio.js"></script>
+  <script src="../js/core/game-engine.js"></script>
+  <script src="../js/games/working-memory.js"></script>
+  <script src="../js/navigation.js"></script>
+</body>
+</html>

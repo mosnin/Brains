@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern Recognition Games for Adults - Free Online | BrainForge</title>
+    <meta name="description" content="Challenge your brain with free pattern recognition games for adults. Identify sequences, complete matrices, and sharpen your logical reasoning skills across 30 progressive levels.">
+    <meta name="keywords" content="pattern recognition games for adults, pattern matching, brain training, cognitive games, matrix reasoning, sequence puzzles, IQ training">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://brainforge.app/games/pattern-match.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/game.css">
+
+    <!-- JSON-LD: VideoGame -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "Pattern Recognition - BrainForge",
+        "description": "A progressive pattern recognition brain training game with 30 levels. Identify color sequences, shape rotations, number patterns, and complete complex matrices.",
+        "url": "https://brainforge.app/games/pattern-match.html",
+        "genre": ["Puzzle", "Educational", "Brain Training"],
+        "numberOfLevels": 30,
+        "gamePlatform": "Web Browser",
+        "applicationCategory": "Game",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "BrainForge"
+        }
+    }
+    </script>
+
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://brainforge.app/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Games",
+                "item": "https://brainforge.app/games/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Pattern Recognition",
+                "item": "https://brainforge.app/games/pattern-match.html"
+            }
+        ]
+    }
+    </script>
+
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What skills does pattern recognition training improve?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Pattern recognition training strengthens fluid intelligence, logical reasoning, and abstract thinking. Regular practice can improve your ability to identify trends, solve novel problems, and make faster decisions in everyday life."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many levels are in the Pattern Recognition game?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The game features 30 progressively challenging levels. Early levels start with simple color and shape sequences, while advanced levels include complex matrix reasoning puzzles similar to those found in IQ assessments."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How often should I practice pattern recognition games?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For optimal cognitive benefits, aim for 15-20 minutes of pattern recognition practice 3-5 times per week. Consistent short sessions are more effective than occasional long sessions for building lasting cognitive improvements."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body class="game-page">
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="../" class="nav__logo"><svg viewBox="0 0 32 32" fill="none" width="32" height="32"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg><span>BrainForge</span></a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+      <ul id="nav-menu" class="nav__menu" role="list">
+        <li><a href="../">Home</a></li>
+        <li><a href="dual-n-back.html">Dual N-Back</a></li>
+        <li><a href="working-memory.html">Working Memory</a></li>
+        <li><a href="pattern-match.html">Pattern Match</a></li>
+        <li><a href="speed-math.html">Speed Math</a></li>
+        <li><a href="word-recall.html">Word Recall</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../">Home</a><span class="breadcrumb__separator">&#8250;</span><a href="../#games">Games</a><span class="breadcrumb__separator">&#8250;</span><span class="breadcrumb__current">Pattern Recognition</span>
+      </nav>
+    </div>
+
+    <section class="game-info">
+      <h1>Pattern <span class="text-gradient">Recognition</span></h1>
+      <p>Identify sequences, complete patterns, and solve matrix puzzles across 30 levels.</p>
+    </section>
+
+    <div class="container container--narrow">
+      <div id="level-select">
+        <h2 class="level-select__title">Select Level</h2>
+        <div id="level-select-grid"></div>
+      </div>
+
+            <!-- Game HUD -->
+            <div id="game-hud" class="game-hud" style="display:none;">
+                <div class="hud-item">
+                    <span class="hud-label">Level</span>
+                    <span id="hud-level" class="hud-value">1</span>
+                </div>
+                <div class="hud-item">
+                    <span class="hud-label">Score</span>
+                    <span id="hud-score" class="hud-value">0%</span>
+                </div>
+                <div class="hud-timer-wrap">
+                    <span id="hud-timer" class="hud-timer-text">--</span>
+                    <div id="hud-timer-bar" class="hud-timer-bar"></div>
+                </div>
+                <button id="pause-btn" class="btn-icon" aria-label="Pause game">&#10074;&#10074;</button>
+            </div>
+
+            <!-- Game Area -->
+            <div id="game-area" class="game-area"></div>
+
+            <!-- Game Overlay -->
+            <div id="game-overlay" class="game-overlay" style="display:none;"></div>
+        </div>
+
+        <!-- SEO Content -->
+        <section class="seo-content">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="content-block">
+                        <h2>How to Play Pattern Recognition</h2>
+                        <p>Each level presents you with a series of visual patterns that follow specific rules. Your task is to identify the underlying pattern and select the correct next element from the available choices.</p>
+                        <ul>
+                            <li><strong>Levels 1-6:</strong> Start with simple color sequences and shape rotations to build your foundational skills.</li>
+                            <li><strong>Levels 7-12:</strong> Progress to multi-attribute patterns combining size, color, and number sequences with time pressure.</li>
+                            <li><strong>Levels 13-18:</strong> Tackle complex patterns with three or more changing attributes and grid transformations.</li>
+                            <li><strong>Levels 19-30:</strong> Master matrix reasoning puzzles where you must identify multiple rules governing rows and columns simultaneously.</li>
+                        </ul>
+                        <p>Score 80% or higher on each level's 5 rounds to advance. Take your time on early levels -- they have no time limit.</p>
+                    </div>
+                    <div class="content-block">
+                        <h2>Benefits of Pattern Recognition Training</h2>
+                        <p>Pattern recognition is one of the core components of fluid intelligence -- the ability to reason and solve novel problems independent of prior knowledge. Research suggests that regular practice with pattern recognition games for adults can yield meaningful cognitive benefits:</p>
+                        <ul>
+                            <li><strong>Enhanced Fluid Intelligence:</strong> Matrix reasoning tasks are closely related to the cognitive processes measured by standardized IQ tests.</li>
+                            <li><strong>Improved Problem Solving:</strong> Recognizing patterns quickly translates directly to better analytical thinking in professional and academic settings.</li>
+                            <li><strong>Faster Processing Speed:</strong> Timed levels train your brain to identify relationships and rules more efficiently.</li>
+                            <li><strong>Stronger Abstract Reasoning:</strong> Working with shapes, colors, and spatial transformations builds your capacity for abstract thought.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>What skills does pattern recognition training improve?</summary>
+                        <p>Pattern recognition training strengthens fluid intelligence, logical reasoning, and abstract thinking. Regular practice can improve your ability to identify trends, solve novel problems, and make faster decisions in everyday life.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>How many levels are in the Pattern Recognition game?</summary>
+                        <p>The game features 30 progressively challenging levels. Early levels start with simple color and shape sequences, while advanced levels include complex matrix reasoning puzzles similar to those found in IQ assessments.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>How often should I practice pattern recognition games?</summary>
+                        <p>For optimal cognitive benefits, aim for 15-20 minutes of pattern recognition practice 3-5 times per week. Consistent short sessions are more effective than occasional long sessions for building lasting cognitive improvements.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- More Games -->
+        <section class="more-games">
+            <div class="container">
+                <h2>More Games</h2>
+                <div class="games-grid">
+                    <a href="/games/dual-n-back.html" class="game-card">
+                        <h3>Dual N-Back</h3>
+                        <p>Train your working memory with this gold-standard cognitive exercise.</p>
+                    </a>
+                    <a href="/games/working-memory.html" class="game-card">
+                        <h3>Working Memory</h3>
+                        <p>Strengthen your ability to hold and manipulate information in mind.</p>
+                    </a>
+                    <a href="/games/speed-math.html" class="game-card">
+                        <h3>Speed Math</h3>
+                        <p>Sharpen your mental arithmetic under time pressure.</p>
+                    </a>
+                    <a href="/games/word-recall.html" class="game-card">
+                        <h3>Word Recall</h3>
+                        <p>Boost your verbal memory by recalling words from growing lists.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+  <footer class="site-footer">
+    <div class="footer__grid">
+      <div class="footer__brand"><a href="../" class="nav__logo"><svg viewBox="0 0 32 32" fill="none" width="28" height="28"><path d="M16 3C9.4 3 4 7.6 4 13.2c0 3.2 1.8 6 4.5 7.8V26a2 2 0 002 2h11a2 2 0 002-2v-5c2.7-1.8 4.5-4.6 4.5-7.8C28 7.6 22.6 3 16 3z" fill="#4F6BF5"/><path d="M17.5 9L13 17h3.5L14.5 24l6-9h-3.5L17.5 9z" fill="#2DD4BF"/></svg><span>BrainForge</span></a><p>Free brain games online to train your memory, focus, and cognitive abilities.</p></div>
+      <div class="footer__section"><h4>Games</h4><a href="dual-n-back.html">Dual N-Back</a><a href="working-memory.html">Working Memory</a><a href="pattern-match.html">Pattern Recognition</a><a href="speed-math.html">Speed Mental Math</a><a href="word-recall.html">Word Recall</a></div>
+      <div class="footer__section"><h4>Legal</h4><a href="../legal/privacy-policy.html">Privacy Policy</a><a href="../legal/terms-of-service.html">Terms of Service</a><a href="../legal/cookie-policy.html">Cookie Policy</a><a href="../legal/disclaimer.html">Disclaimer</a></div>
+    </div>
+    <div class="footer__bottom"><p>&copy; 2026 BrainForge. All rights reserved.</p></div>
+  </footer>
+
+  <div class="cookie-banner" role="dialog" aria-label="Cookie consent"><div class="cookie-banner__inner"><p>We use cookies to save your game progress and improve your experience. <a href="../legal/cookie-policy.html">Learn more</a>.</p><div class="cookie-banner__buttons"><button class="btn btn--primary btn--sm cookie-accept">Accept</button><button class="btn btn--ghost btn--sm cookie-decline">Decline</button></div></div></div>
+
+  <script src="../js/core/storage.js"></script>
+  <script src="../js/core/audio.js"></script>
+  <script src="../js/core/game-engine.js"></script>
+  <script src="../js/games/pattern-match.js"></script>
+  <script src="../js/navigation.js"></script>
+</body>
+</html>
